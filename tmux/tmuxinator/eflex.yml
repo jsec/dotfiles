@@ -1,0 +1,34 @@
+# ~/.tmuxinator/eflex.yml
+
+name: eflex
+root: ~/src/eflex/webApp
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+pre: redis-server /usr/local/etc/redis.conf
+
+windows:
+  - editor:
+      layout: 5d5e,204x58,0,0[204x47,0,0,0,204x10,0,48,4]
+      panes:
+        - vim
+        - ./run.sh
+  - mongo:
+      layout: main-vertical
+      panes:
+        - mongo eflex
+        - tail -f /usr/local/var/log/mongodb/mongo.log
+  - redis:
+      layout: main-vertical
+      panes:
+        - redis-cli
+        -
+  - ssh:
+      layout: main-vertical
+      panes:
+        -
+        -
+  - irc:
+      - irssi
