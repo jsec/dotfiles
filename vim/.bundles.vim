@@ -47,10 +47,12 @@ Bundle 'groenewege/vim-less'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'Blackrush/vim-gocode'
 
 " Misc
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'Raimondi/delimitMate'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on
