@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc monitor -d code web irc ssh
+bspc monitor -d code web irc
 
 bspc config border_width        0
 bspc config window_gap          20
