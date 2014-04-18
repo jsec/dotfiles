@@ -26,8 +26,8 @@ Bundle 'ludovicchabant/vim-lawrencium'
 " Eye candy
 Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
-Bundle 'chriskempson/base16-vim'
 Bundle 'bling/vim-bufferline'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 " Snippet support
 Bundle 'SirVer/ultisnips'
