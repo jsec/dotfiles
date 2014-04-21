@@ -204,9 +204,9 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
+        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
-        usercount = { };
       };
     };
 
@@ -264,8 +264,8 @@ statusbar = {
   };
 };
 settings = {
-  core = { 
-    real_name = "Dash Holmgren";
+  core = {
+    real_name = "Jarrod Seccombe";
     user_name = "jsec";
     nick = "jsec";
   };
@@ -276,93 +276,6 @@ settings = {
     use_msgs_window = "yes";
     autocreate_windows = "yes";
     autocreate_query_level = "DCCMSGS";
-    hilight_nick_matches = "yes";
   };
-  "perl/core/scripts" = {
-    notifier_on_regex = "jsec";
-    usercount_show_zero = "no";
-  };
-};
-hilights = (
-  { text = "word jsec"; nick = "yes"; word = "yes"; },
-  { text = "word jsex"; nick = "yes"; word = "yes"; },
-  { text = "word jsecks"; nick = "yes"; word = "yes"; }
-);
-windows = {
-  1 = {
-    immortal = "yes";
-    name = "(msgs)";
-    level = "MSGS ACTIONS DCCMSGS";
-    sticky = "yes";
-  };
-  2 = { name = "hilight"; sticky = "yes"; };
-  3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "##social";
-        tag = "jsec";
-      }
-    );
-  };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#affiliated";
-        tag = "jsec";
-      }
-    );
-  };
-  5 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "##werewolf";
-        tag = "jsec";
-      }
-    );
-  };
-  6 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#crunchbang";
-        tag = "jsec";
-      }
-    );
-    sticky = "yes";
-    parent = "5";
-  };
-  7 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#bspwm";
-        tag = "jsec";
-      }
-    );
-  };
-  8 = {
-    items = (
-      { 
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#vim";
-        tag = "jsec";
-      }
-    );
-    sticky = "yes";
-    parent = "5";
-  };
-};
-mainwindows = {
-  5 = { first_line = "20"; lines = "33"; };
-  1 = { first_line = "9"; lines = "11"; };
-  2 = { first_line = "1"; lines = "8"; };
+  "perl/core/scripts" = { notifier_on_regex = "jsec"; };
 };
