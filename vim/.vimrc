@@ -83,7 +83,7 @@ set t_Co=256
 set background=dark
 
 " Color File
-colorscheme base16-ocean
+colorscheme Tomorrow-Night 
 
 " Enable syntax highlighting
 syntax enable
@@ -118,7 +118,7 @@ autocmd FileType emblem setl sw=2 sts=2 et
 let g:airline_powerline_fonts = 1
 
 " Set airline theme
-let g:airline_theme="ubaryd"
+let g:airline_theme="tomorrow"
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
