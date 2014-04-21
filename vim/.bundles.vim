@@ -13,6 +13,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/nerdtree-ack'
+Bundle 'rking/ag.vim'
 
 " Linting
 Bundle 'scrooloose/syntastic'
@@ -26,8 +27,7 @@ Bundle 'ludovicchabant/vim-lawrencium'
 " Eye candy
 Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
-Bundle 'bling/vim-bufferline'
-Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'chriskempson/base16-vim'
 
 " Snippet support
 Bundle 'SirVer/ultisnips'
@@ -48,6 +48,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'elzr/vim-json'
+Bundle 'digitaltoad/vim-jade'
 
 " Misc
 Bundle 'xolox/vim-misc'
