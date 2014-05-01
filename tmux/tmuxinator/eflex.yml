@@ -1,7 +1,7 @@
 # ~/.tmuxinator/eflex.yml
 
 name: eflex
-root: ~/src/eflex/webApp
+root: ~/src/eflex/
 
 # Optional tmux socket
 # socket_name: foo
@@ -11,24 +11,28 @@ pre: redis-server /usr/local/etc/redis.conf
 
 windows:
   - editor:
-      layout: 5d5e,204x58,0,0[204x47,0,0,0,204x10,0,48,4]
+      layout: 36cf,364x90,0,0[364x75,0,0,0,364x14,0,76{182x14,0,76,7,181x14,183,76,15}]
       panes:
         - vim
-        - ./run.sh
+        -
+        -
+  - webApp:
+      layout: main-horizontal
+      panes:
+        - coffee
+        - cd webApp && ./run.sh
+  - api:
+      layout: main-horizontal
+      panes:
+        - csharp
+        - mono --runtime=v4.0 lib/NuGet.exe restore Eflex.sln && cd webApi && xbuild && xsp4
   - mongo:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
         - mongo eflex
         - tail -f /usr/local/var/log/mongodb/mongo.log
-  - redis:
-      layout: main-vertical
-      panes:
-        - redis-cli
-        -
-  - ssh:
-      layout: main-vertical
+  - shell:
+      layout: main-horizontal
       panes:
         -
         -
-  - irc:
-      - irssi
