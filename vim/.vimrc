@@ -17,6 +17,7 @@ set encoding=utf-8
 map <silent> , <leader>
 
 " Split navigation
+set splitright
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
@@ -83,13 +84,16 @@ set t_Co=256
 set background=dark
 
 " Color File
-colorscheme Tomorrow-Night 
+colorscheme jellybeans
 
 " Enable syntax highlighting
 syntax enable
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
+
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 
 "~~~~~~~~~~SEARCH SETTINGS~~~~~~~~~~"
@@ -102,6 +106,10 @@ set incsearch
 " Highlight search matches
 set hlsearch
 
+" Formatting for ag searching
+let g:agprg="ag --smart-case --column"
+
+
 "~~~~~~~~~~FILE TYPES~~~~~~~~~~"
 " Set coffeescript files to default to 2 spaces per tab
 autocmd FileType coffee setl sw=2 sts=2 et
@@ -112,13 +120,23 @@ autocmd BufRead,BufNewFile *.conf setf dosini
 " Set emblem files to default to 2 spaces per tab
 autocmd FileType emblem setl sw=2 sts=2 et
 
+" Set json files to their correct filetype
+au BufRead,BufNewFile *.json set filetype=json
+
+" Check cs files on return to normal mode
+let g:syntastic_cs_checkers = ['syntax', 'issues']
+autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
+
+" Automatically add new cs files to nearest project
+autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+
 
 "~~~~~~~~~~VIM-AIRLINE~~~~~~~~~~"
 " Enable powerline fonts
 let g:airline_powerline_fonts = 1
 
 " Set airline theme
-let g:airline_theme="tomorrow"
+let g:airline_theme="murmur"
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
@@ -151,3 +169,10 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
+
+"~~~~~~~~~YCM~~~~~~~~~~"
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 0
+
+"~~~~~~~~~ULTISNIPS~~~~~~~~~~"
+let g:UltiSnipsExpandTrigger="<c-j>"

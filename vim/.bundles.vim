@@ -27,8 +27,7 @@ Bundle 'ludovicchabant/vim-lawrencium'
 " Eye candy
 Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
-Bundle 'bling/vim-bufferline'
-Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'nanotech/jellybeans.vim'
 
 " Snippet support
 Bundle 'SirVer/ultisnips'
@@ -51,11 +50,15 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'elzr/vim-json'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'OrangeT/vim-csharp'
 
 " Misc
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
+Bundle 'nosami/Omnisharp'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-dispatch'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
