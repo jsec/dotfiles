@@ -28,6 +28,7 @@ Bundle 'ludovicchabant/vim-lawrencium'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " Snippet support
 Bundle 'SirVer/ultisnips'
@@ -51,12 +52,12 @@ Bundle 'Blackrush/vim-gocode'
 Bundle 'elzr/vim-json'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'OrangeT/vim-csharp'
+Bundle 'plasticboy/vim-markdown'
 
 " Misc
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'Raimondi/delimitMate'
-Bundle 'nosami/Omnisharp'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-dispatch'
 Bundle 'scrooloose/nerdcommenter'
