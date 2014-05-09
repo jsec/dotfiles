@@ -96,6 +96,9 @@ syntax enable
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
 
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
 
 "~~~~~~~~~~SEARCH SETTINGS~~~~~~~~~~"
 " Case insensitive search
@@ -123,6 +126,13 @@ autocmd FileType emblem setl sw=2 sts=2 et
 
 " Set json files to their correct filetype
 au BufRead,BufNewFile *.json set filetype=json
+
+" Check cs files on return to normal mode
+let g:syntastic_cs_checkers = ['syntax', 'issues']
+autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
+
+" Automatically add new cs files to nearest project
+autocmd BufWritePost *.cs call OmniSharp#AddToProject()
 
 
 "~~~~~~~~~~VIM-AIRLINE~~~~~~~~~~"
@@ -166,7 +176,7 @@ endif
 
 "~~~~~~~~~YCM~~~~~~~~~~"
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
+set completeopt=menu,menuone
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"
 let g:UltiSnipsExpandTrigger="<c-j>"
