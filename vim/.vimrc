@@ -14,7 +14,7 @@ set encoding=utf-8
 
 "~~~~~~~~~~KEYBINDINGS~~~~~~~~~~"
 " Re-map leader key
-map <silent> , <leader>
+let mapleader=","
 
 " Split navigation
 set splitright

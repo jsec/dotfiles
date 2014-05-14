@@ -58,8 +58,10 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'Raimondi/delimitMate'
+Bundle 'nosami/Omnisharp'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-dispatch'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on
