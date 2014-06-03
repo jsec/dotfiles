@@ -7,7 +7,9 @@ root: ~/src/eflex/
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: redis-server /usr/local/etc/redis.conf
+pre:
+  - redis-server /usr/local/etc/redis.conf
+  - sudo proftpd
 
 windows:
   - editor:
@@ -31,6 +33,11 @@ windows:
       panes:
         - mongo eflex
         - tail -f /usr/local/var/log/mongodb/mongo.log
+  - trigger:
+      layout: main-horizontal
+      panes:
+          - make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c eflex/localhost -i imagefiles
+          -
   - shell:
       layout: main-horizontal
       panes:
