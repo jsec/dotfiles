@@ -1,6 +1,6 @@
-# ~/.tmuxinator/eflex.yml
+# ~/.tmuxinator/eflex-small.yml
 
-name: eflex
+name: eflex-small
 root: ~/src/eflex/
 
 # Optional tmux socket
@@ -13,11 +13,8 @@ pre:
 
 windows:
   - editor:
-      layout: 36cf,364x90,0,0[364x75,0,0,0,364x14,0,76{182x14,0,76,7,181x14,183,76,15}]
       panes:
         - vim
-        -
-        -
   - webApp:
       layout: main-horizontal
       panes:
