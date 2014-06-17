@@ -1,0 +1,6 @@
+URxvt*transparent: false
+URxvt*saveLines:   11000
+URxvt*font:        xft:Inconsolata for Powerline:Medium:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont:    xft:Inconsolata for Powerline:Medium:pixelsize=12:antialias=true:hinting=true
+URxvt*scrollBar:   false
+URxvt*scrollstyle: rxvt
