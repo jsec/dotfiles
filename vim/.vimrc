@@ -55,9 +55,6 @@ set nu
 " Don't scroll past 10 lines after current line of text
 set so=10
 
-" Enable mouse support (I'M STILL NEW AT THIS)
-set mouse=a
-
 " Turn off visual flashing
 set vb
 
@@ -84,20 +81,17 @@ let g:indent_guides_start_level=2
 " Enable 256 color support
 set t_Co=256
 
-" Dark backgrounds are much better
-set background=dark
-
 " Color File
 colorscheme jellybeans
 
+" Dark backgrounds are much better
+set background=dark
+
 " Enable syntax highlighting
-syntax enable
+syntax on
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
-
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
 
 
 "~~~~~~~~~~SEARCH SETTINGS~~~~~~~~~~"
@@ -140,7 +134,7 @@ autocmd BufWritePost *.cs call OmniSharp#AddToProject()
 let g:airline_powerline_fonts = 1
 
 " Set airline theme
-let g:airline_theme="murmur"
+let g:airline_theme="jellybeans"
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
@@ -180,3 +174,10 @@ set completeopt=menu,menuone
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+"~~~~~~~~~EASYMOTION~~~~~~~~~~"
+hi EasyMotionTarget ctermbg=lightgrey ctermfg=blue
+hi link EasyMotionShade Comment
+
+hi EasyMotionTarget2First ctermbg=lightgrey ctermfg=blue
+hi EasyMotionTarget2Second ctermbg=lightgrey ctermfg=blue
