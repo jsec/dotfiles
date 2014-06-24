@@ -174,10 +174,3 @@ set completeopt=menu,menuone
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"
 let g:UltiSnipsExpandTrigger="<c-j>"
-
-"~~~~~~~~~EASYMOTION~~~~~~~~~~"
-hi EasyMotionTarget ctermbg=lightgrey ctermfg=blue
-hi link EasyMotionShade Comment
-
-hi EasyMotionTarget2First ctermbg=lightgrey ctermfg=blue
-hi EasyMotionTarget2Second ctermbg=lightgrey ctermfg=blue
