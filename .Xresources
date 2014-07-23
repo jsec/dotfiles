@@ -1,75 +1,10 @@
-! font settings --------------------------------------------------------------
+#include "/home/jsec/.term-jellybeans"
 
-Xft.autohint: true
-Xft.antialias: true
-Xft.hinting: true
-Xft.hintstyle: hintslight
-!Xft.dpi: 96
-Xft.rgba: rgb
-Xft.lcdfilter: lcddefault
+URxvt*transparent: 	false
+URxvt*saveLines:	1000
+URxvt*scrollBar:	false
+URxvt*scrollstyle:	rxvt
+URxvt*letterSpace:  -1
 
-! xscreensaver ---------------------------------------------------------------
-
-!font settings
-xscreensaver.Dialog.headingFont:        -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground:         #101010
-xscreensaver.Dialog.background:         #D8D8D8
-xscreensaver.Dialog.topShadowColor:     #D8D8D8
-xscreensaver.Dialog.bottomShadowColor:  #D8D8D8
-xscreensaver.Dialog.Button.foreground:  #101010
-xscreensaver.Dialog.Button.background:  #E5E5E5
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #101010
-xscreensaver.Dialog.text.background:    #E5E5E5
-xscreensaver.Dialog.internalBorderWidth:24
-xscreensaver.Dialog.borderWidth:        0
-xscreensaver.Dialog.shadowThickness:    2
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #101010
-xscreensaver.passwd.thermometer.background:  #2E2E2E
-xscreensaver.passwd.thermometer.width:       8
-
-!Foreground & Background
-URxvt.background:    #121419
-URxvt.foreground:        #999CA1
-
-!Misc
-URxvt*highlightColor:     #757F8E
-URxvt*highlightTextColor: #15171A
-URxvt*cursorColor:        #758A8E
-URxvt*pointerColor:       #999CA1
-URxvt*colorBD:            #B8BCC2
-URxvt*colorUL:            #B59279
-URxvt*underlineColor:     #B6937A
-
-!Black
-URxvt*color0:             #505152
-URxvt*color8:             #7C7D7E
-!Red
-URxvt*color1:             #B63F53
-URxvt*color9:             #E8909B
-!Green
-URxvt*color2:             #51997A
-URxvt*color10:            #9EDCBB
-!Yellow
-URxvt*color3:             #B27B42
-URxvt*color11:            #DCC58F
-!Blue
-URxvt*color4:             #5C95B3
-URxvt*color12:            #A7C8D4
-!Magenta
-URxvt*color5:             #B85A86
-URxvt*color13:            #D9A4C8
-!Cyan
-URxvt*color6:             #83A6A7
-URxvt*color14:            #BBD7D2
-!White
-URxvt*color7:             #A4A6A7
-URxvt*color15:            #E8E6E4
+URxvt*font:         xft:envy code r:medium:pixelsize=11
+URxvt*boldFont:     xft:envy code r:medium:pixelsize=11

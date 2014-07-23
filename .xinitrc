@@ -1,5 +1,4 @@
-xrdb ~/.Xresources
-xrdb ~/.Xdefaults
+xrdb -merge ~/.Xresources
+fc-cache -fv
 
-xset +fp ~/.fonts
-xset fp rehash
+exec i3

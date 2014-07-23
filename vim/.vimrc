@@ -81,14 +81,14 @@ let g:indent_guides_start_level=2
 " Enable 256 color support
 set t_Co=256
 
-" Color File
-colorscheme jellybeans
-
 " Dark backgrounds are much better
 set background=dark
 
 " Enable syntax highlighting
 syntax on
+
+" Color File
+colorscheme jellybeans
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
@@ -121,23 +121,19 @@ autocmd FileType emblem setl sw=2 sts=2 et
 " Set json files to their correct filetype
 au BufRead,BufNewFile *.json set filetype=json
 
-" Check cs files on return to normal mode
-let g:syntastic_cs_checkers = ['syntax', 'issues']
-autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-
-" Automatically add new cs files to nearest project
-autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-
 
 "~~~~~~~~~~VIM-AIRLINE~~~~~~~~~~"
 " Enable powerline fonts
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " Set airline theme
 let g:airline_theme="jellybeans"
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
+
+let g:airline_right_sep = ''
+let g:airline_left_sep = ''
 
 
 "~~~~~~~~~~NERDTREE~~~~~~~~~~"
@@ -169,7 +165,7 @@ endif
 
 
 "~~~~~~~~~YCM~~~~~~~~~~"
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 set completeopt=menu,menuone
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"
