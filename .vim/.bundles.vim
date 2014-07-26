@@ -28,6 +28,7 @@ Bundle 'ludovicchabant/vim-lawrencium'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'w0ng/vim-hybrid'
 Bundle 'nathanaelkane/vim-indent-guides'
 
 " Snippet support
@@ -52,6 +53,7 @@ Bundle 'elzr/vim-json'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'OrangeT/vim-csharp'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'fatih/vim-go.git'
 
 " Misc
 Bundle 'xolox/vim-misc'
