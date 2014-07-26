@@ -1,4 +1,4 @@
-#include "/home/jsec/.term-jellybeans"
+#include "/home/jsec/.term-hybrid"
 
 URxvt*transparent: 	false
 URxvt*saveLines:	1000
