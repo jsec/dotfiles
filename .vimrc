@@ -58,6 +58,10 @@ set so=10
 " Turn off visual flashing
 set vb
 
+" Wildmode options
+set wildmenu
+set wildmode=longest:full,full
+
 
 "~~~~~~~~~~TAB SETTINGS~~~~~~~~~~"
 " Auto-indent next lines
@@ -87,8 +91,11 @@ set background=dark
 " Enable syntax highlighting
 syntax on
 
+" Make colorscheme use Xresources
+let g:hybrid_use_Xresources=1
+
 " Color File
-colorscheme jellybeans
+colorscheme hybrid
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
@@ -127,7 +134,7 @@ au BufRead,BufNewFile *.json set filetype=json
 let g:airline_powerline_fonts = 0
 
 " Set airline theme
-let g:airline_theme="jellybeans"
+let g:airline_theme="bubblegum"
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
