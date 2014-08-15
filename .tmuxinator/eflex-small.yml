@@ -24,7 +24,7 @@ windows:
       layout: main-horizontal
       panes:
         - csharp
-        - mono --runtime=v4.0 lib/NuGet.exe restore Eflex.sln && cd webApi && xbuild && xsp4
+        - mono --runtime=v4.0 webApi/lib/NuGet.exe restore Eflex.sln && cd webApi && xbuild && xsp4
   - mongo:
       layout: main-horizontal
       panes:
