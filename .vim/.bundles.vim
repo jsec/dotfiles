@@ -29,6 +29,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'zefei/cake16'
 Bundle 'nathanaelkane/vim-indent-guides'
 
 " Snippet support
