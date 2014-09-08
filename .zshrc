@@ -1,9 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="garyblessington"
+ZSH_THEME="minimal"
 
 alias zshconfig="vim ~/.zshrc"
+alias wifi="sudo wifi-menu wlp3s0"
 
 plugins=(git ruby golang)
 
