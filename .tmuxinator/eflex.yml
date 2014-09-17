@@ -18,7 +18,7 @@ windows:
         - vim
         -
         -
-  - webApp:
+  - app:
       layout: main-horizontal
       panes:
         - coffee
@@ -27,7 +27,7 @@ windows:
       layout: main-horizontal
       panes:
         - csharp
-        - mono --runtime=v4.0 webApi/lib/NuGet.exe restore webApi/Eflex.sln && cd webApi && xbuild && xsp4
+        - mono --runtime=v4.0 webApi/lib/NuGet.exe restore webApi/Eflex.sln && cd webApi/WebApi/ && xbuild && xsp4
   - mongo:
       layout: main-horizontal
       panes:
@@ -36,7 +36,7 @@ windows:
   - trigger:
       layout: main-horizontal
       panes:
-          - make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p imagefiles
+          - make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/public/imagefiles
           -
   - shell:
       layout: main-horizontal
