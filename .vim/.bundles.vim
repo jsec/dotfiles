@@ -1,68 +1,72 @@
 set nocompatible
-
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Directory Navigation
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/nerdtree-ack'
-Bundle 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/nerdtree-ack'
+Plugin 'rking/ag.vim'
+Plugin 'majutsushi/tagbar'
 
 " Linting
-Bundle 'scrooloose/syntastic'
-Bundle 'bitc/vim-bad-whitespace'
+Plugin 'scrooloose/syntastic'
+Plugin 'bitc/vim-bad-whitespace'
 
 " Version control support
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/hgrev'
-Bundle 'ludovicchabant/vim-lawrencium'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/hgrev'
+Plugin 'ludovicchabant/vim-lawrencium'
 
 " Eye candy
-Bundle 'myusuf3/numbers.vim'
-Bundle 'bling/vim-airline'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'zefei/cake16'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Snippet support
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Syntax files
-Bundle 'hdima/python-syntax'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'octol/vim-cpp-enhanced-highlight'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'moll/vim-node'
-Bundle 'wavded/vim-stylus'
-Bundle 'heartsentwined/vim-ember-script'
-Bundle 'heartsentwined/vim-emblem'
-Bundle 'nono/vim-handlebars'
-Bundle 'groenewege/vim-less'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'elzr/vim-json'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'OrangeT/vim-csharp'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'fatih/vim-go.git'
+Plugin 'hdima/python-syntax'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'lukaszkorecki/coffeetags'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'moll/vim-node'
+Plugin 'wavded/vim-stylus'
+Plugin 'heartsentwined/vim-ember-script'
+Plugin 'heartsentwined/vim-emblem'
+Plugin 'nono/vim-handlebars'
+Plugin 'groenewege/vim-less'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'elzr/vim-json'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'OrangeT/vim-csharp'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'noc7c9/vim-iced-coffee-script'
+Plugin 'fatih/vim-go.git'
 
 " Misc
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'tpope/vim-dispatch'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'Raimondi/delimitMate'
+Plugin 'nosami/Omnisharp'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-easymotion'
+
+call vundle#end()
 
 filetype plugin indent on
