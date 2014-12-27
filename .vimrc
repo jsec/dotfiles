@@ -134,6 +134,9 @@ set hlsearch
 " Formatting for ag searching
 let g:agprg="ag --smart-case --column"
 
+" Formatting for ack
+let g:ackprg="ag --nogroup --nocolor --column"
+
 
 "~~~~~~~~~~FILE TYPES~~~~~~~~~~"
 " Set coffeescript files to default to 2 spaces per tab
@@ -154,6 +157,9 @@ autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
 
 " Automatically add new cs files to nearest project
 autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+
+" Automatically trim whitespace
+autocmd BufWritePre *.cs,*.coffee,*.js :%s/\s\+$//e
 
 
 "~~~~~~~~~~VIM-AIRLINE~~~~~~~~~~"
@@ -193,10 +199,18 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 
 "~~~~~~~~~~CTRL-P~~~~~~~~~"
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\public$\|\node_modules$',
-  \ 'file': '\.exe$\|\.dll$\|\.so$\|\.dat$'
-  \ }
+set wildignore =*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/\.hg/*,*/node_modules/*,*/bower_components/*,*/public/*,*/bin/*,*/obj/*
+
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+    \ --ignore .git
+    \ --ignore .hg
+    \ --ignore node_modules
+    \ --ignore bower_components
+    \ --ignore vendor
+    \ --ignore public
+    \ --ignore bin
+    \ --ignore obj
+    \ -g ""'
 
 "~~~~~~~~~YCM~~~~~~~~~~"
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
