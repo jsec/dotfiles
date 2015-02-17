@@ -50,9 +50,6 @@ nmap <silent> <leader>` :ccl<CR>
 " Close buffer without closing split
 map <leader>q :bp\|bd #<CR>
 
-" TODO display mapping
-noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
-
 
 "~~~~~~~~~~VIM SETTINGS~~~~~~~~~~"
 " Backspace over any text
@@ -91,6 +88,9 @@ set expandtab
 " Indent guides
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
+
+" netrw ignores
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 
 "~~~~~~~~~~COLOR~~~~~~~~~~"
@@ -181,12 +181,6 @@ let g:airline_mode_map = {
       \ 'S' : 'S',
       \ }
 
-
-"~~~~~~~~~~NERDTREE~~~~~~~~~~"
-" Set default size for NerdTree window
-let g:NERDTreeWinSize=35
-
-
 "~~~~~~~~~~SYNTASTIC~~~~~~~~~~"
 " Start syntastic on startup
 let g:syntastic_check_on_open=1
@@ -196,6 +190,10 @@ let g:syntastic_enable_signs=1
 
 " Default to C++11 compiler
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+
+"~~~~~~~~~~NERDTREE~~~~~~~~~~"
+"" Set default size for NerdTree window
+let g:NERDTreeWinSize=35
 
 
 "~~~~~~~~~~CTRL-P~~~~~~~~~"
@@ -211,6 +209,13 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
     \ --ignore bin
     \ --ignore obj
     \ -g ""'
+
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
+
 
 "~~~~~~~~~YCM~~~~~~~~~~"
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
