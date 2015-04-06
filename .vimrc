@@ -33,7 +33,7 @@ nnoremap <silent> <C-k> :vertical resize +5<cr>
 nnoremap <silent> <leader>a ggVG
 
 " Nerd Tree toggle
-map <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Turn off search highlighting
 nmap <silent> <C-o> :nohlsearch<CR>
@@ -49,6 +49,12 @@ nmap <silent> <leader>` :ccl<CR>
 
 " Close buffer without closing split
 map <leader>q :bp\|bd #<CR>
+
+" Easy align
+vmap <Enter> <Plug>(EasyAlign)
+
+" Interactive Easy Align
+nmap ga <Plug>(EasyAlign)
 
 
 "~~~~~~~~~~VIM SETTINGS~~~~~~~~~~"
@@ -88,9 +94,6 @@ set expandtab
 " Indent guides
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
-
-" netrw ignores
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 
 "~~~~~~~~~~COLOR~~~~~~~~~~"
@@ -199,17 +202,6 @@ let g:NERDTreeWinSize=35
 "~~~~~~~~~~CTRL-P~~~~~~~~~"
 set wildignore =*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/\.hg/*,*/node_modules/*,*/bower_components/*,*/public/*,*/bin/*,*/obj/*
 
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-    \ --ignore .git
-    \ --ignore .hg
-    \ --ignore node_modules
-    \ --ignore bower_components
-    \ --ignore vendor
-    \ --ignore public
-    \ --ignore bin
-    \ --ignore obj
-    \ -g ""'
-
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
@@ -226,3 +218,4 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 
 "~~~~~~~~~TAGBAR~~~~~~~~~"
 nnoremap <silent> <C-i> :TagbarToggle<CR>
+

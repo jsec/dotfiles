@@ -3,7 +3,7 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-" Directory Navigation
+" Navigation
 Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -24,6 +24,7 @@ Plug 'ludovicchabant/vim-lawrencium'
 Plug 'myusuf3/numbers.vim'
 Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
+Plug 'edkolev/tmuxline.vim'
 
 " Snippet Support
 Plug 'SirVer/ultisnips'
@@ -31,7 +32,7 @@ Plug 'honza/vim-snippets'
 
 " Syntax Files
 Plug 'hdima/python-syntax'
-Plug 'kchmck/vim-coffee-script'
+Plug 'jsec/vim-coffee-script'
 Plug 'lukaszkorecki/coffeetags'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'jelera/vim-javascript-syntax'
@@ -53,7 +54,7 @@ Plug 'fatih/vim-go'
 
 " Misc
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'Raimondi/delimitMate'
 Plug 'nosami/Omnisharp'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang --omnisharp-completer' }
@@ -61,6 +62,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
