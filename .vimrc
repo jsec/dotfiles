@@ -86,7 +86,7 @@ let g:indent_guides_start_level=2
 set t_Co=256
 
 " Dark backgrounds are much better
-set background=dark
+set background=light
 
 " Enable syntax highlighting
 syntax on
@@ -98,7 +98,7 @@ let g:hybrid_use_Xresources=1
 colorscheme hybrid
 
 " Change color of matched parentheses
-highlight MatchParen ctermfg=white ctermbg=black
+highlight MatchParen ctermfg=red ctermbg=black
 
 
 "~~~~~~~~~~SEARCH SETTINGS~~~~~~~~~~"
@@ -134,7 +134,7 @@ au BufRead,BufNewFile *.json set filetype=json
 let g:airline_powerline_fonts = 0
 
 " Set airline theme
-let g:airline_theme="bubblegum"
+let g:airline_theme="sol"
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
@@ -174,6 +174,8 @@ endif
 "~~~~~~~~~YCM~~~~~~~~~~"
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 set completeopt=menu,menuone
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"
 let g:UltiSnipsExpandTrigger="<c-j>"
