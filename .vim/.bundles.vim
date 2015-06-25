@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
 
 " Navigation
 Plug 'mileszs/ack.vim'
-"Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/nerdtree-ack'
 Plug 'rking/ag.vim'
@@ -26,7 +25,6 @@ Plug 'ludovicchabant/vim-lawrencium'
 " Eye Candy
 Plug 'myusuf3/numbers.vim'
 Plug 'bling/vim-airline'
-Plug 'altercation/vim-colors-solarized'
 Plug 'edkolev/tmuxline.vim'
 Plug 'chriskempson/base16-vim'
 
