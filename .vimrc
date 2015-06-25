@@ -14,9 +14,20 @@ set encoding=utf-8
 " Auto-reload changed files
 set autoread
 
+" Wildmenu
+set wildmenu
+
 " Line wrapping
 set wrap
 
+" Set backup directory
+set backupdir=~/.vim/backup//
+
+" Set swap directory
+set directory=~/.vim/swap//
+
+" Set undo directory
+set undodir=~/.vim/undo//
 
 "~~~~~~~~~~KEYBINDINGS~~~~~~~~~~"
 " Re-map leader key
@@ -34,6 +45,9 @@ nnoremap <silent> <leader>a ggVG
 
 " Nerd Tree toggle
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+
+" FZF toggle
+nnoremap <silent> <C-p> :FZF<CR>
 
 " Turn off search highlighting
 nmap <silent> <C-o> :nohlsearch<CR>
@@ -107,14 +121,13 @@ syntax enable
 set background=dark
 
 " Color scheme
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme base16-ocean
 
 " Airline theme
 if has('gui_running')
     let g:airline_theme="solarized"
 else
-    let g:airline_theme="murmur"
+    let g:airline_theme="base16"
 endif
 
 " Change color of matched parentheses
@@ -144,6 +157,9 @@ let g:ackprg="ag --nogroup --nocolor --column"
 "~~~~~~~~~~FILE TYPES~~~~~~~~~~"
 " Set coffeescript files to default to 2 spaces per tab
 autocmd FileType coffee setl sw=2 sts=2 et
+
+" Set emblem files to default to 2 spaces per tab
+autocmd FileType styl setl sw=2 sts=2 et
 
 " Syntax highlighting for .conf files
 autocmd BufRead,BufNewFile *.conf setf dosini
@@ -200,13 +216,16 @@ let g:NERDTreeWinSize=35
 
 
 "~~~~~~~~~~CTRL-P~~~~~~~~~"
-set wildignore =*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/\.hg/*,*/node_modules/*,*/bower_components/*,*/public/*,*/bin/*,*/obj/*
+"set wildignore =*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/\.hg/*,*/node_modules/*,*/bower_components/*,*/public/*,*/bin/*,*/obj/*
 
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-endif
+"if executable('ag')
+    "set grepprg=ag\ --nogroup\ --nocolor
+    "let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
+    "let g:ctrlp_use_caching = 0
+"endif
+
+"~~~~~~~~~FZF~~~~~~~~~~"
+let g:fzf_height = "20%"
 
 
 "~~~~~~~~~YCM~~~~~~~~~~"
@@ -219,3 +238,11 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 "~~~~~~~~~TAGBAR~~~~~~~~~"
 nnoremap <silent> <C-i> :TagbarToggle<CR>
 
+"~~~~~~~~~EASYMOTION~~~~~~~~~"
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade Comment
+
+hi link EasyMotionTarget2First ErrorMsg
+hi link EasyMotionTarget2Second ErrorMsg
+
+hi link EasyMotionMoveHL Search

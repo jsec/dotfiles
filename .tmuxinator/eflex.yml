@@ -3,10 +3,6 @@
 name: eflex
 root: ~/src/eflex/
 
-# Optional tmux socket
-# socket_name: foo
-
-# Runs before everything. Use it to start daemons etc.
 pre:
   - redis-server /usr/local/etc/redis.conf
   - sudo proftpd
@@ -22,12 +18,21 @@ windows:
       layout: main-horizontal
       panes:
         - coffee
-        - cd webApp && ./run.sh
+        #- cd webApp && ./run.sh
+        - cd webapp-cli && npm start
   - api:
       layout: main-horizontal
       panes:
         - csharp
-        - mono --runtime=v4.0 webApi/lib/NuGet.exe restore webApi/Eflex.sln && cd webApi/WebApi/ && xbuild && xsp4
+        - cd WebApi/WebApi/ && xbuild && xsp
+  - node:
+      layout: main-horizontal
+      panes:
+        - cd plcComm && npm install && iced app.coffee
+        - cd tools/plcTester && npm install && iced app.coffee
+  - redis:
+      panes:
+        - redis-cli
   - mongo:
       layout: main-horizontal
       panes:
@@ -36,7 +41,8 @@ windows:
   - trigger:
       layout: main-horizontal
       panes:
-          - make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/public/imagefiles
+          #- make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/public/imagefiles
+          - make trigger && cd webapp-cli/dist && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webapp-cli/dist/imagefiles
           -
   - shell:
       layout: main-horizontal
