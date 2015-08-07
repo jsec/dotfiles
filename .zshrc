@@ -1,17 +1,25 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="minimal"
+ZSH_THEME="sunrise"
 
 alias zshconfig="vim ~/.zshrc"
-alias wifi="sudo wifi-menu wlp3s0"
+alias say=/usr/bin/say
+alias irssi='TERM=screen-256color irssi'
+alias pac="sudo pacman -S"
+alias pacup="sudo pacman -Syy && sudo pacman -Syu"
 
-plugins=(git ruby golang)
+plugins=(git mercurial osx golang ruby rbenv jira)
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
-# User configuration
+eval CLICOLOR=1
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/jsec/.gem/ruby/2.1.0/bin:/usr/bin/core_perl:/home/jsec/src/go/bin"
 export EDITOR='vim'
-export GOPATH='/home/jsec/src/go'
+export DISABLE_AUTO_TITLE=true
+export GOPATH=/home/jsec/src/go
+export GOHOME=$GOPATH/src/github.com/jsec
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/home/jsec/src/go/bin:/usr/local/go/bin:/home/jsec/.gem/ruby/2.2.0/bin
+
+DEFAULT_USER="jsec"
