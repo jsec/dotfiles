@@ -7,6 +7,7 @@ alias say=/usr/bin/say
 alias irssi='TERM=screen-256color irssi'
 alias pac="sudo pacman -S"
 alias pacup="sudo pacman -Syy && sudo pacman -Syu"
+alias aurup="sudo aura -Ayu"
 
 plugins=(git mercurial osx golang ruby rbenv jira)
 
