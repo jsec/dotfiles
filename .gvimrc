@@ -1,3 +1,6 @@
-let g:airline_powerline_fonts=0
-let g:airline_right_sep=''
-let g:airline_left_sep=''
+set guioptions=aem
+set background=light
+colorscheme PaperColor
+set guifont=Roboto\ Mono:h12
+let g:airline_left_separator=''
+let g:airline_right_separator=''

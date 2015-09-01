@@ -29,6 +29,18 @@ set directory=~/.vim/swap//
 " Set undo directory
 set undodir=~/.vim/undo//
 
+"~~~~~~~~~~IGNORES~~~~~~~~~~"
+set wildignore+=**/node_modules
+set wildignore+=**/bower_components
+set wildignore+=**/tmp
+set wildignore+=**/dist
+set wildignore+=**/.git
+set wildignore+=**/.hg
+set wildignore+=**/bin
+set wildignore+=**/Debug
+set wildignore+=**/Release
+
+
 "~~~~~~~~~~KEYBINDINGS~~~~~~~~~~"
 " Re-map leader key
 let mapleader=","
@@ -45,9 +57,6 @@ nnoremap <silent> <leader>a ggVG
 
 " Nerd Tree toggle
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-
-" FZF toggle
-nnoremap <silent> <C-p> :FZF<CR>
 
 " Turn off search highlighting
 nmap <silent> <C-o> :nohlsearch<CR>
@@ -111,21 +120,21 @@ let g:indent_guides_start_level=2
 
 
 "~~~~~~~~~~COLOR~~~~~~~~~~"
-" Enable 256 color support
-set t_Co=256
-
 " Enable syntax highlighting
 syntax enable
 
 " Background
 set background=dark
 
+" Base 16 color palette
+let base16colorspace=256
+
 " Color scheme
 colorscheme base16-ocean
 
 " Airline theme
 if has('gui_running')
-    let g:airline_theme="solarized"
+    let g:airline_theme="sol"
 else
     let g:airline_theme="base16"
 endif
@@ -146,6 +155,9 @@ set incsearch
 
 " Highlight search matches
 set hlsearch
+
+" Formatting for grep
+set grepprg=ag\ --nogroup\ --nocolor
 
 " Formatting for ag searching
 let g:agprg="ag --smart-case --column"
@@ -173,9 +185,6 @@ au BufRead,BufNewFile *.json set filetype=json
 " Check cs files on return to normal mode
 let g:syntastic_cs_checkers = ['syntax', 'issues']
 autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-
-" Automatically add new cs files to nearest project
-autocmd BufWritePost *.cs call OmniSharp#AddToProject()
 
 " Automatically trim whitespace
 autocmd BufWritePre *.cs,*.coffee,*.js :%s/\s\+$//e
@@ -215,25 +224,21 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:NERDTreeWinSize=35
 
 
-"~~~~~~~~~~CTRL-P~~~~~~~~~"
-"set wildignore =*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/\.hg/*,*/node_modules/*,*/bower_components/*,*/public/*,*/bin/*,*/obj/*
-
-"if executable('ag')
-    "set grepprg=ag\ --nogroup\ --nocolor
-    "let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
-    "let g:ctrlp_use_caching = 0
-"endif
-
-"~~~~~~~~~FZF~~~~~~~~~~"
-let g:fzf_height = "20%"
-
-
 "~~~~~~~~~YCM~~~~~~~~~~"
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
 set completeopt=menu,menuone
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+"~~~~~~~~~CTRLP~~~~~~~~~~"
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:agprg="ag --smart-case --column"
+    let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
 
 "~~~~~~~~~TAGBAR~~~~~~~~~"
 nnoremap <silent> <C-i> :TagbarToggle<CR>
