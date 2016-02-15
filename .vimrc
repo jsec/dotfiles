@@ -2,9 +2,6 @@
 " Source vundle plugin list
 so ~/.vim/.bundles.vim
 
-" Turn off vi compatibility
-set nocompatible
-
 " Necessary for airline
 set laststatus=2
 
@@ -97,9 +94,6 @@ let g:indent_guides_start_level=2
 
 
 "~~~~~~~~~~COLOR~~~~~~~~~~"
-" Enable 256 color support
-set t_Co=256
-
 " Enable syntax highlighting
 syntax enable
 
@@ -107,10 +101,10 @@ syntax enable
 set background=dark
 
 " Color scheme
-colorscheme base16-ocean
+colorscheme gotham
 
 " Airline theme
-let g:airline_theme="base16"
+let g:airline_theme="gotham"
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
@@ -162,7 +156,7 @@ autocmd BufWritePre *.cs,*.coffee,*.js :%s/\s\+$//e
 
 "~~~~~~~~~~VIM-AIRLINE~~~~~~~~~~"
 " Disable powerline fonts
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
 "Enable mercurial support
 let g:airline_enable_lawrencium=1
@@ -178,17 +172,6 @@ let g:airline_mode_map = {
       \ 's' : 'S',
       \ 'S' : 'S',
       \ }
-
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
-"~~~~~~~~~~TMUXLINE~~~~~~~~~~~"
-let g:tmuxline_separators = {
-    \ 'left': '',
-    \ 'left_alt': '',
-    \ 'right': '',
-    \ 'right_alt': '',
-    \ 'space': ' ' }
 
 "~~~~~~~~~~SYNTASTIC~~~~~~~~~~"
 " Start syntastic on startup
@@ -217,6 +200,7 @@ endif
 
 "~~~~~~~~~YCM~~~~~~~~~~"
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
+let g:ycm_rust_src_path = '/usr/src/rust/src'
 set completeopt=menu,menuone
 
 "~~~~~~~~~ULTISNIPS~~~~~~~~~~"

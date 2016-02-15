@@ -1,35 +1,19 @@
-#include "/home/jsec/src/config/base16-xresources/base16-ocean.dark.xresources"
+#include "/home/jsec/src/config/xresources/gotham"
 
-URxvt*transparent: 	false
-URxvt*saveLines:	1000
-URxvt*scrollBar:	false
-URxvt*scrollstyle:	rxvt
-URxvt*letterSpace:  -1
-URxvt.allow_bold:   true
+URxvt*transparent: false
+URxvt*saveLines:   1000
+URxvt*scrollBar:   false
+URxvt*scrollstyle: rxvt
+URxvt*letterSpace: -1
+URxvt.allow_bold:  true
 
-Xft.dpi:    96
-Xft.antialias:  true
-Xft.hinting:    true
-Xft.hintstyle:  hintmedium
-Xfg.lcdfilter:  lcddefault
+Xft.dpi:           96
+Xft.antialias:     true
+Xft.hinting:       true
+Xft.autohint: 0
+Xft.rgba: rgb
+Xft.hintstyle:     hintslight
+Xfg.lcdfilter:     lcddefault
 
-!URxvt*font:         xft:Essential PragmataPro:Regular:pixelsize=15
-!URxvt*boldFont:     xft:Essential PragmataPro:Bold:pixelsize=15
-
-URxvt*font:         xft:Fira Mono:Medium:pixelsize=14
-URxvt*boldFont:     xft:Fira Mono:Bold:pixelsize=14
-
-!URxvt*font:         xft:ttyp0:Regular:pixelsize=17
-!URxvt*boldFont:     xft:ttyp0:Bold:pixelsize=17
-
-! Rofi config
-rofi.lines: 5
-rofi.columns: 1
-rofi.opacity: 90
-rofi.terminal: xfce4-terminal
-rofi.height: 100
-rofi.width: 100
-rofi.bw: 0
-rofi.font: Fira Mono Medium 14
-rofi.padding: 800
-rofi.disable-history: true
+URxvt*font:        xft:Input Mono:style=Medium:pixelsize=15
+URxvt*boldFont:    xft:Input Mono:style=Bold:pixelsize=15
