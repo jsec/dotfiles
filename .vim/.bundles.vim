@@ -22,9 +22,7 @@ Plug 'ludovicchabant/vim-lawrencium'
 " Eye Candy
 Plug 'myusuf3/numbers.vim'
 Plug 'bling/vim-airline'
-Plug 'altercation/vim-colors-solarized'
 Plug 'whatyouhide/vim-gotham'
-Plug 'chriskempson/base16-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 
@@ -58,7 +56,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'xolox/vim-misc'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Raimondi/delimitMate'
-Plug 'nosami/Omnisharp'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --system-libclang --racer-completer' }
 Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
