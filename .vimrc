@@ -1,35 +1,39 @@
-"~~~~~~~~~~INIT~~~~~~~~~~"
-" Source vundle plugin list
-so ~/.vim/.bundles.vim
+"**********PLUGINS***********
+filetype off
+call plug#begin('~/.vim/plugged')
 
-" Turn off vi compatibility
-set nocompatible
+so ~/.vim/syntax-files.vim
+so ~/.vim/plugins.vim
 
-" Necessary for airline
-set laststatus=2
+call plug#end()
+filetype plugin indent on
 
-" Default encoding
-set encoding=utf-8
+"**********SETTINGS**********
+set laststatus=2                " needed for airline
+set encoding=utf-8              " default encoding
+set autoread                    " auto-reload changed files
+set wildmenu                    " wildmenu completions
+set wrap                        " line wrapping
+set backupdir=~/.vim/backup//   " backup directory
+set directory=~/.vim/swap//     " swap directory
+set undodir=~/.vim/undo//       " undo directory
+set backspace+=start,eol,indent " backspace over any text
+set nu                          " enable line numbering
+set so=10                       " don't scroll past 10 lines
+set mouse=a                     " enable mouse support
+set vb                          " turn off visual flash
+set ignorecase                  " ignore case in regex pattern
+set smartcase                   " don't ignore case if uppercase letter is in search string
+set autoindent                  " turn on auto-indent
+set shiftwidth=4                " make shifts 4 spaces
+set tabstop=4                   " tabs count for 4 spaces
+set expandtab                   " expand tabs to spaces
+set ignorecase                  " case insensitive search
+set incsearch                   " incremental search
+set hlsearch                    " highlight search matches
+set splitright                  " new splits go to right of current split
 
-" Auto-reload changed files
-set autoread
-
-" Wildmenu
-set wildmenu
-
-" Line wrapping
-set wrap
-
-" Set backup directory
-set backupdir=~/.vim/backup//
-
-" Set swap directory
-set directory=~/.vim/swap//
-
-" Set undo directory
-set undodir=~/.vim/undo//
-
-"~~~~~~~~~~IGNORES~~~~~~~~~~"
+"**********IGNORES**********
 set wildignore+=**/node_modules
 set wildignore+=**/bower_components
 set wildignore+=**/tmp
@@ -39,14 +43,16 @@ set wildignore+=**/.hg
 set wildignore+=**/bin
 set wildignore+=**/Debug
 set wildignore+=**/Release
+set wildignore+=**/packages
+set wildignore+=**/eFlexI18n.js
+set wildignore+=*.dll
+set wildignore+=*.mdb
 
-
-"~~~~~~~~~~KEYBINDINGS~~~~~~~~~~"
-" Re-map leader key
+"**********KEYBINDINGS**********
+" Remap leader key
 let mapleader=","
 
 " Split navigation
-set splitright
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
@@ -54,9 +60,6 @@ nmap <silent> <C-l> :wincmd l<CR>
 nnoremap <silent> <C-j> :vertical resize -5<cr>
 nnoremap <silent> <C-k> :vertical resize +5<cr>
 nnoremap <silent> <leader>a ggVG
-
-" Nerd Tree toggle
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Turn off search highlighting
 nmap <silent> <C-o> :nohlsearch<CR>
@@ -73,71 +76,10 @@ nmap <silent> <leader>` :ccl<CR>
 " Close buffer without closing split
 map <leader>q :bp\|bd #<CR>
 
-" Easy align
-vmap <Enter> <Plug>(EasyAlign)
-
-" Interactive Easy Align
-nmap ga <Plug>(EasyAlign)
-
-
-"~~~~~~~~~~VIM SETTINGS~~~~~~~~~~"
-" Backspace over any text
-set backspace+=start,eol,indent
-
-" Enable line numbering
-set nu
-
-" Don't scroll past 10 lines after current line of text
-set so=10
-
-" Enable mouse support (I'M STILL NEW AT THIS)
-set mouse=a
-
-" Turn off visual flashing
-set vb
-
-" Change case settings
-set smartcase
-set ignorecase
-
-
-"~~~~~~~~~~TAB SETTINGS~~~~~~~~~~"
-" Auto-indent next lines
-set autoindent
-
-" Set re-indent ops to 4 spaces
-set shiftwidth=4
-
-" Tabs count for 4 spaces
-set tabstop=4
-
-" Expand tabs to spaces
-set expandtab
-
-" Indent guides
-let g:indent_guides_guide_size=1
-let g:indent_guides_start_level=2
-
-
-"~~~~~~~~~~COLOR~~~~~~~~~~"
-" Enable syntax highlighting
-syntax enable
-
-" Background
-set background=dark
-
-" Base 16 color palette
-let base16colorspace=256
-
-" Color scheme
-colorscheme base16-ocean
-
-" Airline theme
-if has('gui_running')
-    let g:airline_theme="sol"
-else
-    let g:airline_theme="base16"
-endif
+"**********COLOR**********
+syntax enable           " enable syntax highlighting
+set background=dark     " set dark background
+colorscheme gotham      " colorscheme
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
@@ -145,109 +87,14 @@ highlight MatchParen ctermfg=white ctermbg=black
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
-
-"~~~~~~~~~~SEARCH SETTINGS~~~~~~~~~~"
-" Case insensitive search
-set ignorecase
-
-" Incremental search as you type
-set incsearch
-
-" Highlight search matches
-set hlsearch
-
-" Formatting for grep
-set grepprg=ag\ --nogroup\ --nocolor
-
-" Formatting for ag searching
-let g:agprg="ag --smart-case --column"
-
-" Formatting for ack
-let g:ackprg="ag --nogroup --nocolor --column"
-
-
-"~~~~~~~~~~FILE TYPES~~~~~~~~~~"
-" Set coffeescript files to default to 2 spaces per tab
-autocmd FileType coffee setl sw=2 sts=2 et
-
-" Set emblem files to default to 2 spaces per tab
-autocmd FileType styl setl sw=2 sts=2 et
-
-" Syntax highlighting for .conf files
-autocmd BufRead,BufNewFile *.conf setf dosini
-
-" Set emblem files to default to 2 spaces per tab
-autocmd FileType emblem setl sw=2 sts=2 et
-
-" Set json files to their correct filetype
-au BufRead,BufNewFile *.json set filetype=json
-
-" Check cs files on return to normal mode
-let g:syntastic_cs_checkers = ['syntax', 'issues']
-autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
+"**********FILETYPES***********
+autocmd FileType coffee setl sw=2 sts=2 et      " coffeescript 2 spaces per tab
+autocmd FileType styl setl sw=2 sts=2 et        " stylus 2 spaces per tab
+autocmd FileType js setl sw=2 sts=2 et          " javascript 2 spaces per tab
+autocmd BufRead,BufNewFile *.conf setf dosini   " syntax highlighting for conf files
+autocmd FileType emblem setl sw=2 sts=2 et      " emblem 2 spaces per tab
+au BufRead,BufNewFile *.json set filetype=json  " proper filetype for json
+autocmd FileType json setl sw=2 sts=2 et        " json 2 spaces per tab
 
 " Automatically trim whitespace
 autocmd BufWritePre *.cs,*.coffee,*.js :%s/\s\+$//e
-
-
-"~~~~~~~~~~VIM-AIRLINE~~~~~~~~~~"
-" Enable powerline fonts
-let g:airline_powerline_fonts = 1
-
-"Enable mercurial support
-let g:airline_enable_lawrencium=1
-
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n' : 'N',
-      \ 'i' : 'I',
-      \ 'R' : 'R',
-      \ 'c' : 'C',
-      \ 'v' : 'V',
-      \ 'V' : 'V',
-      \ 's' : 'S',
-      \ 'S' : 'S',
-      \ }
-
-"~~~~~~~~~~SYNTASTIC~~~~~~~~~~"
-" Start syntastic on startup
-let g:syntastic_check_on_open=1
-
-" Enable gutter signs
-let g:syntastic_enable_signs=1
-
-" Default to C++11 compiler
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
-
-"~~~~~~~~~~NERDTREE~~~~~~~~~~"
-"" Set default size for NerdTree window
-let g:NERDTreeWinSize=35
-
-
-"~~~~~~~~~YCM~~~~~~~~~~"
-let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
-set completeopt=menu,menuone
-
-"~~~~~~~~~ULTISNIPS~~~~~~~~~~"
-let g:UltiSnipsExpandTrigger="<c-j>"
-
-"~~~~~~~~~CTRLP~~~~~~~~~~"
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    let g:agprg="ag --smart-case --column"
-    let g:ctrlp_user_command = 'ag %s -S -l --depth -1 --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-endif
-
-"~~~~~~~~~TAGBAR~~~~~~~~~"
-nnoremap <silent> <C-i> :TagbarToggle<CR>
-
-"~~~~~~~~~EASYMOTION~~~~~~~~~"
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade Comment
-
-hi link EasyMotionTarget2First ErrorMsg
-hi link EasyMotionTarget2Second ErrorMsg
-
-hi link EasyMotionMoveHL Search

@@ -18,18 +18,17 @@ windows:
       layout: main-horizontal
       panes:
         - coffee
-        #- cd webApp && ./run.sh
-        - cd webapp-cli && npm start
+        - cd webApp && ./run.sh
   - api:
       layout: main-horizontal
       panes:
-        - csharp
         - cd WebApi/WebApi/ && xbuild && xsp
-  - node:
+        - cd api && ./run
+  - plcComm:
       layout: main-horizontal
       panes:
-        - cd plcComm && npm install && iced app.coffee
-        - cd tools/plcTester && npm install && iced app.coffee
+        - cd plcComm && npm install && coffee app.coffee
+        - cd tools/plcTester && npm install && coffee app.coffee
   - redis:
       panes:
         - redis-cli
@@ -41,8 +40,7 @@ windows:
   - trigger:
       layout: main-horizontal
       panes:
-          #- make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/public/imagefiles
-          - make trigger && cd webapp-cli/dist && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webapp-cli/dist/imagefiles
+          - make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/public/imagefiles
           -
   - shell:
       layout: main-horizontal
