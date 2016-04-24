@@ -2,11 +2,11 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $background #1D1F21
-set $foreground #C5C8C6
-set $blue #5F819D
-set $urgent #A54242
-set $black #282A2E
+set $background #2B303B
+set $foreground #C0C5C3
+set $blue #8FA1B3
+set $urgent #BF616A
+set $black #65737E
 
 set $mod Mod4
 
@@ -145,12 +145,12 @@ bar {
         colors {
             background $background
             statusline $foreground
-            separator  $background
+            separator  $blue
 
             #----------COLORS----------
             # value             border      background      text
-            focused_workspace   $blue     $blue         $foreground
-            active_workspace    #FFFFFF     #DCDCDC         #000000
+            focused_workspace   $blue     $background         $foreground
+            active_workspace    #FFFFFF     #3D3D3D         #000000
             inactive_workspace  $background    $background        $foreground
             urgent_workspace    $urgent    $background        $urgent
         }

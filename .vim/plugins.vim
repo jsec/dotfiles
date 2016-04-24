@@ -43,20 +43,21 @@ Plug 'majutsushi/tagbar'
 nnoremap <silent> <C-i> :TagbarToggle<CR>
 
 "*******************************************************
-" SYNTASTIC
+" NEOMAKE
 
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 0
 
 "*******************************************************
 " AIRLINE
 
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 
 set laststatus=2
+
+let g:airline_theme = 'base16'
 
 let g:airline_powerline_fonts = 1
 let g:airline_mode_map = {
@@ -72,18 +73,14 @@ let g:airline_mode_map = {
       \ }
 
 "*******************************************************
-" AIRLINE THEMES
-
-Plug 'vim-airline/vim-airline-themes'
-
-"*******************************************************
 " YOUCOMPLETEME
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang --racer-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer' }
 
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
 let g:ycm_rust_src_path = '/usr/src/rust/src'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 
 set completeopt=menu,menuone
 
@@ -103,12 +100,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'myusuf3/numbers.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'xolox/vim-misc'
+Plug 'w0ng/vim-hybrid'
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-dispatch'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
