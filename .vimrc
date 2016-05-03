@@ -77,9 +77,10 @@ nmap <silent> <leader>` :ccl<CR>
 map <leader>q :bp\|bd #<CR>
 
 "**********COLOR**********
-syntax enable           " enable syntax highlighting
-set background=dark     " set dark background
-colorscheme gotham      " colorscheme
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1  " neovim true color
+syntax enable                        " enable syntax highlighting
+set background=dark                  " set dark background
+colorscheme gruvbox                  " colorscheme
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
@@ -89,8 +90,8 @@ highlight nonText ctermbg=NONE
 
 "**********FILETYPES***********
 autocmd FileType coffee setl sw=2 sts=2 et      " coffeescript 2 spaces per tab
-autocmd FileType styl setl sw=2 sts=2 et        " stylus 2 spaces per tab
-autocmd FileType js setl sw=2 sts=2 et          " javascript 2 spaces per tab
+autocmd FileType stylus setl sw=2 sts=2 et        " stylus 2 spaces per tab
+autocmd FileType javascript setl sw=2 sts=2 et          " javascript 2 spaces per tab
 autocmd BufRead,BufNewFile *.conf setf dosini   " syntax highlighting for conf files
 autocmd FileType emblem setl sw=2 sts=2 et      " emblem 2 spaces per tab
 au BufRead,BufNewFile *.json set filetype=json  " proper filetype for json

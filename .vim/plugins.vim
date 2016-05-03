@@ -1,6 +1,5 @@
 "**********COLOR**********
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'whatyouhide/vim-gotham'
+Plug 'morhetz/gruvbox'
 
 "**********COMMENTING**********
 Plug 'scrooloose/nerdcommenter'
@@ -11,6 +10,7 @@ Plug 'Raimondi/delimitMate'
 "**********FUZZY SEARCHING**********
 Plug 'mileszs/ack.vim'
 Plug 'rking/ag.vim'
+Plug 'gabesoft/vim-ags'
 
 "**********NERDTREE**********
 Plug 'scrooloose/nerdtree'
@@ -59,10 +59,8 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 let airline#extensions#default#section_use_groupitems = 0
-let g:airline_powerline_fonts                         = 0
-let g:airline_theme                                   = "gotham"
-let g:airline_left_sep                                = ''
-let g:airline_right_sep                               = ''
+let g:airline_powerline_fonts                         = 1
+let g:airline_theme                                   = "gruvbox"
 
 let g:airline_mode_map = {
       \ '__' : '-',
@@ -83,7 +81,7 @@ Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 "**********YCM**********
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang --omnisharp-completer --racer-completer'}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --omnisharp-completer --racer-completer'}
 
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
 let g:ycm_rust_src_path         = '/Users/jsec/src/rust/rust/src'
