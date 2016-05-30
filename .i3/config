@@ -2,11 +2,11 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $background #2B303B
-set $foreground #C0C5C3
-set $blue #8FA1B3
-set $urgent #BF616A
-set $black #65737E
+set $background #282828
+set $foreground #EBDBB2
+set $blue #458588
+set $urgent #CC251D
+set $black #928374
 
 set $mod Mod4
 
@@ -18,7 +18,7 @@ font xft:Envy Code R 0
 floating_modifier $mod
 
 # set wallpaper
-exec_always --no-startup-id feh --bg-scale /home/jsec/images/codecloud.png
+exec_always --no-startup-id feh --bg-scale /home/jsec/images/coffee.png
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -27,7 +27,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "95" -bw 0 -bc "$background" -bg "$background" -fg "$foreground" -hlbg "$background" -hlfg "$blue" -font "SFNS Display 14"
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 300 -opacity "95" -bw 0 -font "SFNS Display 14"
 
 # change focus
 bindsym $mod+j focus left
@@ -145,11 +145,11 @@ bar {
         colors {
             background $background
             statusline $foreground
-            separator  $blue
+            separator  $black
 
             #----------COLORS----------
             # value             border      background      text
-            focused_workspace   $blue     $background         $foreground
+            focused_workspace   $black     $background         $foreground
             active_workspace    #FFFFFF     #3D3D3D         #000000
             inactive_workspace  $background    $background        $foreground
             urgent_workspace    $urgent    $background        $urgent
@@ -158,7 +158,7 @@ bar {
 
 # Color configuration
 # value             border      background      text        indicator
-client.focused      $blue    $blue        $foreground    #000000
+client.focused      $black    $black        $foreground    #000000
 client.unfocused    $background    $background        $foreground    #000000
 
 exec_always --no-startup-id compton -f

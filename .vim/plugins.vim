@@ -57,8 +57,6 @@ Plug 'vim-airline/vim-airline'
 
 set laststatus=2
 
-let g:airline_theme = 'base16'
-
 let g:airline_powerline_fonts = 1
 let g:airline_mode_map = {
       \ '__' : '-',
@@ -98,10 +96,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 Plug 'bitc/vim-bad-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'myusuf3/numbers.vim'
-Plug 'edkolev/tmuxline.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'w0ng/vim-hybrid'
-Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Raimondi/delimitMate'

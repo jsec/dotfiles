@@ -63,10 +63,11 @@ set expandtab
 "*******************************************************
 " COLOR SETTINGS
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 syntax enable
 set background=dark
-let base16colorspace=256
-colorscheme base16-ocean
+let g:gruvbox_italic=1
+colorscheme gruvbox
 highlight MatchParen ctermfg=white ctermbg=black
 
 "*******************************************************

@@ -1,14 +1,20 @@
-URxvt*transparent: false
-URxvt*saveLines:   1000
-URxvt*scrollBar:   false
-URxvt*scrollstyle: rxvt
-URxvt*letterSpace: -1
-URxvt.allow_bold:  true
+URxvt*transparent:  false
+URxvt*saveLines:    1000
+URxvt*scrollBar:    false
+URxvt*scrollstyle:  rxvt
+URxvt*letterSpace:  -1
+URxvt.allow_bold:   true
 
-Xft.dpi:           96
-Xft.antialias:     true
-Xft.hinting:       true
-Xft.autohint:      0
-Xft.rgba:          rgb
-Xft.hintstyle:     hintslight
-Xfg.lcdfilter:     lcddefault
+Xft.dpi:            96
+Xft.antialias:      true
+Xft.hinting:        true
+Xft.autohint:       0
+Xft.rgba:           rgb
+Xft.hintstyle:      hintslight
+Xfg.lcdfilter:      lcddefault
+
+rofi.color-enabled: true
+rofi.color-window:  #282828, #EBDBB2, #268bd2
+rofi.color-normal:  #282828, #EBDBB2, #282828, #EBDBB2, #282828
+rofi.color-active:  #282828, #EBDBB2, #928374, #EBDBB2, #282828
+rofi.color-urgent:  #CC241D, #282828, #FB4934, #CC241D, #282828
