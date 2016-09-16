@@ -1,7 +1,6 @@
 " Syntax Files
 Plug 'hdima/python-syntax'
 Plug 'jsec/vim-coffee-script'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'moll/vim-node'
 Plug 'wavded/vim-stylus'
@@ -16,3 +15,4 @@ Plug 'OrangeT/vim-csharp'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
+Plug 'vim-scripts/SyntaxRange'

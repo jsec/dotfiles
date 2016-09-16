@@ -40,7 +40,7 @@ windows:
   - trigger:
       layout: main-horizontal
       panes:
-          - make trigger && cd webApp/public && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/public/imagefiles
+          - make trigger && cd webApp/dist && mkdir -p imagefiles && chmod a+w imagefiles && eVisionTrigger -c localhost -p /Users/jsec/src/eflex/webApp/dist/imagefiles
           -
   - shell:
       layout: main-horizontal

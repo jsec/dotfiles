@@ -16,14 +16,14 @@ Plug 'gabesoft/vim-ags'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/nerdtree-ack'
 
+"**********TMUX-FOCUS-EVENTS**********
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 let g:NERDTreeWinSize=35
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 "**********TAGS**********
-Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
-
-nnoremap <silent> <C-i> :TagbarToggle<CR>
 
 "**********CTRLP**********
 Plug 'ctrlpvim/ctrlp.vim'
@@ -48,11 +48,6 @@ Plug 'bitc/vim-bad-whitespace'
 
 "**********FUGITIVE**********
 Plug 'tpope/vim-fugitive'
-
-"**********TMUXLINE**********
-Plug 'edkolev/tmuxline.vim'
-
-let g:tmuxline_powerline_separators = 0
 
 "**********AIRLINE**********
 Plug 'bling/vim-airline'
@@ -81,24 +76,11 @@ Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 "**********YCM**********
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --omnisharp-completer --racer-completer'}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer'}
 
 let g:ycm_global_ycm_extra_conf = '~/src/configs/.ycm_extra_conf.py'
 let g:ycm_rust_src_path         = '/Users/jsec/src/rust/rust/src'
 set completeopt=menu,menuone
-
-"**********EASYMOTION**********
-Plug 'Lokaltog/vim-easymotion'
-
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade Comment
-
-hi link EasyMotionTarget2First ErrorMsg
-hi link EasyMotionTarget2Second ErrorMsg
-
-hi link EasyMotionMoveHL Search
-
-Plug 'tmux-plugins/vim-tmux-focus-events'
 
 "**********EASYALIGN**********
 Plug 'junegunn/vim-easy-align'
@@ -106,10 +88,7 @@ Plug 'junegunn/vim-easy-align'
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-"**********GIT-GUTTER**********"
-Plug 'airblade/vim-gitgutter'
+"**********SNEAK**********
+Plug 'justinmk/vim-sneak'
 
-"**********VIM-TEST**********"
-Plug 'janko-m/vim-test'
-
-let test#strategy = "neovim"
+let g:sneak#streak=1
