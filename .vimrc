@@ -40,13 +40,7 @@ set wildignore+=**/bower_components
 set wildignore+=**/tmp
 set wildignore+=**/dist
 set wildignore+=**/.git
-set wildignore+=**/.hg
 set wildignore+=**/bin
-set wildignore+=**/Debug
-set wildignore+=**/Release
-set wildignore+=**/packages
-set wildignore+=*.dll
-set wildignore+=*.mdb
 
 "**********KEYBINDINGS**********
 " Remap leader key
