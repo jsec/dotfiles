@@ -74,11 +74,14 @@ map <leader>q :bp\|bd #<CR>
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
 set background=dark                  " set dark background
-colorscheme gruvbox                  " colorscheme
+colorscheme nord                     " colorscheme
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 15
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses
 highlight MatchParen ctermfg=white ctermbg=black
+highlight Normal ctermbg=NONE
 
 "**********FILETYPES***********
 autocmd FileType coffee setl sw=2 sts=2 et     " coffeescript 2 spaces per tab
@@ -88,6 +91,11 @@ autocmd BufRead,BufNewFile *.conf setf dosini  " syntax highlighting for conf fi
 autocmd FileType emblem setl sw=2 sts=2 et     " emblem 2 spaces per tab
 au BufRead,BufNewFile *.json set filetype=json " proper filetype for json
 autocmd FileType json setl sw=2 sts=2 et       " json 2 spaces per tab
+autocmd FileType pug setl sw=2 sts=2 et        " pug 2 spaces per tab
 
 " Automatically trim whitespace
 autocmd BufWritePre *.cs,*.coffee,*.js :%s/\s\+$//e
+
+" Python paths
+let g:python2_host_prog = "/usr/local/bin/python"
+let g:python3_host_prog = "/usr/local/bin/python3"
