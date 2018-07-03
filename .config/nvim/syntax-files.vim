@@ -1,0 +1,6 @@
+Plug 'moll/vim-node'
+Plug 'tpope/vim-rails'
+"Plug 'davidhalter/jedi-vim'
+Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
+Plug 'jsec/vim-coffee-script'
