@@ -74,11 +74,15 @@ map <leader>q :bp\|bd #<CR>
 "**********COLOR**********
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
-set background=dark                  " set dark background
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_comment_brightness = 15
-colorscheme nord                     " colorscheme
+set background=light                 " set dark background
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
+"let g:nord_comment_brightness = 15
+"colorscheme nord
+let g:gruvbox_italic = 1
+let g:gruvbox_bold = 1
+let g:gruvbox_contrast_light='soft'
+colorscheme gruvbox                  " colorscheme
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses

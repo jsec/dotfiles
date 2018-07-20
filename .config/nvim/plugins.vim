@@ -37,6 +37,10 @@ Plug 'vim-scripts/nerdtree-ack'
 
 Plug 'w0rp/ale'
 
+let g:ale_lint_on_text_changed='never'
+let g:ale_sign_error = 'E'
+let g:ale_sign_warning = 'W'
+
 "*******************************************************
 " AIRLINE
 
@@ -93,3 +97,4 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'morhetz/gruvbox'
