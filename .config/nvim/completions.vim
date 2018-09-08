@@ -42,3 +42,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
 
 "*******************************************************
+" BUFWORD
+
+Plug 'ncm2/ncm2-bufword'
+
+"*******************************************************
