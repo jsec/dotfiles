@@ -11,8 +11,7 @@ filetype plugin indent on
 
 "**********SETTINGS**********
 set laststatus=2                        " needed for airline
-set encoding=utf-8                      " default encoding
-set autoread                            " auto-reload changed files
+set encoding=utf-8                      " default encoding set autoread                            " auto-reload changed files
 set wildmenu                            " wildmenu completions
 set wrap                                " line wrapping
 set backupdir=~/.config/nvim/backup//   " backup directory
@@ -75,14 +74,10 @@ map <leader>q :bp\|bd #<CR>
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
 set background=light                 " set dark background
-"let g:nord_italic = 1
-"let g:nord_italic_comments = 1
-"let g:nord_comment_brightness = 15
-"colorscheme nord
-let g:gruvbox_italic = 1
-let g:gruvbox_bold = 1
-let g:gruvbox_contrast_light='soft'
-colorscheme gruvbox                  " colorscheme
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 15
+colorscheme nord
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses
@@ -105,3 +100,7 @@ autocmd BufWritePre *.cs,*.coffee,*.js :%s/\s\+$//e
 " Python paths
 let g:python2_host_prog = "/usr/bin/python"
 let g:python3_host_prog = "/usr/bin/python3"
+
+" GO stuff
+let g:go_bin_path = "/home/jsec/src/go/bin"
+let $GOPATH = $HOME."/go"
