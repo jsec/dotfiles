@@ -78,11 +78,12 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "*******************************************************
-" PYTHON MODE
+" PRETTIER
 
-"Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-"let g:pymode_python = 'python3'
+let g:prettier#quickfix_enabled = 0
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 "*******************************************************
 " MISC
@@ -90,11 +91,11 @@ nmap ga <Plug>(EasyAlign)
 Plug 'bitc/vim-bad-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'myusuf3/numbers.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'whatyouhide/vim-gotham'
 Plug 'morhetz/gruvbox'
