@@ -1,44 +1,33 @@
 [options]
-font = Fira Mono Medium 11
-;font = Pragmata Pro 12
+font = Hack 11
 
 [colors]
-# hard contrast: background = #1d2021
-background = #282828
-# soft contrast: background = #32302f
-foreground = #ebdbb2
-foreground_bold = #ebdbb2
+foreground =  #4D4D4C
+foreground_bold =  #4D4D4C
+background =  #EEEEEE
 
-# dark0 + gray
-color0 = #282828
-color8 = #928374
+color0 =  #EDEDED
+color8 =  #969694
 
-# neutral_red + bright_red
-color1 = #cc241d
-color9 = #fb4934
+color1 =  #D7005F
+color9 =  #D7005F
 
-# neutral_green + bright_green
-color2 = #98971a
-color10 = #b8bb26
+color2 =  #718C00
+color10 =  #718C00
 
-# neutral_yellow + bright_yellow
-color3 = #d79921
-color11 = #fabd2f
+color3 =  #D75F00
+color11 =  #D75F00
 
-# neutral_blue + bright_blue
-color4 = #458588
-color12 = #83a598
+color4 =  #4271AE
+color12 =  #4271AE
 
-# neutral_purple + bright_purple
-color5 = #b16286
-color13 = #d3869b
+color5 =  #8959A8
+color13 =  #8959A8
 
-# neutral_aqua + faded_aqua
-color6 = #689d6a
-color14 = #8ec07c
+color6 =  #3E999F
+color14 =  #3E999F
 
-# light4 + light1
-color7 = #a89984
-color15 = #ebdbb2
+color7 =  #4D4D4C
+color15 =  #F5F5F5
 
 # vim: ft=dosini cms=#%s

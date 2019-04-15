@@ -74,11 +74,15 @@ map <leader>q :bp\|bd #<CR>
 "**********COLOR**********
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
-set background=dark                  " set dark background
-let g:gruvbox_bold = 1
-let g:gruvbox_italic = 1
-let g:gruvbox_italicize_comments = 1
-colorscheme gruvbox
+set background=light                 " set dark background
+let g:PaperColor_Theme_Options = {
+            \'theme': {
+            \  'default': {
+            \    'allow_bold': 1,
+            \    'allow_italic': 1
+            \  }
+            \}}
+colorscheme PaperColor
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses
@@ -100,8 +104,8 @@ autocmd FileType pug setl sw=2 sts=2 et        " pug 2 spaces per tab
 autocmd BufWritePre *.coffee,*.js,*.ts :%s/\s\+$//e
 
 " Python paths
-let g:python2_host_prog = "/usr/bin/python"
-let g:python3_host_prog = "/usr/bin/python3"
+let g:python2_host_prog = "/usr/bin/python2"
+let g:python3_host_prog = "/usr/bin/python"
 
 " GO stuff
 let g:go_bin_path = "/home/jsec/src/go/bin"
