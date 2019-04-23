@@ -74,15 +74,10 @@ map <leader>q :bp\|bd #<CR>
 "**********COLOR**********
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
-set background=light                 " set dark background
-let g:PaperColor_Theme_Options = {
-            \'theme': {
-            \  'default': {
-            \    'allow_bold': 1,
-            \    'allow_italic': 1
-            \  }
-            \}}
-colorscheme PaperColor
+set background=dark
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses
