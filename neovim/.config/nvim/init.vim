@@ -96,7 +96,7 @@ autocmd FileType json setl sw=2 sts=2 et       " json 2 spaces per tab
 autocmd FileType pug setl sw=2 sts=2 et        " pug 2 spaces per tab
 
 " Automatically trim whitespace
-autocmd BufWritePre *.coffee,*.js,*.ts :%s/\s\+$//e
+autocmd BufWritePre *.go,*.py,*.js,*.ts :%s/\s\+$//e
 
 " Python paths
 let g:python2_host_prog = "/usr/bin/python2"
