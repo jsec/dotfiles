@@ -1,5 +1,5 @@
 [options]
-font = Input 12
+font = Operator Mono Semi-Light 13
 
 [colors]
 # Base16 Oceanic Next

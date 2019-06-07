@@ -14,7 +14,8 @@ fi
 alias vim=nvim
 
 LOCAL_BINS=/home/jsec/bin
-RUBY_GEMS=/home/jsec/.gem/ruby/2.6.0/bin
 export GOPATH=/home/jsec/src/go
 export GOBIN=/home/jsec/src/go/bin
-export PATH="$RUBY_GEMS:$GOBIN:$LOCAL_BINS:$PATH"
+export PATH="$GOBIN:$LOCAL_BINS:$PATH"
+
+eval "$(rbenv init -)"

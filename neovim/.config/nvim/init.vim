@@ -86,7 +86,7 @@ highlight Normal ctermbg=NONE
 
 "**********FILETYPES***********
 autocmd FileType coffee setl sw=2 sts=2 et     " coffeescript 2 spaces per tab
-autocmd FileType typescript setl sw=2 sts=2 et " coffeescript 2 spaces per tab
+autocmd FileType typescript setl sw=2 sts=2 et " typescript 2 spaces per tab
 autocmd FileType stylus setl sw=2 sts=2 et     " stylus 2 spaces per tab
 autocmd FileType javascript setl sw=2 sts=2 et " javascript 2 spaces per tab
 autocmd BufRead,BufNewFile *.conf setf dosini  " syntax highlighting for conf files
@@ -102,6 +102,6 @@ autocmd BufWritePre *.go,*.py,*.js,*.ts :%s/\s\+$//e
 let g:python2_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/bin/python"
 
-" GO stuff
+" Go stuff
 let g:go_bin_path = "/home/jsec/src/go/bin"
 let $GOPATH = $HOME."/go"
