@@ -13,9 +13,8 @@ fi
 # Customize to your needs...
 alias vim=nvim
 
-LOCAL_BINS=/home/jsec/bin
+export EDITOR='vim'
+export DISABLE_AUTO_TITLE=true
 export GOPATH=/home/jsec/src/go
 export GOBIN=/home/jsec/src/go/bin
-export PATH="$GOBIN:$LOCAL_BINS:$PATH"
-
-eval "$(rbenv init -)"
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications
