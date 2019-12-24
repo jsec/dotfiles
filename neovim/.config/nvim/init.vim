@@ -78,6 +78,7 @@ set background=dark
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
+"colorscheme gotham
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses
@@ -99,8 +100,8 @@ autocmd FileType pug setl sw=2 sts=2 et        " pug 2 spaces per tab
 autocmd BufWritePre *.go,*.py,*.js,*.ts :%s/\s\+$//e
 
 " Python paths
-let g:python2_host_prog = "/usr/bin/python2"
-let g:python3_host_prog = "/usr/bin/python"
+let g:python2_host_prog = "/usr/local/bin/python2"
+let g:python3_host_prog = "/usr/local/bin/python3"
 
 " Go stuff
 let g:go_bin_path = "/home/jsec/src/go/bin"

@@ -7,4 +7,4 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 let g:go_fmt_command = "goimports"
-let g:polyglot_disabled = ['typescript']
+"let g:polyglot_disabled = ['typescript']
