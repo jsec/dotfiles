@@ -14,9 +14,8 @@ Plug 'gabesoft/vim-ags'
 Plug 'kien/ctrlp.vim'
 
 let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'Ctrlp'
 
-let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob "!.git/*"'
 let g:ctrlp_use_caching = 0
 
 "*******************************************************
@@ -97,3 +96,10 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mhartington/oceanic-next'
 Plug 'whatyouhide/vim-gotham'
+Plug 'ayu-theme/ayu-vim'
+"Plug 'Yggdroot/indentLine'
+
+"let g:indentLine_char = '>'
+"let g:indentLine_first_char = '>'
+"let g:indentLine_showFirstIndentLevel = 1
+"let g:indentLine_setColors = 0
