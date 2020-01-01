@@ -97,9 +97,3 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mhartington/oceanic-next'
 Plug 'whatyouhide/vim-gotham'
 Plug 'ayu-theme/ayu-vim'
-"Plug 'Yggdroot/indentLine'
-
-"let g:indentLine_char = '>'
-"let g:indentLine_first_char = '>'
-"let g:indentLine_showFirstIndentLevel = 1
-"let g:indentLine_setColors = 0
