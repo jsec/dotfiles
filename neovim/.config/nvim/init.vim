@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 so ~/.config/nvim/syntax-files.vim
 so ~/.config/nvim/plugins.vim
-so ~/.config/nvim/completions.vim
+so ~/.config/nvim/coc.vim
 
 call plug#end()
 filetype plugin indent on
@@ -33,7 +33,9 @@ set ignorecase                          " case insensitive search
 set incsearch                           " incremental search
 set hlsearch                            " highlight search matches
 set splitright                          " new splits go to right of current split
-set noshowcmd
+set cmdheight=2                         " coc.nvim message handling
+set updatetime=300                      " oof, this thing again
+set shortmess+=c                        " suppress ins-completion-menu messages
 
 "**********IGNORES**********
 set wildignore+=**/node_modules

@@ -1,0 +1,13 @@
+{
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "javascript",
+    "ruby",
+    "Markdown",
+    "html",
+    "css"
+  ],
+  "typescript.referencesCodeLens.enable": false,
+  "typescript.implementationsCodeLens.enable": false
+}

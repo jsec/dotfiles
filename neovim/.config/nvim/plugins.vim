@@ -77,14 +77,6 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "*******************************************************
-" PRETTIER
-
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-"*******************************************************
 " MISC
 
 Plug 'bitc/vim-bad-whitespace'
