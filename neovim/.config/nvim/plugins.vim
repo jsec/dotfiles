@@ -32,15 +32,6 @@ let g:NERDTreeWinSize=35
 Plug 'vim-scripts/nerdtree-ack'
 
 "*******************************************************
-" ALE
-
-Plug 'w0rp/ale'
-
-let g:ale_lint_on_text_changed='never'
-let g:ale_sign_error = 'E'
-let g:ale_sign_warning = 'W'
-
-"*******************************************************
 " AIRLINE
 
 Plug 'vim-airline/vim-airline'
@@ -87,6 +78,5 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'mhartington/oceanic-next'
-Plug 'whatyouhide/vim-gotham'
-Plug 'ayu-theme/ayu-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'gruvbox-community/gruvbox'
