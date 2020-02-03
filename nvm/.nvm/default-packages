@@ -5,6 +5,7 @@ gulp
 mocha
 neovim
 prettier
-terminalizer
 tslint
 typescript
+@nestjs/cli
+jest
