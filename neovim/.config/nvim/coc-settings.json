@@ -8,6 +8,12 @@
     "html",
     "css"
   ],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "typescript.referencesCodeLens.enable": false,
   "typescript.implementationsCodeLens.enable": false
 }
