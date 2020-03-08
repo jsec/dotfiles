@@ -77,9 +77,6 @@ map <leader>q :bp\|bd #<CR>
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
 set background=dark
-"let g:onedark_hide_endofbuffer = 1
-"let g:onedark_terminal_italics = 1
-"colorscheme onedark
 colorscheme night-owl
 let g:airline_theme = 'night_owl'
 hi EndOfBuffer ctermfg=white

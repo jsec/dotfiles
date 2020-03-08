@@ -32,23 +32,37 @@ let g:NERDTreeWinSize=35
 Plug 'vim-scripts/nerdtree-ack'
 
 "*******************************************************
-" AIRLINE
+" LIGHTLINE
 
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 
-set laststatus=2
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
 
-let g:airline_powerline_fonts = 1
-let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n' : 'N',
-      \ 'i' : 'I',
-      \ 'R' : 'R',
-      \ 'c' : 'C',
-      \ 'v' : 'V',
-      \ 'V' : 'V',
-      \ 's' : 'S',
-      \ 'S' : 'S',
+let g:lightline = {
+      \ 'colorscheme': 'nightowl',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'currentfunction', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \   'currentfunction': 'CocCurrentFunction'
+      \ },
+      \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ },
       \ }
 
 "*******************************************************
@@ -79,4 +93,3 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jiangmiao/auto-pairs'
 Plug 'haishanh/night-owl.vim'
-Plug 'vim-airline/vim-airline-themes'
