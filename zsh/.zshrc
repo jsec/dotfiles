@@ -18,7 +18,7 @@ export DISABLE_AUTO_TITLE=true
 export GOPATH=/home/jsec/src/go
 export GOBIN=/home/jsec/src/go/bin
 export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications
-export FZF_DEFAULT_COMMAND='rg  %s --files --hidden --color=never --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --color=never --glob '\!.git/*'"
 
 eval "$(rbenv init -)"
 

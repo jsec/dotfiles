@@ -1,4 +1,6 @@
 tags
 configstore/
 swap/
+bat/
 coc/
+.DS_Store

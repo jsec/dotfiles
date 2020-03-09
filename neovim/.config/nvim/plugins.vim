@@ -9,14 +9,51 @@ let g:ackprg="ag --nogroup --nocolor --column"
 Plug 'gabesoft/vim-ags'
 
 "*******************************************************
-" CTRLP
+" FZF
 
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
-let g:ctrlp_map = '<c-p>'
+nnoremap <silent> <c-p> :call Fzf_dev()<CR>
 
-let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob "!.git/*"'
-let g:ctrlp_use_caching = 0
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
+
+" list files
+function! Fzf_dev()
+  let l:fzf_files_options = '--preview "bat --theme="night-owlish" --style=numbers,changes --color always {1..-1} | head -'.&lines.'"'
+
+  function! s:files()
+    let l:files = split(system($FZF_DEFAULT_COMMAND), '\n')
+    return s:format_filename(l:files)
+  endfunction
+
+  function! s:format_filename(candidates)
+    let l:result = []
+    for l:candidate in a:candidates
+      let l:filename = fnamemodify(l:candidate, ':p:t')
+      call add(l:result, printf('%s', l:candidate))
+    endfor
+
+    return l:result
+  endfunction
+
+  function! s:edit_file(item)
+    let l:pos = stridx(a:item, ' ')
+    let l:file_path = a:item[pos+1:-1]
+    execute 'silent e' l:file_path
+  endfunction
+
+  call fzf#run({
+        \ 'source': <sid>files(),
+        \ 'sink':   function('s:edit_file'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down':    '40%' })
+endfunction
 
 "*******************************************************
 " NERDTREE
@@ -30,40 +67,6 @@ let g:NERDTreeWinSize=35
 " NERDTREE-ACK
 
 Plug 'vim-scripts/nerdtree-ack'
-
-"*******************************************************
-" LIGHTLINE
-
-Plug 'itchyny/lightline.vim'
-
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
-
-let g:lightline = {
-      \ 'colorscheme': 'nightowl',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'currentfunction', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
-      \   'currentfunction': 'CocCurrentFunction'
-      \ },
-      \ 'mode_map': {
-        \ 'n' : 'N',
-        \ 'i' : 'I',
-        \ 'R' : 'R',
-        \ 'v' : 'V',
-        \ 'V' : 'VL',
-        \ "\<C-v>": 'VB',
-        \ 'c' : 'C',
-        \ 's' : 'S',
-        \ 'S' : 'SL',
-        \ "\<C-s>": 'SB',
-        \ 't': 'T',
-        \ },
-      \ }
 
 "*******************************************************
 " SNIPPETS
