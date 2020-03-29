@@ -16,5 +16,6 @@
   ],
   "tsserver.npm": "/usr/local/bin/npm",
   "typescript.referencesCodeLens.enable": false,
-  "typescript.implementationsCodeLens.enable": false
+  "typescript.implementationsCodeLens.enable": false,
+  "typescript.preferences.importModuleSpecifier": "relative"
 }
