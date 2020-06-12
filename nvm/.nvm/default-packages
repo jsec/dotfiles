@@ -2,10 +2,10 @@
 @angular/cli
 create-react-app
 gulp
-mocha
 neovim
 prettier
 tslint
 typescript
 @nestjs/cli
 jest
+sequelize-cli

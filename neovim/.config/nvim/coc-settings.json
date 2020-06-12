@@ -14,7 +14,10 @@
     "typescript",
     "typescriptreact"
   ],
-  "tsserver.npm": "/usr/local/bin/npm",
+  "solargraph.commandPath": "/Users/jsec/.rbenv/shims/solargraph",
+  "solargraph.completion": true,
+  "solargraph.diagnostics": true,
+  "tsserver.npm": "/Users/jsec/.nvm/versions/node/v14.2.0/bin/npm",
   "typescript.referencesCodeLens.enable": false,
   "typescript.implementationsCodeLens.enable": false,
   "typescript.preferences.importModuleSpecifier": "relative"
