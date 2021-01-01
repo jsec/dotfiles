@@ -78,8 +78,9 @@ map <leader>q :bp\|bd #<CR>
 set termguicolors                    " neovim true color
 syntax enable                        " enable syntax highlighting
 set background=dark
-colorscheme night-owl
-let g:airline_theme = 'night_owl'
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+colorscheme nord
 hi EndOfBuffer ctermfg=white
 
 " Change color of matched parentheses

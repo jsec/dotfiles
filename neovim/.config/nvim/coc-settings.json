@@ -8,16 +8,18 @@
     "html",
     "css"
   ],
+  "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact"
   ],
+  "prettier.eslintIntegration": true,
   "solargraph.commandPath": "/Users/jsec/.rbenv/shims/solargraph",
   "solargraph.completion": true,
   "solargraph.diagnostics": true,
-  "tsserver.npm": "/Users/jsec/.nvm/versions/node/v14.2.0/bin/npm",
+  "tsserver.npm": "/Users/jsec/.nvm/versions/node/v14.10.0/bin/npm",
   "typescript.referencesCodeLens.enable": false,
   "typescript.implementationsCodeLens.enable": false,
   "typescript.preferences.importModuleSpecifier": "relative"

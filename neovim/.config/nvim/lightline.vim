@@ -1,7 +1,7 @@
 Plug 'itchyny/lightline.vim'
 
 let g:lightline = {
-      \ "colorscheme": "nightowl",
+      \ "colorscheme": "nord",
       \ "active": {
       \   "left": [ [ "mode", "paste" ],
       \             [ "gitbranch", "readonly", "filename" ] ],
