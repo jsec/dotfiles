@@ -16,6 +16,7 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U promptinit; promptinit
 prompt spaceship
 
+# Support coloring in ls commands without the use of a framework
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
