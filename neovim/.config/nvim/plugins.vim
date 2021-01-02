@@ -25,6 +25,9 @@ endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
+let g:fzf_colors =
+            \ { 'border': ['fg', 'Keyword'] }
+
 "*******************************************************
 " NERDTREE
 
