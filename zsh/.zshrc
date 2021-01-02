@@ -6,6 +6,7 @@ export GOPATH=/home/jsec/src/go
 export GOBIN=/home/jsec/src/go/bin
 export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
+export BAT_THEME="Nord"
 
 eval "$(rbenv init -)"
 
