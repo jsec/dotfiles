@@ -58,6 +58,12 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "*******************************************************
+" SNEAK
+
+Plug 'justinmk/vim-sneak'
+let g:sneak#label = 1
+
+"*******************************************************
 " MISC
 
 Plug 'bitc/vim-bad-whitespace'
@@ -65,7 +71,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'myusuf3/numbers.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-Plug 'Lokaltog/vim-easymotion'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jiangmiao/auto-pairs'
 Plug 'arcticicestudio/nord-vim'
