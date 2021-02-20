@@ -4,7 +4,7 @@ export EDITOR='vim'
 export DISABLE_AUTO_TITLE=true
 export GOPATH=/home/jsec/src/go
 export GOBIN=/home/jsec/src/go/bin
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications:/Users/jsec/.emacs.d/bin
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 export BAT_THEME="Nord"
 
