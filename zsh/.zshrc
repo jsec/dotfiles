@@ -14,10 +14,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"
 [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
 
-autoload -U promptinit; promptinit
-prompt spaceship
-
 # Support coloring in ls commands without the use of a framework
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
+
+eval "$(starship init zsh)"
