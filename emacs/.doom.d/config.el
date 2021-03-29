@@ -52,3 +52,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(setq +vc-gutter-default-style nil)
+(setq-default left-margin-width 1)
+(setq-default flycheck-indication-mode 'left-margin)
