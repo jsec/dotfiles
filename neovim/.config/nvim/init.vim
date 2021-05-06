@@ -11,6 +11,7 @@ lua << EOF
 require('plugins')
 require('_telescope')
 require('_devicons')
+require('_nvim-tree')
 EOF
 
 call plug#end()

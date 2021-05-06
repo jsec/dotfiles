@@ -3,13 +3,6 @@
 Plug 'mileszs/ack.vim'
 let g:ackprg="ag --nogroup --nocolor --column"
 
-" NERDTREE
-
-Plug 'scrooloose/nerdtree'
-
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=35
-
 "*******************************************************
 " SNIPPETS
 
