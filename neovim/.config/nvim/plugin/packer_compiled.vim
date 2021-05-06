@@ -83,10 +83,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/nerdcommenter"
   },
-  ["nerdtree-ack"] = {
-    loaded = true,
-    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/nerdtree-ack"
-  },
   ["nord-vim"] = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/nord-vim"

@@ -35,3 +35,5 @@ vim.g.nvim_tree_bindings = {
 }
 
 vim.api.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+vim.g.nvim_tree_gitignore = 1
