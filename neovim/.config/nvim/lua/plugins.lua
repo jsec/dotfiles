@@ -11,7 +11,7 @@ return require('packer').startup(function()
     use { 'tmux-plugins/vim-tmux-focus-events' }
     use { 'jiangmiao/auto-pairs' }
     use { 'arcticicestudio/nord-vim' }
-    use { 'ryanoasis/vim-devicons' }
+    use { 'kyazdani42/nvim-web-devicons' }
 
     use {
         'nvim-telescope/telescope.nvim',

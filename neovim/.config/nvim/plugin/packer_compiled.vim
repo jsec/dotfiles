@@ -91,6 +91,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -118,10 +122,6 @@ _G.packer_plugins = {
   ["vim-bad-whitespace"] = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-bad-whitespace"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
   ["vim-fugitive"] = {
     loaded = true,

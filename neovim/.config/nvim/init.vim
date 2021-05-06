@@ -10,6 +10,7 @@ so ~/.config/nvim/plugins.vim
 lua << EOF
 require('plugins')
 require('_telescope')
+require('_devicons')
 EOF
 
 call plug#end()
