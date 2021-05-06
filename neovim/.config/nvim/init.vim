@@ -7,6 +7,11 @@ so ~/.config/nvim/coc.vim
 so ~/.config/nvim/lightline.vim
 so ~/.config/nvim/plugins.vim
 
+lua << EOF
+require('plugins')
+require('_telescope')
+EOF
+
 call plug#end()
 filetype plugin indent on
 
