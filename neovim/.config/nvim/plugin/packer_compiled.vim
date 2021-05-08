@@ -79,6 +79,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/delimitMate"
   },
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   nerdcommenter = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/nerdcommenter"

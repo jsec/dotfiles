@@ -12,6 +12,12 @@ return require('packer').startup(function()
     use { 'arcticicestudio/nord-vim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
+    use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+    use {
+        'glepnir/galaxyline.nvim',
+        branch = 'main',
+        config = function() require('_galaxyline') end
+    }
 
     use {
         'nvim-telescope/telescope.nvim',
