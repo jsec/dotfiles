@@ -25,7 +25,7 @@ end
 
 gls.left[1] = {
   FirstElement = {
-    provider = function() return '▋ ' end,
+    provider = function() return '▋' end,
     highlight = {colors.purple, colors.purple}
   },
 }
@@ -35,7 +35,8 @@ gls.left[2] = {
       local alias = {n = ' N',i = ' I',c= ' C',v= ' V',V= ' VL', [''] = ' VB'}
       return alias[vim.fn.mode()]
     end,
-    separator = '',
+    separator = '▋',
+    --separator = '',
     separator_highlight = {colors.purple,function()
       if not buffer_not_empty() then
         return colors.purple
@@ -137,8 +138,8 @@ gls.left[13] = {
   }
 }
 gls.right[1]= {
-  FileFormat = {
-    provider = 'FileFormat',
+  FileTypeName = {
+    provider = 'FileTypeName',
     separator = '',
     separator_highlight = {colors.bg,colors.purple},
     highlight = {colors.grey,colors.purple},
