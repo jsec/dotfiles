@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 so ~/.config/nvim/syntax-files.vim
 so ~/.config/nvim/coc.vim
-"so ~/.config/nvim/lightline.vim
 so ~/.config/nvim/plugins.vim
 
 lua << EOF
@@ -13,6 +12,7 @@ require('_telescope')
 require('_devicons')
 require('_nvim-tree')
 require('_galaxyline')
+require('./config')
 EOF
 
 call plug#end()

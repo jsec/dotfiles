@@ -15,10 +15,3 @@ Plug 'junegunn/vim-easy-align'
 
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-"*******************************************************
-" SNEAK
-
-Plug 'justinmk/vim-sneak'
-let g:sneak#label = 1
-

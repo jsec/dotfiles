@@ -13,6 +13,7 @@ return require('packer').startup(function()
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+
     use {
         'glepnir/galaxyline.nvim',
         branch = 'main',
@@ -22,5 +23,13 @@ return require('packer').startup(function()
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
+
+    use {
+        'phaazon/hop.nvim',
+        as = 'hop',
+        config = function()
+        require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
     }
 end)
