@@ -34,6 +34,4 @@ vim.g.nvim_tree_bindings = {
     ["q"]              = tree_cb("close")
 }
 
-vim.api.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-
 vim.g.nvim_tree_gitignore = 1

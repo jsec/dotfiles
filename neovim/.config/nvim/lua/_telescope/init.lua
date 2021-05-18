@@ -47,5 +47,3 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
-
-vim.api.nvim_set_keymap('n', '<c-p>', ':Telescope git_files<CR>', {noremap = true, silent = true})

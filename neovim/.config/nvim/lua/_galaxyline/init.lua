@@ -50,6 +50,8 @@ gls.left[3] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
+    separator = '▋',
+    separator_highlight = {colors.bg},
     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.darkblue},
   },
 }
@@ -57,7 +59,8 @@ gls.left[4] = {
   FileName = {
     provider = {'FileName','FileSize'},
     condition = buffer_not_empty,
-    separator = '',
+    separator = '▋',
+    --separator = '',
     separator_highlight = {colors.purple,colors.darkblue},
     highlight = {colors.magenta,colors.darkblue}
   }
