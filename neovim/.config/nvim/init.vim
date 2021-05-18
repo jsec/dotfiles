@@ -12,7 +12,7 @@ require('_telescope')
 require('_devicons')
 require('_nvim-tree')
 require('_galaxyline')
-require('./config')
+require('_keybindings')
 EOF
 
 call plug#end()
