@@ -28,5 +28,9 @@ M.nvim_set_keymap('n', '<c-p>', ':Telescope git_files<CR>', { noremap = true, si
 M.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- CoC
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-y>" : "\\<Tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
+M.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-y>" : "\\<Tab>"', {expr = true})
+M.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
+
+-- Easy Align
+M.nvim_set_keymap('v', '<Enter>', '<Plug>(EasyAlign)', {})
+M.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})

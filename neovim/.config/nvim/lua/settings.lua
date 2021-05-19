@@ -44,3 +44,7 @@ vim.cmd('autocmd FileType json setl sw=2 sts=2 et')
 -- Trim whitespace
 vim.cmd('autocmd FileType * EnableStripWhitespaceOnSave')
 vim.g.strip_whitespace_confirm = 0
+
+-- Python hosts
+vim.g.python2_host_prog = "/usr/local/bin/python2"
+vim.g.python3_host_prog = "/usr/local/bin/python3"
