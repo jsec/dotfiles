@@ -9,17 +9,15 @@ return require('packer').startup(function()
     use { 'Raimondi/delimitMate' }
     use { 'tmux-plugins/vim-tmux-focus-events' }
     use { 'jiangmiao/auto-pairs' }
-    use { 'arcticicestudio/nord-vim' }
+    use { 'ChristianChiarulli/nvcode-color-schemes.vim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
     use { 'moll/vim-node' }
-    use { 'tpope/vim-rails' }
-    use { 'jsec/vim-coffee-script' }
-    use { 'sheerun/vim-polyglot' }
     use { 'peitalin/vim-jsx-typescript' }
     use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'junegunn/vim-easy-align' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use {
         'glepnir/galaxyline.nvim',
