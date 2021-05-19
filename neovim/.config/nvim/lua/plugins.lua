@@ -4,7 +4,7 @@ return require('packer').startup(function()
     use { 'gabesoft/vim-ags' }
     use { 'SirVer/ultisnips' }
     use { 'honza/vim-snippets' }
-    use { 'bitc/vim-bad-whitespace' }
+    use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
     use { 'tmux-plugins/vim-tmux-focus-events' }

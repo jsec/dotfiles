@@ -32,3 +32,15 @@ vim.cmd('set wildignore+=**/tmp')
 vim.cmd('set wildignore+=**/dist')
 vim.cmd('set wildignore+=**/.git')
 vim.cmd('set wildignore+=**/bin')
+
+-- Filetype settings
+-- Maybe move this to its own file? Or break it out by filetype?
+vim.cmd('autocmd FileType coffee setl sw=2 sts=2 et')
+vim.cmd('autocmd FileType typescript setl sw=2 sts=2 et')
+vim.cmd('autocmd FileType stylus setl sw=2 sts=2 et')
+vim.cmd('autocmd FileType javascript setl sw=2 sts=2 et')
+vim.cmd('autocmd FileType json setl sw=2 sts=2 et')
+
+-- Trim whitespace
+vim.cmd('autocmd FileType * EnableStripWhitespaceOnSave')
+vim.g.strip_whitespace_confirm = 0

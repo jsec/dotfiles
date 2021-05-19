@@ -133,9 +133,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-ags"
   },
-  ["vim-bad-whitespace"] = {
+  ["vim-better-whitespace"] = {
     loaded = true,
-    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-bad-whitespace"
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-better-whitespace"
   },
   ["vim-coffee-script"] = {
     loaded = true,
@@ -172,14 +172,14 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: galaxyline.nvim
-time("Config for galaxyline.nvim", true)
-try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16_galaxyline\frequire\0", "config", "galaxyline.nvim")
-time("Config for galaxyline.nvim", false)
 -- Config for: hop
 time("Config for hop", true)
 try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop")
 time("Config for hop", false)
+-- Config for: galaxyline.nvim
+time("Config for galaxyline.nvim", true)
+try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16_galaxyline\frequire\0", "config", "galaxyline.nvim")
+time("Config for galaxyline.nvim", false)
 if should_profile then save_profiles() end
 
 END
