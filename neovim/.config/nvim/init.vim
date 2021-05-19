@@ -8,11 +8,11 @@ so ~/.config/nvim/plugins.vim
 
 lua << EOF
 require('plugins')
+require('_keybindings')
 require('_telescope')
 require('_devicons')
 require('_nvim-tree')
 require('_galaxyline')
-require('_keybindings')
 EOF
 
 call plug#end()
@@ -53,34 +53,6 @@ set wildignore+=**/tmp
 set wildignore+=**/dist
 set wildignore+=**/.git
 set wildignore+=**/bin
-
-"**********KEYBINDINGS**********
-" Remap leader key
-let mapleader=","
-
-" Split navigation
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
-
-" Split resizing
-nnoremap <silent> <C-j> :vertical resize -5<cr>
-nnoremap <silent> <C-k> :vertical resize +5<cr>
-nnoremap <silent> <leader>a ggVG
-
-" Turn off search highlighting
-nmap <silent> <C-o> :nohlsearch<CR>
-
-" Quicker exit from insert mode
-inoremap <silent> jj <ESC>
-
-" Quicker write in normal mode
-nnoremap <silent> ;w :w<CR>
-
-" Close quickfix window
-nmap <silent> <leader>` :ccl<CR>
-
-" Close buffer without closing split
-map <leader>q :bp\|bd #<CR>
 
 "**********COLOR**********
 set termguicolors                    " neovim true color
