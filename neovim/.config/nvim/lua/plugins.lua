@@ -18,6 +18,7 @@ return require('packer').startup(function()
     use { 'jsec/vim-coffee-script' }
     use { 'sheerun/vim-polyglot' }
     use { 'peitalin/vim-jsx-typescript' }
+    use { 'neoclide/coc.nvim', branch = 'release' }
 
     use {
         'glepnir/galaxyline.nvim',

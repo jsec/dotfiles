@@ -75,6 +75,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/coc.nvim"
+  },
   delimitMate = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/delimitMate"
