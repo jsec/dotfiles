@@ -13,6 +13,11 @@ return require('packer').startup(function()
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+    use { 'moll/vim-node' }
+    use { 'tpope/vim-rails' }
+    use { 'jsec/vim-coffee-script' }
+    use { 'sheerun/vim-polyglot' }
+    use { 'peitalin/vim-jsx-typescript' }
 
     use {
         'glepnir/galaxyline.nvim',

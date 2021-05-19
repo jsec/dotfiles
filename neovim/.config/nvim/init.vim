@@ -2,7 +2,6 @@
 filetype off
 call plug#begin('~/.local/share/nvim/plugged')
 
-so ~/.config/nvim/syntax-files.vim
 so ~/.config/nvim/coc.vim
 so ~/.config/nvim/plugins.vim
 

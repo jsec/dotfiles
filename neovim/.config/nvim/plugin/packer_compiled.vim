@@ -137,9 +137,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-bad-whitespace"
   },
+  ["vim-coffee-script"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-coffee-script"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-jsx-typescript"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-jsx-typescript"
+  },
+  ["vim-node"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-node"
+  },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+  },
+  ["vim-rails"] = {
+    loaded = true,
+    path = "/Users/jsec/.local/share/nvim/site/pack/packer/start/vim-rails"
   },
   ["vim-snippets"] = {
     loaded = true,
