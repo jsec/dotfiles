@@ -35,3 +35,4 @@ vim.g.nvim_tree_bindings = {
 }
 
 vim.g.nvim_tree_gitignore = 1
+vim.g.nvim_tree_hide_dotfiles = 1
