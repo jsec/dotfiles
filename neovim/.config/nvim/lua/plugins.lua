@@ -15,9 +15,11 @@ return require('packer').startup(function()
     use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
     use { 'moll/vim-node' }
     use { 'peitalin/vim-jsx-typescript' }
-    use { 'neoclide/coc.nvim', branch = 'release' }
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'neovim/nvim-lspconfig' }
+    use { 'hrsh7th/nvim-compe' }
+    use { 'hrsh7th/vim-vsnip' }
 
     use {
         'glepnir/galaxyline.nvim',

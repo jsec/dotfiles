@@ -34,5 +34,4 @@ vim.g.nvim_tree_bindings = {
     ["q"]              = tree_cb("close")
 }
 
-vim.g.nvim_tree_gitignore = 1
-vim.g.nvim_tree_ignore = { '.git', 'node_modules' }
+vim.g.nvim_tree_ignore = { '.git', 'node_modules', 'dist' }

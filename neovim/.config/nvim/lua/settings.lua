@@ -42,7 +42,8 @@ vim.cmd('autocmd FileType javascript setl sw=2 sts=2 et')
 vim.cmd('autocmd FileType json setl sw=2 sts=2 et')
 
 -- Trim whitespace
-vim.cmd('autocmd FileType * EnableStripWhitespaceOnSave')
+vim.g.better_whitespace_enabled=1
+vim.g.strip_whitespace_on_save = 1
 vim.g.strip_whitespace_confirm = 0
 
 -- Python hosts
