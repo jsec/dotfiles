@@ -18,6 +18,7 @@ return require('packer').startup(function()
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'neovim/nvim-lspconfig' }
+    use { 'mattn/efm-langserver' }
     use { 'hrsh7th/nvim-compe' }
     use { 'hrsh7th/vim-vsnip' }
 
