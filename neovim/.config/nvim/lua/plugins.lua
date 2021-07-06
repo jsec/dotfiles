@@ -3,7 +3,6 @@ return require('packer').startup(function()
     use { 'scrooloose/nerdcommenter' }
     use { 'gabesoft/vim-ags' }
     use { 'SirVer/ultisnips' }
-    use { 'honza/vim-snippets' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
@@ -12,15 +11,28 @@ return require('packer').startup(function()
     use { 'ChristianChiarulli/nvcode-color-schemes.vim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
-    use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
+    use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'moll/vim-node' }
     use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use { 'neovim/nvim-lspconfig' }
-    use { 'mattn/efm-langserver' }
     use { 'hrsh7th/nvim-compe' }
     use { 'hrsh7th/vim-vsnip' }
+
+    use { 'neovim/nvim-lspconfig' }
+    use { 'kabouzeid/nvim-lspinstall' }
+
+
+    --use {
+        --'neovim/nvim-lspconfig',
+        --setup = [[require('_lsp')]],
+        --requires = {
+          --'kabouzeid/nvim-lspinstall',
+          --'glepnir/lspsaga.nvim',
+          --'jose-elias-alvarez/nvim-lsp-ts-utils',
+          --'mattn/efm-langserver'
+        --},
+    --}
 
     use {
         'glepnir/galaxyline.nvim',
