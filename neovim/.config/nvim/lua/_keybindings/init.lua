@@ -34,3 +34,10 @@ M.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr 
 -- Easy Align
 M.nvim_set_keymap('v', '<Enter>', '<Plug>(EasyAlign)', {})
 M.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
+
+-- Compe
+M.nvim_set_keymap('i', '<C-Space>', 'compe#complete()', { noremap = true, silent = true, expr = true })
+M.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', { noremap = true, silent = true, expr = true })
+M.nvim_set_keymap('i', '<C-e>', 'compe#close("<C-e>")', { noremap = true, silent = true, expr = true })
+M.nvim_set_keymap('i', '<C-f>', 'compe#scroll({ "delta": +4 })', { noremap = true, silent = true, expr = true })
+M.nvim_set_keymap('i', '<C-d>', 'compe#scroll({ "delta": -4 })', { noremap = true, silent = true, expr = true })
