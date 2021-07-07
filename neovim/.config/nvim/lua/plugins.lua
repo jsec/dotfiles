@@ -21,18 +21,7 @@ return require('packer').startup(function()
 
     use { 'neovim/nvim-lspconfig' }
     use { 'kabouzeid/nvim-lspinstall' }
-
-
-    --use {
-        --'neovim/nvim-lspconfig',
-        --setup = [[require('_lsp')]],
-        --requires = {
-          --'kabouzeid/nvim-lspinstall',
-          --'glepnir/lspsaga.nvim',
-          --'jose-elias-alvarez/nvim-lsp-ts-utils',
-          --'mattn/efm-langserver'
-        --},
-    --}
+    use { 'glepnir/lspsaga.nvim' }
 
     use {
         'glepnir/galaxyline.nvim',

@@ -1,6 +1,6 @@
-local lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
 
-local set_lsp_config = function(client, bufnr)
+local on_attach = function(client, bufnr)
   print("LSP started.");
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -21,9 +21,41 @@ local set_lsp_config = function(client, bufnr)
   end
 end
 
-lsp.tsserver.setup{
+lspconfig.tsserver.setup{
   on_attach = function(client, bufnr)
+    root_dir = lspconfig.util.root_pattern('.git', 'nx.json')
     client.resolved_capabilities.document_formatting = false
-    set_lsp_config(client, bufnr)
+    on_attach(client, bufnr)
   end
+}
+
+local prettier = require('_efm/prettier')
+local eslint = require('_efm/eslint')
+
+local languages = {
+    lua = {luafmt},
+    typescript = {prettier, eslint},
+    javascript = {prettier, eslint},
+    typescriptreact = {prettier, eslint},
+    javascriptreact = {prettier, eslint},
+    yaml = {prettier},
+    json = {prettier},
+    html = {prettier},
+    scss = {prettier},
+    css = {prettier}
+}
+
+lspconfig.efm.setup {
+    root_dir = lspconfig.util.root_pattern('.git', 'nx.json'),
+    filetypes = vim.tbl_keys(languages),
+    init_options = {
+        documentFormatting = true,
+        codeAction = true
+    },
+    settings = {
+        languages = languages,
+        log_level = 1,
+        log_file = '~/efm.log',
+        on_attach = on_attach
+    }
 }
