@@ -1,27 +1,26 @@
+local M = {}
 
-local eslint = {
-  lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
-  lintIgnoreExitCode = true,
-  lintStdin = true,
-  lintFormats = {'%f:%l:%c: %m'},
-  formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}',
-  formatStdin = true
+local prettier_options = {
+    tabWidth = 2,
+    singleQuote = true,
+    trailingComma = "none",
+    configPrecedence = "prefer-file"
 }
 
-local prettier = {formatCommand = 'prettier --stdin-filepath ${INPUT}', formatStdin = true}
+local get_format_options = function()
+    return string.format("format_%s", vim.bo.filetype)
+end
 
-local luaformatter = {formatCommand = 'lua-format -i', formatStdin = true}
+vim.g.format_typescript = prettier_options
+vim.g.format_javascript = prettier_options
+vim.g.format_typescriptreact = prettier_options
+vim.g.format_javascriptreact = prettier_options
+vim.g.format_html = prettier_options
+vim.g.format_css = prettier_options
+vim.g.format_scss = prettier_options
 
-return {
-  css = {prettier},
-  html = {prettier},
-  javascript = {prettier, eslint},
-  javascriptreact = {prettier, eslint},
-  json = {prettier},
-  lua = {luaformatter},
-  markdown = {prettier},
-  scss = {prettier},
-  typescript = {prettier, eslint},
-  typescriptreact = {prettier, eslint},
-  yaml = {prettier}
-}
+M.format = function()
+    vim.lsp.buf.formatting(vim.g[get_format_options()] or {})
+end
+
+return M

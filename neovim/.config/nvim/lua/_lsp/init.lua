@@ -1,31 +1,33 @@
 local lspconfig = require('lspconfig')
+--local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+local function mappings()
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  local opts = { noremap=true, silent=true }
+
+  --buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  --buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  --buf_set_keymap('n', '<leader>s', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  --buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  --buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+end
 
 local on_attach = function(client, bufnr)
-  print("LSP started.");
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<leader>s', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-
-  if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "<leader>df", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  end
+    mappings()
+    if client.resolved_capabilities.document_formatting then
+        vim.cmd [[augroup Format]]
+        vim.cmd [[autocmd! * <buffer>]]
+        vim.cmd [[autocmd BufWritePost <buffer> lua require'_formatting'.format()]]
+        vim.cmd [[augroup END]]
+    end
 end
 
 lspconfig.tsserver.setup{
-  on_attach = function(client, bufnr)
-    root_dir = lspconfig.util.root_pattern('.git', 'nx.json')
+  on_attach = function(client)
+    root_dir = lspconfig.util.root_pattern('.git')
     client.resolved_capabilities.document_formatting = false
-    on_attach(client, bufnr)
+    on_attach(client)
   end
 }
 
@@ -33,7 +35,6 @@ local prettier = require('_efm/prettier')
 local eslint = require('_efm/eslint')
 
 local languages = {
-    lua = {luafmt},
     typescript = {prettier, eslint},
     javascript = {prettier, eslint},
     typescriptreact = {prettier, eslint},
@@ -46,7 +47,9 @@ local languages = {
 }
 
 lspconfig.efm.setup {
-    root_dir = lspconfig.util.root_pattern('.git', 'nx.json'),
+    on_attach = on_attach,
+    root_dir = vim.loop.cwd,
+    --root_dir = lspconfig.util.root_pattern('.git'),
     filetypes = vim.tbl_keys(languages),
     init_options = {
         documentFormatting = true,
@@ -56,6 +59,5 @@ lspconfig.efm.setup {
         languages = languages,
         log_level = 1,
         log_file = '~/efm.log',
-        on_attach = on_attach
     }
 }
