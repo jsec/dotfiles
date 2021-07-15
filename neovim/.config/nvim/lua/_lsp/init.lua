@@ -18,7 +18,7 @@ local on_attach = function(client, bufnr)
     if client.resolved_capabilities.document_formatting then
         vim.cmd [[augroup Format]]
         vim.cmd [[autocmd! * <buffer>]]
-        vim.cmd [[autocmd BufWritePost <buffer> lua require'_formatting'.format()]]
+        vim.cmd [[autocmd BufWritePost <buffer> lua require'_lsp/formatting/prettier'.format()]]
         vim.cmd [[augroup END]]
     end
 end
@@ -31,8 +31,8 @@ lspconfig.tsserver.setup{
   end
 }
 
-local prettier = require('_efm/prettier')
-local eslint = require('_efm/eslint')
+local prettier = require('_lsp/efm/prettier')
+local eslint = require('_lsp/efm/eslint')
 
 local languages = {
     typescript = {prettier, eslint},
@@ -71,7 +71,6 @@ vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
         vim.fn.winrestview(view)
         if bufnr == vim.api.nvim_get_current_buf() then
             vim.cmd [[noautocmd :update]]
-            --vim.cmd [[GitGutter]]
         end
     end
 end
