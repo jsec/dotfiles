@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local appearance = require('_lsp/appearance')
 
 local function mappings(bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -15,6 +16,7 @@ end
 
 local on_attach = function(client, bufnr)
     mappings(bufnr)
+    appearance.setup()
     if client.resolved_capabilities.document_formatting then
         vim.cmd [[augroup Format]]
         vim.cmd [[autocmd! * <buffer>]]
