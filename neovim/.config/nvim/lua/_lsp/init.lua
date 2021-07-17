@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local appearance = require('_lsp/appearance')
+local handlers = require('_lsp/handlers')
 
 local function mappings(bufnr)
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -22,6 +23,8 @@ local on_attach = function(client, bufnr)
         vim.cmd [[autocmd! * <buffer>]]
         vim.cmd [[autocmd BufWritePost <buffer> lua require'_lsp/formatting/prettier'.format()]]
         vim.cmd [[augroup END]]
+
+        handlers.registerHandlers()
     end
 end
 
@@ -62,17 +65,3 @@ lspconfig.efm.setup {
         log_file = '~/efm.log',
     }
 }
-
-vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
-    if err ~= nil or result == nil then
-        return
-    end
-    if not vim.api.nvim_buf_get_option(bufnr, "modified") then
-        local view = vim.fn.winsaveview()
-        vim.lsp.util.apply_text_edits(result, bufnr)
-        vim.fn.winrestview(view)
-        if bufnr == vim.api.nvim_get_current_buf() then
-            vim.cmd [[noautocmd :update]]
-        end
-    end
-end
