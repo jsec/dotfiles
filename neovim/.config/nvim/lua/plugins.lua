@@ -22,6 +22,7 @@ return require('packer').startup(function()
     use { 'neovim/nvim-lspconfig' }
     use { 'kabouzeid/nvim-lspinstall' }
     use { 'glepnir/lspsaga.nvim' }
+    use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
 
     use {
         'glepnir/galaxyline.nvim',

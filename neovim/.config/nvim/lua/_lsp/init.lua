@@ -33,6 +33,7 @@ lspconfig.tsserver.setup{
     root_dir = lspconfig.util.root_pattern('.git')
     client.resolved_capabilities.document_formatting = false
     on_attach(client)
+    require('nvim-lsp-ts-utils').setup()
   end
 }
 
