@@ -29,11 +29,51 @@ local on_attach = function(client, bufnr)
 end
 
 lspconfig.tsserver.setup{
-  on_attach = function(client)
+  on_attach = function(client, bufnr)
     root_dir = lspconfig.util.root_pattern('.git')
     client.resolved_capabilities.document_formatting = false
     on_attach(client)
-    require('nvim-lsp-ts-utils').setup()
+
+    local ts_utils = require('nvim-lsp-ts-utils')
+    ts_utils.setup {
+        debug = false,
+        disable_commands = false,
+        enable_import_on_completion = true,
+
+        import_all_timeout = 5000,
+        import_all_priorities = {
+            buffers = 4,
+            buffer_content = 3,
+            local_files = 2,
+            same_file = 1
+        },
+
+        import_all_scan_buffers = 100,
+        import_all_select_source = false,
+
+        eslint_enable_code_actions = true,
+        eslint_enable_disable_comments = true,
+        eslint_bin = "eslint_d",
+        eslint_config_fallback = nil,
+        eslint_enable_diagnostics = true,
+
+        enable_formatting = true,
+        formatter = "prettier",
+        formatter_config_fallback = nil,
+
+        update_imports_on_move = true,
+        require_confirmation_on_move = false,
+        watch_dir = nil
+    }
+
+    ts_utils.setup_client(client)
+
+    local opts = { silent = true }
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gq", ":TSLspFixCurrent<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
+
   end
 }
 
