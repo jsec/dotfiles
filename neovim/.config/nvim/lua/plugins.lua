@@ -23,6 +23,7 @@ return require('packer').startup(function()
     use { 'kabouzeid/nvim-lspinstall' }
     use { 'glepnir/lspsaga.nvim' }
     use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
+    use { 'jose-elias-alvarez/null-ls.nvim' }
 
     use {
         'glepnir/galaxyline.nvim',

@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local null_ls = require('null-ls')
 local appearance = require('_lsp/appearance')
 local handlers = require('_lsp/handlers')
 
@@ -18,15 +19,14 @@ end
 local on_attach = function(client, bufnr)
     mappings(bufnr)
     appearance.setup()
-    if client.resolved_capabilities.document_formatting then
-        vim.cmd [[augroup Format]]
-        vim.cmd [[autocmd! * <buffer>]]
-        vim.cmd [[autocmd BufWritePost <buffer> lua require'_lsp/formatting/prettier'.format()]]
-        vim.cmd [[augroup END]]
-
-        handlers.registerHandlers()
-    end
+    vim.cmd [[augroup Format]]
+    vim.cmd [[autocmd! * <buffer>]]
+    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]]
+    vim.cmd [[augroup END]]
 end
+
+null_ls.setup {}
+lspconfig['null-ls'].setup {}
 
 lspconfig.tsserver.setup{
   on_attach = function(client, bufnr)
@@ -57,6 +57,9 @@ lspconfig.tsserver.setup{
         eslint_config_fallback = nil,
         eslint_enable_diagnostics = true,
 
+        complete_parens = true,
+        signature_help_in_parens = true,
+
         enable_formatting = true,
         formatter = "prettier",
         formatter_config_fallback = nil,
@@ -75,34 +78,4 @@ lspconfig.tsserver.setup{
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
 
   end
-}
-
-local prettier = require('_lsp/efm/prettier')
-local eslint = require('_lsp/efm/eslint')
-
-local languages = {
-    typescript = {prettier, eslint},
-    javascript = {prettier, eslint},
-    typescriptreact = {prettier, eslint},
-    javascriptreact = {prettier, eslint},
-    yaml = {prettier},
-    json = {prettier},
-    html = {prettier},
-    scss = {prettier},
-    css = {prettier}
-}
-
-lspconfig.efm.setup {
-    on_attach = on_attach,
-    root_dir = vim.loop.cwd,
-    filetypes = vim.tbl_keys(languages),
-    init_options = {
-        documentFormatting = true,
-        codeAction = true
-    },
-    settings = {
-        languages = languages,
-        log_level = 1,
-        log_file = '~/efm.log',
-    }
 }
