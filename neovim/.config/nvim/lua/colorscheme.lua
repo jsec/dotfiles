@@ -8,3 +8,8 @@ vim.cmd('colorscheme nord')
 vim.cmd('hi EndOfBuffer ctermfg=white')
 vim.cmd('highlight MatchParen ctermfg=white ctermbg=black')
 vim.cmd('highlight Normal ctermbg=NONE')
+
+vim.cmd('highlight LspDiagnosticsFloatingWarning guifg=#ECEFF4')
+vim.cmd('highlight LspDiagnosticsFloatingError guifg=#ECEFF4')
+vim.cmd('highlight LspDiagnosticsFloatingInformation guifg=#ECEFF4')
+vim.cmd('highlight LspDiagnosticsFloatingHint guifg=#ECEFF4')
