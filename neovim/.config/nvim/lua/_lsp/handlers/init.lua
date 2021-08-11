@@ -3,12 +3,8 @@ local diagnostics = require('_lsp/handlers/diagnostics')
 
 local M = {}
 
-function M.register_handlers()
-    appearance.register()
-    diagnostics.register()
-end
-
 function M.on_attach()
+    diagnostics.on_attach()
     appearance.on_attach()
 end
 

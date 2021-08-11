@@ -1,6 +1,6 @@
 local M = {}
 
-function M.register()
+function M.on_attach()
     vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = false,
         signs = true,
@@ -9,7 +9,7 @@ function M.register()
     })
 
     vim.o.updatetime = 250
-    vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false})]]
+    vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false, show_header=false, border="double"})')
 end
 
 return M
