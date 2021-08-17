@@ -29,12 +29,6 @@ return require('packer').startup(function()
         config = function() require('_statusbar') end
     }
 
-    --use {
-        --'glepnir/galaxyline.nvim',
-        --branch = 'main',
-        --config = function() require('_galaxyline') end
-    --}
-
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
