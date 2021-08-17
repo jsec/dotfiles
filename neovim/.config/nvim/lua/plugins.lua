@@ -25,11 +25,15 @@ return require('packer').startup(function()
     use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
     use { 'jose-elias-alvarez/null-ls.nvim' }
 
-    use {
-        'glepnir/galaxyline.nvim',
-        branch = 'main',
-        config = function() require('_galaxyline') end
+    use { 'famiu/feline.nvim',
+        config = function() require('_statusbar') end
     }
+
+    --use {
+        --'glepnir/galaxyline.nvim',
+        --branch = 'main',
+        --config = function() require('_galaxyline') end
+    --}
 
     use {
         'nvim-telescope/telescope.nvim',
