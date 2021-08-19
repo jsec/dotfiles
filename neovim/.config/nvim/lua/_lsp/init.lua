@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
     appearance.setup()
     vim.cmd [[augroup Format]]
     vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()]]
+    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()]]
     vim.cmd [[augroup END]]
 
     handlers.on_attach()
