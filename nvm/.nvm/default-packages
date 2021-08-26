@@ -2,7 +2,7 @@
 @nestjs/cli
 agentkeepalive
 commitizen
-eslint
+eslint_d
 gulp
 jest
 neovim
