@@ -1,18 +1,18 @@
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp.setup {
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end
   },
   formatting = {
     format = function(entry, vim_item)
-      -- fancy icons and a name of kind
       vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-      -- set a name for each source
       vim_item.menu = ({
         buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
@@ -56,5 +56,6 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'buffer' }
   },
 }

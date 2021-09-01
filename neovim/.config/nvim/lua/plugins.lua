@@ -20,12 +20,12 @@ return require('packer').startup(function()
     use {
         'hrsh7th/nvim-cmp',
         requires = {
-            'hrsh7th/vim-vsnip',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-nvim-lsp',
             'saadparwaiz1/cmp_luasnip',
             'L3MON4D3/LuaSnip',
-            'onsails/lspkind-nvim'
+            'onsails/lspkind-nvim',
+            'rafamadriz/friendly-snippets'
         }
     }
 

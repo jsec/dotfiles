@@ -16,6 +16,23 @@ local function mappings(bufnr)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  },
+}
+
 local on_attach = function(client, bufnr)
     mappings(bufnr)
     appearance.setup()
@@ -31,6 +48,7 @@ null_ls.setup {}
 lspconfig['null-ls'].setup {}
 
 lspconfig.tsserver.setup{
+  capabilities = capabilites,
   on_attach = function(client, bufnr)
     root_dir = lspconfig.util.root_pattern('.git')
     client.resolved_capabilities.document_formatting = false
