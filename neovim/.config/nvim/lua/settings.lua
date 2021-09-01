@@ -41,6 +41,7 @@ vim.cmd('autocmd FileType typescript setl sw=2 sts=2 et')
 vim.cmd('autocmd FileType stylus setl sw=2 sts=2 et')
 vim.cmd('autocmd FileType javascript setl sw=2 sts=2 et')
 vim.cmd('autocmd FileType json setl sw=2 sts=2 et')
+vim.cmd('autocmd FileType lua setl sw=2 sts=2 et')
 
 -- Trim whitespace
 vim.g.better_whitespace_enabled=1
