@@ -1,14 +1,14 @@
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 
-require('luasnip.loaders.from_vscode').lazy_load()
+--require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end
-  },
+  --snippet = {
+    --expand = function(args)
+      --luasnip.lsp_expand(args.body)
+    --end
+  --},
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
@@ -17,8 +17,7 @@ cmp.setup {
         buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
-        nvim_lua = "[Lua]",
-        latex_symbols = "[Latex]",
+        nvim_lua = "[Lua]"
       })[entry.source.name]
       return vim_item
     end
@@ -34,7 +33,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = function(fallback)
+    ['<C-j>'] = function(fallback)
       if vim.fn.pumvisible() == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
       elseif luasnip.expand_or_jumpable() then
