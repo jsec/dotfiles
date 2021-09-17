@@ -4,24 +4,25 @@ local get_diag = function(str)
 end
 
 local vi_mode_provider = function()
-    local mode_alias = {
-      n = 'NORMAL',
-      no = 'NORMAL',
-      i = 'INSERT',
-      v = 'VISUAL',
-      V = 'V-LINE',
-      [''] = 'V-BLOCK',
-      c = 'COMMAND',
-      cv = 'COMMAND',
-      ce = 'COMMAND',
-      R = 'REPLACE',
-      Rv = 'REPLACE',
-      s = 'SELECT',
-      S = 'SELECT',
-      [''] = 'SELECT',
-      t = 'TERMINAL',
-    }
-    return ' ' .. mode_alias[vim.fn.mode()] .. ' '
+  local mode_alias = {
+    n = 'NORMAL',
+    no = 'NORMAL',
+    i = 'INSERT',
+    v = 'VISUAL',
+    V = 'V-LINE',
+    [''] = 'V-BLOCK',
+    c = 'COMMAND',
+    cv = 'COMMAND',
+    ce = 'COMMAND',
+    R = 'REPLACE',
+    Rv = 'REPLACE',
+    s = 'SELECT',
+    S = 'SELECT',
+    [''] = 'SELECT',
+    t = 'TERMINAL',
+  }
+
+  return ' ' .. mode_alias[vim.fn.mode()] .. ' '
 end
 
 local percentage_provider = function()
@@ -39,10 +40,72 @@ local vi_mode_hl = function()
   }
 end
 
+local components = {
+  active = {},
+  inactive = {}
+}
+
+-- Left section, active split
+table.insert(components.active, {
+  { provider = vi_mode_provider, hl = vi_mode_hl, right_sep = ' ' },
+  { provider = 'git_branch' , icon = ' ', right_sep = '  ',
+    enabled = function() return vim.b.gitsigns_status_dict ~= nil end },
+  { provider = 'file_info' },
+  { provider = '' , hl = { fg = 'bg', bg = 'black' }},
+})
+
+-- nothing in the middle section for active splits
+table.insert(components.active, {})
+
+-- Right section, active split
+table.insert(components.active, {
+  { provider = function() return get_diag("Error") end,
+    hl = { fg = 'bg', bg = 'red', style = 'bold' },
+    left_sep = { str = '', hl = { fg = 'red', bg = 'black' }},
+    right_sep = { str = '', hl = { fg = 'yellow', bg = 'red' }}},
+  { provider = function() return get_diag("Warning") end,
+    hl = { fg = 'bg', bg = 'yellow', style = 'bold'  },
+    right_sep = { str = '', hl = { fg = 'cyan', bg = 'yellow' }}},
+  { provider = function() return get_diag("Information") end,
+    hl = { fg = 'bg', bg = 'cyan', style = 'bold' },
+    right_sep = { str = '', hl = { fg = 'oceanblue', bg = 'cyan' }}},
+  { provider = function() return get_diag("Hint") end,
+    hl = { fg = 'bg', bg = 'oceanblue', style = 'bold' },
+    right_sep = { str = '', hl = { fg = 'bg', bg = 'oceanblue', }}},
+  { provider = 'file_encoding', left_sep = ' ' },
+  { provider = 'position', left_sep = ' ', right_sep = ' ' },
+  { provider = percentage_provider,
+    hl = { fg = 'bg', bg = 'skyblue', style = 'bold' }},
+})
+
+-- Left section, inactive split
+table.insert(components.inactive, {
+  { provider = vi_mode_provider, hl = vi_mode_hl, right_sep = ' ' },
+  { provider = 'git_branch' , icon = ' ', right_sep = '  ',
+    enabled = function() return vim.b.gitsigns_status_dict ~= nil end },
+  { provider = 'file_info' },
+  { provider = '' , hl = { fg = 'bg', bg = 'black' }},
+})
+
+-- Nothing in the middle section for inactive splits
+table.insert(components.inactive, {})
+
+-- Nothing in the right section for inactive splits
+table.insert(components.inactive, {})
+
 require('feline').setup {
-  default_fg = '#8FBCBB',
-  default_bg = '#2E3440',
+  force_inactive = {
+    filetypes = {
+      'NvimTree',
+      'packer',
+      'LspTrouble',
+    },
+    buftypes = {'terminal'},
+    bufnames = {},
+  },
   colors = {
+    fg = '#8FBCBB',
+    bg =  '#2E3440',
     black = '#434C5E',
     skyblue = '#81A1C1',
     cyan = '#88C0D0',
@@ -71,56 +134,5 @@ require('feline').setup {
     TERM = 'skyblue',
     NONE = 'orange',
   },
-  components = {
-    left = {
-      active = {
-        { provider = vi_mode_provider, hl = vi_mode_hl, right_sep = ' ' },
-        { provider = 'git_branch' , icon = ' ', right_sep = '  ',
-          enabled = function() return vim.b.gitsigns_status_dict ~= nil end },
-        { provider = 'file_info' },
-        { provider = '' , hl = { fg = 'bg', bg = 'black' }},
-      },
-      inactive = {
-        { provider = vi_mode_provider, hl = vi_mode_hl, right_sep = ' ' },
-        { provider = 'git_branch' , icon = ' ', right_sep = '  ',
-          enabled = function() return vim.b.gitsigns_status_dict ~= nil end },
-        { provider = 'file_info' },
-        { provider = '' , hl = { fg = 'bg', bg = 'black' }},
-      }
-    },
-    mid = { active = {}, inactive = {} },
-    right = {
-      active = {
-        { provider = function() return get_diag("Error") end,
-          hl = { fg = 'bg', bg = 'red', style = 'bold' },
-          left_sep = { str = '', hl = { fg = 'red', bg = 'black' }},
-          right_sep = { str = '', hl = { fg = 'yellow', bg = 'red' }}},
-        { provider = function() return get_diag("Warning") end,
-          hl = { fg = 'bg', bg = 'yellow', style = 'bold'  },
-          right_sep = { str = '', hl = { fg = 'cyan', bg = 'yellow' }}},
-        { provider = function() return get_diag("Information") end,
-          hl = { fg = 'bg', bg = 'cyan', style = 'bold' },
-          right_sep = { str = '', hl = { fg = 'oceanblue', bg = 'cyan' }}},
-        { provider = function() return get_diag("Hint") end,
-          hl = { fg = 'bg', bg = 'oceanblue', style = 'bold' },
-          right_sep = { str = '', hl = { fg = 'bg', bg = 'oceanblue', }}},
-        { provider = 'file_encoding', left_sep = ' ' },
-        { provider = 'position', left_sep = ' ', right_sep = ' ' },
-        { provider = percentage_provider,
-          hl = { fg = 'bg', bg = 'skyblue', style = 'bold' }},
-      },
-      inactive = {}
-    },
-  },
-  properties =  {
-    force_inactive = {
-      filetypes = {
-        'NvimTree',
-        'packer',
-        'LspTrouble',
-      },
-      buftypes = {'terminal'},
-      bufnames = {},
-    }
-  }
+  components = components
 }
