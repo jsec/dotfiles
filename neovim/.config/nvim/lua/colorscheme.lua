@@ -1,15 +1,16 @@
 vim.cmd('set termguicolors')
 vim.cmd('syntax enable')
 vim.cmd('set background=dark')
-vim.g.nvcode_termcolors=256
-vim.g.nord_italic = 1
-vim.g.nord_italic_comments = 1
-vim.cmd('colorscheme nord')
+
+require('github-theme').setup({
+  theme_style = 'dark_default',
+  function_style = 'bold',
+  keyword_style = 'NONE',
+  comment_style = 'italic',
+  dark_sidebar = true,
+  colors = {hint = "orange", error = "#ff0000"}
+})
+
 vim.cmd('hi EndOfBuffer ctermfg=white')
 vim.cmd('highlight MatchParen ctermfg=white ctermbg=black')
 vim.cmd('highlight Normal ctermbg=NONE')
-
-vim.cmd('highlight LspDiagnosticsFloatingWarning guifg=#ECEFF4')
-vim.cmd('highlight LspDiagnosticsFloatingError guifg=#ECEFF4')
-vim.cmd('highlight LspDiagnosticsFloatingInformation guifg=#ECEFF4')
-vim.cmd('highlight LspDiagnosticsFloatingHint guifg=#ECEFF4')
