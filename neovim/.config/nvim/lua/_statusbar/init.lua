@@ -93,46 +93,48 @@ table.insert(components.inactive, {})
 -- Nothing in the right section for inactive splits
 table.insert(components.inactive, {})
 
-require('feline').setup {
-  force_inactive = {
-    filetypes = {
-      'NvimTree',
-      'packer',
-      'LspTrouble',
-    },
-    buftypes = {'terminal'},
-    bufnames = {},
-  },
-  colors = {
-    fg = '#8FBCBB',
-    bg =  '#2E3440',
-    black = '#434C5E',
-    skyblue = '#81A1C1',
-    cyan = '#88C0D0',
-    green  = '#8FBCBB',
-    oceanblue = '#5E81AC',
-    magenta = '#B48EAD',
-    orange = '#D08770',
-    red = '#EC5F67',
-    violet = '#B48EAD',
-    white  = '#ECEFF4',
-    yellow = '#EBCB8B',
-  },
-  vi_mode_colors = {
-    NORMAL = 'cyan',
-    OP = 'cyan',
-    INSERT = 'white',
-    VISUAL = 'green',
-    BLOCK = 'green',
-    REPLACE = 'yellow',
-    ['V-REPLACE'] = 'yellow',
-    ENTER = 'cyan',
-    MORE = 'cyan',
-    SELECT = 'magenta',
-    COMMAND = 'cyan',
-    SHELL = 'skyblue',
-    TERM = 'skyblue',
-    NONE = 'orange',
-  },
-  components = components
-}
+require('feline').setup()
+
+--require('feline').setup {
+  --force_inactive = {
+    --filetypes = {
+      --'NvimTree',
+      --'packer',
+      --'LspTrouble',
+    --},
+    --buftypes = {'terminal'},
+    --bufnames = {},
+  --},
+  --colors = {
+    --fg = '#8FBCBB',
+    --bg =  '#2E3440',
+    --black = '#434C5E',
+    --skyblue = '#81A1C1',
+    --cyan = '#88C0D0',
+    --green  = '#8FBCBB',
+    --oceanblue = '#5E81AC',
+    --magenta = '#B48EAD',
+    --orange = '#D08770',
+    --red = '#EC5F67',
+    --violet = '#B48EAD',
+    --white  = '#ECEFF4',
+    --yellow = '#EBCB8B',
+  --},
+  --vi_mode_colors = {
+    --NORMAL = 'cyan',
+    --OP = 'cyan',
+    --INSERT = 'white',
+    --VISUAL = 'green',
+    --BLOCK = 'green',
+    --REPLACE = 'yellow',
+    --['V-REPLACE'] = 'yellow',
+    --ENTER = 'cyan',
+    --MORE = 'cyan',
+    --SELECT = 'magenta',
+    --COMMAND = 'cyan',
+    --SHELL = 'skyblue',
+    --TERM = 'skyblue',
+    --NONE = 'orange',
+  --},
+  --components = components
+--}
