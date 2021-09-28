@@ -8,7 +8,6 @@ return require('packer').startup(function()
     use { 'Raimondi/delimitMate' }
     use { 'tmux-plugins/vim-tmux-focus-events' }
     use { 'jiangmiao/auto-pairs' }
-    use { 'ChristianChiarulli/nvcode-color-schemes.vim' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim' }
