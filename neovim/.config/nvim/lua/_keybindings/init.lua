@@ -18,9 +18,6 @@ M.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true })
 M.nvim_set_keymap('n', ';w', ':w<CR>', { noremap = true, silent = true })
 M.nvim_set_keymap('n', '<leader>`', ':ccl<CR>', { silent = true })
 
--- Hop
-M.nvim_set_keymap('n', '<leader>f', "<cmd>lua require'hop'.hint_words()<cr>", {})
-
 -- Telescope
 M.nvim_set_keymap('n', '<c-p>', ':Telescope git_files<CR>', { noremap = true, silent = true })
 

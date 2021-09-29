@@ -16,6 +16,7 @@ return require('packer').startup(function()
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'projekt0n/github-nvim-theme' }
+    use { 'ggandor/lightspeed.nvim' }
 
     use {
         'hrsh7th/nvim-cmp',
@@ -42,14 +43,6 @@ return require('packer').startup(function()
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-    }
-
-    use {
-        'phaazon/hop.nvim',
-        as = 'hop',
-        config = function()
-        require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
-        end
     }
 
     use {
