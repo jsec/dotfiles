@@ -15,7 +15,7 @@ return require('packer').startup(function()
     use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use { 'projekt0n/github-nvim-theme' }
+    use { 'folke/tokyonight.nvim' }
     use { 'ggandor/lightspeed.nvim' }
 
     use {
