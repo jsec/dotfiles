@@ -36,7 +36,7 @@ return require('packer').startup(function()
     use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
     use { 'jose-elias-alvarez/null-ls.nvim' }
 
-    use { 'famiu/feline.nvim',
+    use { 'hoob3rt/lualine.nvim',
         config = function() require('_statusbar') end
     }
 
