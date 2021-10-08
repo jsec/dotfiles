@@ -31,3 +31,10 @@ M.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr 
 -- Easy Align
 M.nvim_set_keymap('v', '<Enter>', '<Plug>(EasyAlign)', {})
 M.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
+
+-- Kommentary
+vim.g.kommentary_create_default_mappings = false
+M.nvim_set_keymap('n', '<leader>cc', '<Plug>kommentary_line_increase', {})
+M.nvim_set_keymap('x', '<leader>cc', '<Plug>kommentary_visual_increase<C-c>', {})
+M.nvim_set_keymap('n', '<leader>cu', '<Plug>kommentary_line_decrease', {})
+M.nvim_set_keymap('x', '<leader>cu', '<Plug>kommentary_visual_decrease<C-c>', {})

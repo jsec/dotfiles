@@ -1,8 +1,6 @@
 return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
-    use { 'scrooloose/nerdcommenter' }
     use { 'gabesoft/vim-ags' }
-    use { 'SirVer/ultisnips' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
@@ -15,8 +13,11 @@ return require('packer').startup(function()
     use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/playground' }
     use { 'folke/tokyonight.nvim' }
     use { 'ggandor/lightspeed.nvim' }
+    use { 'projekt0n/github-nvim-theme' }
+    use { 'b3nj5m1n/kommentary' }
 
     use {
         'hrsh7th/nvim-cmp',
