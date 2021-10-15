@@ -5,7 +5,7 @@ function M.on_attach()
         function(_, result, ctx, _)
             local config = {
                 underline = true,
-                virtual_text = false,
+                virtual_text = true,
                 signs = true,
                 update_in_insert = false,
             }
@@ -33,7 +33,7 @@ function M.on_attach()
         end
 
     vim.o.updatetime = 250
-    vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false, show_header=false, border="double"})')
+    -- vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false, show_header=false, border="double"})')
 end
 
 return M
