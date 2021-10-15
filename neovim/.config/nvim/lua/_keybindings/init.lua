@@ -24,10 +24,6 @@ M.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<CR>', { noremap = true, s
 -- NvimTree
 M.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
--- CoC
-M.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-y>" : "\\<Tab>"', {expr = true})
-M.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-
 -- Easy Align
 M.nvim_set_keymap('v', '<Enter>', '<Plug>(EasyAlign)', {})
 M.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
@@ -38,3 +34,6 @@ M.nvim_set_keymap('n', '<leader>cc', '<Plug>kommentary_line_increase', {})
 M.nvim_set_keymap('x', '<leader>cc', '<Plug>kommentary_visual_increase<C-c>', {})
 M.nvim_set_keymap('n', '<leader>cu', '<Plug>kommentary_line_decrease', {})
 M.nvim_set_keymap('x', '<leader>cu', '<Plug>kommentary_visual_decrease<C-c>', {})
+
+-- LSP
+M.nvim_set_keymap('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
