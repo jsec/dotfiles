@@ -1,5 +1,12 @@
 local M = {}
 
+local ignored_error_codes = {
+  [6133] = true,
+  [80002] = true,
+  [7016] = true,
+  [2339] = true
+}
+
 function M.on_attach()
     vim.lsp.handlers["textDocument/publishDiagnostics"] =
         function(_, result, ctx, _)
@@ -19,6 +26,17 @@ function M.on_attach()
 
             local diagnostics = result.diagnostics
 
+            if diagnostics ~= nil then
+              local idx = 1
+              while idx <= #diagnostics do
+                if ignored_error_codes[diagnostics[idx].code] then
+                  table.remove(diagnostics, idx)
+                else
+                  idx = idx + 1
+                end
+              end
+            end
+
             for i, v in ipairs(diagnostics) do
                 diagnostics[i].message = string.format("%s: %s", v.source, v.message)
             end
@@ -34,5 +52,6 @@ function M.on_attach()
 
     vim.o.updatetime = 250
 end
+
 
 return M
