@@ -14,7 +14,7 @@ function M.on_attach()
                 underline = true,
                 virtual_text = true,
                 signs = true,
-                update_in_insert = false,
+                update_in_insert = true,
             }
 
             local uri = result.uri
