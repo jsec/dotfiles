@@ -19,7 +19,7 @@ M.nvim_set_keymap('n', ';w', ':w<CR>', { noremap = true, silent = true })
 M.nvim_set_keymap('n', '<leader>`', ':ccl<CR>', { silent = true })
 
 -- Telescope
-M.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<CR>', { noremap = true, silent = true })
+M.nvim_set_keymap('n', '<c-p>', ':Telescope git_files<CR>', { noremap = true, silent = true })
 
 -- NvimTree
 M.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
