@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
     handlers.on_attach()
 end
 
-null_ls.setup {}
+null_ls.config {}
 lspconfig['null-ls'].setup {}
 
 lspconfig.tsserver.setup{

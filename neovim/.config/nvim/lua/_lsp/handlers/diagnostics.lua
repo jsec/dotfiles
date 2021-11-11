@@ -33,7 +33,6 @@ function M.on_attach()
         end
 
     vim.o.updatetime = 250
-    -- vim.cmd('autocmd CursorHold,CursorHoldI * lua vim.lsp.diagnostic.show_line_diagnostics({focusable=false, show_header=false, border="double"})')
 end
 
 return M

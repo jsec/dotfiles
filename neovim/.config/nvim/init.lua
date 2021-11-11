@@ -1,7 +1,7 @@
 require('plugins')
 require('settings')
-require('colorscheme')
 require('_treesitter')
+require('colorscheme')
 require('_keybindings')
 require('_telescope')
 require('_devicons')
