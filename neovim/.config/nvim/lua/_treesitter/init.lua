@@ -4,5 +4,9 @@ require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true,
         disable = {}
-    }
+    },
+    --[[ custom_captures = {
+      ["typescriptcustom_type_identifier"] = "TSType",
+    }, ]]
+    additional_vim_regex_highlighting = false
 }
