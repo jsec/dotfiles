@@ -1,3 +1,5 @@
-
-require('nvim-tree').setup()
-vim.g.nvim_tree_ignore = { '.git', 'node_modules', 'dist' }
+require('nvim-tree').setup({
+  filters = {
+    custom = { '.git', 'node_modules', 'dist' }
+  }
+})
