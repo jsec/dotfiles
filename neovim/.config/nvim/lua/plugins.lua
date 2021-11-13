@@ -1,6 +1,5 @@
 return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
-    use { 'gabesoft/vim-ags' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
