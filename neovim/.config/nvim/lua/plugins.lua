@@ -37,9 +37,8 @@ return require('packer').startup(function()
     }
 
     use { 'neovim/nvim-lspconfig' }
-    use { 'kabouzeid/nvim-lspinstall' }
+    use { 'williamboman/nvim-lsp-installer' }
     use { 'glepnir/lspsaga.nvim' }
-    use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
     use { 'jose-elias-alvarez/null-ls.nvim' }
 
     use { 'RishabhRD/nvim-lsputils',
