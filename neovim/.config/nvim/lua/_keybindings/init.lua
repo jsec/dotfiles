@@ -28,6 +28,9 @@ M.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = tru
 -- NvimTree
 M.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
+-- Hop
+M.nvim_set_keymap('n', '<leader>f', ':HopChar2<CR>', { noremap = true, silent = true })
+
 -- Easy Align
 M.nvim_set_keymap('v', '<Enter>', '<Plug>(EasyAlign)', {})
 M.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
