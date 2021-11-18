@@ -1,6 +1,5 @@
 return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
-    use { 'gabesoft/vim-ags' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
@@ -14,8 +13,14 @@ return require('packer').startup(function()
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/playground' }
     use { 'folke/tokyonight.nvim' }
-    use { 'ggandor/lightspeed.nvim' }
     use { 'b3nj5m1n/kommentary' }
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v1',
+      config = function()
+        require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      end
+    }
 
     use {
         'hrsh7th/nvim-cmp',
@@ -30,10 +35,8 @@ return require('packer').startup(function()
     }
 
     use { 'neovim/nvim-lspconfig' }
-    use { 'kabouzeid/nvim-lspinstall' }
+    use { 'williamboman/nvim-lsp-installer' }
     use { 'glepnir/lspsaga.nvim' }
-    use { 'jose-elias-alvarez/nvim-lsp-ts-utils' }
-    use { 'jose-elias-alvarez/null-ls.nvim' }
 
     use { 'RishabhRD/nvim-lsputils',
       requires = { 'RishabhRD/popfix' }
