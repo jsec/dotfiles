@@ -1,6 +1,5 @@
 local lspconfig = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
-local null_ls = require('null-ls')
 local appearance = require('_lsp/appearance')
 local handlers = require('_lsp/handlers')
 
