@@ -39,7 +39,6 @@ return require('packer').startup(function()
     use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/nvim-lsp-installer' }
     use { 'glepnir/lspsaga.nvim' }
-    use { 'jose-elias-alvarez/null-ls.nvim' }
 
     use { 'RishabhRD/nvim-lsputils',
       requires = { 'RishabhRD/popfix' }

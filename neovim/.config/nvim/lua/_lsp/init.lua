@@ -10,7 +10,7 @@ local on_attach = function(client, bufnr)
     appearance.setup()
     vim.cmd [[augroup Format]]
     vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()]]
+    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
     vim.cmd [[augroup END]]
 
     handlers.on_attach()
@@ -23,11 +23,11 @@ lsp_installer.on_server_ready(function (server)
   }
 
   if server.name == 'tsserver' then
-    root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git')
+    opts.root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git')
   end
 
   if server.name == 'eslint' then
-    root_dir = lspconfig.util.root_pattern('.git')
+    opts.root_dir = lspconfig.util.root_pattern('.eslintrc', '.eslintrc.json', '.git')
 
     opts.on_attach = function (client, bufnr)
       client.resolved_capabilities.document_formatting = true
@@ -41,6 +41,3 @@ lsp_installer.on_server_ready(function (server)
 
   server:setup(opts)
 end)
-
-null_ls.config {}
-lspconfig['null-ls'].setup {}
