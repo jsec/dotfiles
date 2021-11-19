@@ -40,3 +40,13 @@ lsp_installer.on_server_ready(function (server)
 
   server:setup(opts)
 end)
+
+require('null-ls').config({
+  sources = {
+    require('null-ls').builtins.formatting.prettier
+  }
+})
+
+lspconfig['null-ls'].setup({
+  on_attach = on_attach
+})
