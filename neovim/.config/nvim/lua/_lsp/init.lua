@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
+local null_ls = require('null-ls')
 local appearance = require('_lsp/appearance')
 local handlers = require('_lsp/handlers')
 
@@ -40,3 +41,13 @@ lsp_installer.on_server_ready(function (server)
 
   server:setup(opts)
 end)
+
+null_ls.config({
+  sources = {
+    null_ls.builtins.formatting.prettier
+  }
+})
+
+lspconfig["null-ls"].setup({
+  on_attach = on_attach
+})
