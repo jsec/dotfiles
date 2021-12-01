@@ -43,7 +43,7 @@ end)
 
 require('null-ls').config({
   sources = {
-    require('null-ls').builtins.formatting.prettier
+    require('null-ls').builtins.formatting.prettierd
   }
 })
 
