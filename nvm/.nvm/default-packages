@@ -1,12 +1,13 @@
-@angular/cli
 @nestjs/cli
 agentkeepalive
 commitizen
 eslint_d
+eslint
 gulp
 jest
 neovim
 prettier
 typescript
 typescript-language-server
+vscode-langservers-extracted
 yarn

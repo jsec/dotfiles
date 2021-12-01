@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
+local null_ls = require('null-ls')
 local appearance = require('_lsp/appearance')
 local handlers = require('_lsp/handlers')
 
@@ -9,7 +10,7 @@ local on_attach = function(client, bufnr)
     appearance.setup()
     vim.cmd [[augroup Format]]
     vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync({}, 2000)]]
     vim.cmd [[augroup END]]
 
     handlers.on_attach()

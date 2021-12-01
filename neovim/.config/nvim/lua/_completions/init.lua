@@ -1,10 +1,14 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert',
+  },
+  formatting = {
+    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
   },
   snippet = {
     expand = function(args)
