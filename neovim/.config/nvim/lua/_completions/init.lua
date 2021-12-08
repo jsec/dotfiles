@@ -8,7 +8,18 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert',
   },
   formatting = {
-    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
+    format = lspkind.cmp_format({
+      with_text = true,
+      menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]"
+      })
+    })
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   },
   snippet = {
     expand = function(args)
