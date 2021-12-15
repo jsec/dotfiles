@@ -4,7 +4,7 @@ return require('packer').startup(function()
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
     use { 'tmux-plugins/vim-tmux-focus-events' }
-    use { 'jiangmiao/auto-pairs' }
+    use { 'windwp/nvim-autopairs' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim' }
