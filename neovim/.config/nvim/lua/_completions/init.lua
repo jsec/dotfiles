@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -8,7 +9,18 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert',
   },
   formatting = {
-    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
+    format = lspkind.cmp_format({
+      with_text = true,
+      menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]"
+      })
+    })
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   },
   snippet = {
     expand = function(args)
@@ -28,3 +40,5 @@ cmp.setup({
     { name = 'buffer' }
   }
 })
+
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))

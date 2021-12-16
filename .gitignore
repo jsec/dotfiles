@@ -8,3 +8,4 @@ plugin/*
 gtk-2.0/
 packer-compiled.vim
 neovim/.config/nvim/plugin/
+.luarc.json
