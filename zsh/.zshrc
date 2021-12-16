@@ -1,21 +1,33 @@
-alias vim=nvim
-export EDITOR='vim'
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+export CI_REGISTRY="registry.gitlab.com"
+export MYSQL_TAG="2020-08-17-1337"
+export HAPROXY_TAG="master"
+export SSH_PRIVATE_KEY="$(cat ~/.ssh/id_ed25519)"
+
+# Personal configs
+alias vim="nvim"
+alias mux="tmuxinator"
+export EDITOR=vim
 export DISABLE_AUTO_TITLE=true
-export GOPATH=/home/jsec/src/go
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications:/Users/jsec/.emacs.d/bin
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 export BAT_THEME="Nord"
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications:/usr/local/lib/python3.9/site-packages:$PATH
 
-eval "$(rbenv init -)"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"
-[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"
-
-# Support coloring in ls commands without the use of a framework
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
 
 eval "$(starship init zsh)"
+
+ulimit -n 10240
+
+# Case insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+if [ -f ~/.zsh/git.zsh ]; then
+    source ~/.zsh/git.zsh
+fi
