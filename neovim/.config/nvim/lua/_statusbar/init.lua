@@ -48,7 +48,7 @@ require('lualine').setup {
       { 'mode', separator = { left = '' }, right_padding = 2 },
     },
     lualine_b = { 'filename', 'diff' },
-    lualine_c = { { 'diagnostics', sources = { 'nvim_lsp' } } },
+    lualine_c = { { 'diagnostics', sources = { 'nvim_diagnostic' } } },
     lualine_x = {},
     lualine_y = { 'filetype', 'encoding' },
     lualine_z = {
@@ -57,7 +57,7 @@ require('lualine').setup {
   },
   inactive_sections = {
     lualine_a = { 'filename' },
-    lualine_b = { { 'diagnostics', sources = { 'nvim_lsp' } } },
+    lualine_b = { { 'diagnostics', sources = { 'nvim_diagnostic' } } },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
