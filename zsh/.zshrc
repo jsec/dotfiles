@@ -31,3 +31,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 if [ -f ~/.zsh/git.zsh ]; then
     source ~/.zsh/git.zsh
 fi
+
+if [ -f ~/.zsh/docker.zsh ]; then
+    source ~/.zsh/docker.zsh
+fi
