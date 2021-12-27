@@ -42,14 +42,11 @@ lsp_installer.on_server_ready(function (server)
   server:setup(opts)
 end)
 
-require('null-ls').config({
+null_ls.setup({
   sources = {
     require('null-ls').builtins.formatting.prettierd.with {
       filetypes = { 'html', 'json', 'javascript', 'css', 'markdown' }
     }
-  }
-})
-
-lspconfig['null-ls'].setup({
+  },
   on_attach = on_attach
 })
