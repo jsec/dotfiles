@@ -44,7 +44,9 @@ end)
 
 require('null-ls').config({
   sources = {
-    require('null-ls').builtins.formatting.prettierd
+    require('null-ls').builtins.formatting.prettierd.with {
+      filetypes = { 'html', 'json', 'javascript', 'css', 'markdown' }
+    }
   }
 })
 
