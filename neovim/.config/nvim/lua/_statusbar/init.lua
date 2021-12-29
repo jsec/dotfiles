@@ -1,8 +1,3 @@
--- Bubbles config for lualine
--- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
-
--- stylua: ignore
 local colors = {
   blue        = '#7aa2f7',
   white       = '#c0caf5',
