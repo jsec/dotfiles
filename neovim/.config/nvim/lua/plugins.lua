@@ -13,6 +13,8 @@ return require('packer').startup(function()
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/playground' }
     use { 'folke/tokyonight.nvim' }
+    use { 'rebelot/kanagawa.nvim' }
+    use { 'sainnhe/gruvbox-material' }
     use { 'b3nj5m1n/kommentary' }
     use {
       'phaazon/hop.nvim',

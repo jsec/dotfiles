@@ -78,7 +78,7 @@ require('lualine').setup {
     lualine_a = { 'mode' },
     lualine_b = {
       'branch',
-      { 'filename', file_status = false, path = 1 },
+      { 'filename', file_status = false, path = 0 },
       {
         'diagnostics',
         source = { 'nvim' },
