@@ -8,13 +8,13 @@ return require('packer').startup(function()
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim' }
+    use { 'moll/vim-node' }
     use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/playground' }
     use { 'folke/tokyonight.nvim' }
     use { 'rebelot/kanagawa.nvim' }
-    use { 'sainnhe/gruvbox-material' }
     use { 'b3nj5m1n/kommentary' }
     use {
       'phaazon/hop.nvim',
