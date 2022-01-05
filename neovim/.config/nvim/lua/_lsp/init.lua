@@ -24,6 +24,24 @@ lsp_installer.on_server_ready(function (server)
 
   if server.name == 'tsserver' then
     opts.root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git')
+
+    opts.on_attach = function (client, bufnr)
+      local ts_utils = require('nvim-lsp-ts-utils')
+
+      ts_utils.setup({
+        filter_out_diagnostics_by_code = {
+          6113,
+          80001,
+          80002,
+          7016,
+          2338
+        }
+      })
+
+      ts_utils.setup_client(client)
+
+      on_attach(client, bufnr)
+    end
   end
 
   if server.name == 'eslint' then
