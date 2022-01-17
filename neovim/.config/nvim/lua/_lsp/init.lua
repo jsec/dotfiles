@@ -44,7 +44,7 @@ end)
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.prettier
+    null_ls.builtins.formatting.prettierd
   },
   on_attach = on_attach
 })
