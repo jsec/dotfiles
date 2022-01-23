@@ -1,5 +1,6 @@
 -- Custom lualine config
--- Author: jsec Credit: shadmansaleh && glepnir
+-- Author: jsec
+-- Credit: shadmansaleh && glepnir
 local lualine = require('lualine')
 
 -- Color table for highlights
@@ -10,10 +11,10 @@ local colors = {
   yellow   = '#ECBE7B',
   cyan     = '#008080',
   darkblue = '#081633',
-  green    = '#98be65',
+  green    = '#6A9955',
   orange   = '#FF8800',
   violet   = '#a9a1e1',
-  magenta  = '#c678dd',
+  magenta  = '#C586C0',
   blue     = '#51afef',
   red      = '#ec5f67',
 }
