@@ -46,6 +46,7 @@ return require('packer').startup(function()
     use { 'hoob3rt/lualine.nvim',
         config = function() require('_statusbar') end
     }
+    use { 'arkav/lualine-lsp-progress' }
 
     use {
         'nvim-telescope/telescope.nvim',
