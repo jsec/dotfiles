@@ -39,6 +39,10 @@ lsp_installer.on_server_ready(function (server)
     }
   end
 
+  if server.name == 'tailwindcss' then
+    opts.filetypes = { "html", "jade", "css", "less", "postcss", "sass", "scss", "stylus", "javascriptreact", "typescriptreact", "vue", "svelte" }
+  end
+
   server:setup(opts)
 end)
 
