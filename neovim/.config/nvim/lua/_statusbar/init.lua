@@ -6,17 +6,18 @@ local lualine = require('lualine')
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#262626',
-  fg       = '#bbc2cf',
-  yellow   = '#ffaf00',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#619955',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#C586C0',
-  blue     = '#0a7aca',
-  red      = '#f44747',
+  bg        = '#262626',
+  fg        = '#bbc2cf',
+  yellow    = '#ffaf00',
+  cyan      = '#008080',
+  darkblue  = '#081633',
+  green     = '#619955',
+  orange    = '#FF8800',
+  violet    = '#a9a1e1',
+  magenta   = '#C586C0',
+  blue      = '#0a7aca',
+  red       = '#f44747',
+  lightblue = '#5CB6F8'
 }
 
 local mode_color = {
@@ -111,7 +112,25 @@ ins_left({
 ins_left({
   'filename',
   cond = conditions.buffer_not_empty,
+  color = { fg = colors.lightblue, gui = 'bold' },
+})
+
+ins_left({
+  'branch',
+  icon = '',
   color = { fg = colors.magenta, gui = 'bold' },
+})
+
+ins_left({
+  'diff',
+  -- Is it me or the symbol for modified us really weird
+  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  cond = conditions.hide_in_width,
 })
 
 ins_left({
@@ -142,13 +161,31 @@ ins_left({
   }
 })
 
--- Add components to right sections
-ins_right({
-  'o:encoding', -- option component same as &encoding in viml
-  fmt = string.upper, -- I'm not sure why it's upper case either ;)
+ins_right {
+  function(msg)
+    msg = msg or "Inactive"
+    local buf_clients = vim.lsp.buf_get_clients()
+    if next(buf_clients) == nil then
+      if type(msg) == "boolean" or #msg == 0 then
+        return "Inactive"
+      end
+      return msg
+    end
+    local buf_client_names = {}
+
+    for _, client in pairs(buf_clients) do
+      if client.name ~= "null-ls" then
+        table.insert(buf_client_names, client.name)
+      end
+    end
+
+    return table.concat(buf_client_names, ", ")
+  end,
+  icon = " ",
+  color = { fg = colors.magenta },
+  padding = { left = 0, right = 1 },
   cond = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' },
-})
+}
 
 ins_right({
   'filetype',
@@ -157,23 +194,18 @@ ins_right({
   color = { fg = colors.green, gui = 'bold' },
 })
 
-ins_right({
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
-})
-
-ins_right({
-  'diff',
-  -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
+ins_right {
+  function()
+    local b = vim.api.nvim_get_current_buf()
+    if next(vim.treesitter.highlighter.active[b]) then
+      return " 綠TS"
+    end
+    return ""
+  end,
+  color = { fg = colors.green },
+  padding = { left = 1, right = 0 },
   cond = conditions.hide_in_width,
-})
+}
 
 ins_right({
 
