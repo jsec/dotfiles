@@ -133,7 +133,14 @@ ins_left({
   end,
 })
 
-ins_left('lsp_progress')
+ins_left({
+  'lsp_progress',
+  timer = {
+    progress_enddelay = 1000,
+    spinner = 1000,
+    lsp_client_name_enddelay = 0
+  }
+})
 
 -- Add components to right sections
 ins_right({
