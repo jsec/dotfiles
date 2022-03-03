@@ -3,7 +3,7 @@
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export CI_REGISTRY="registry.gitlab.com"
-export MYSQL_TAG="2020-08-17-1337"
+export MYSQL_TAG="2022-02-11-1606"
 export HAPROXY_TAG="master"
 export SSH_PRIVATE_KEY="$(cat ~/.ssh/id_ed25519)"
 
