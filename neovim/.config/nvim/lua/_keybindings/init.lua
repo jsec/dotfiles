@@ -19,10 +19,9 @@ M.nvim_set_keymap('n', ';w', ':w<CR>', { noremap = true, silent = true })
 M.nvim_set_keymap('n', '<leader>`', ':ccl<CR>', { silent = true })
 
 -- Telescope
--- Can probably get a lot of these into splits, telescope supports jump_type
 M.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<CR>', { noremap = true, silent = true })
 M.nvim_set_keymap('n', '<leader>ca', ':Telescope lsp_code_actions<CR>', { noremap = true, silent = true })
-M.nvim_set_keymap('n', '<leader>gd', ':Telescope lsp_definitions<CR>', { noremap = true, silent = true })
+M.nvim_set_keymap('n', '<leader>gd', ':Telescope lsp_definitions jump_type=vsplit<CR>', { noremap = true, silent = true })
 M.nvim_set_keymap('n', '<leader>gr', ':Telescope lsp_references<CR>', { noremap = true, silent = true })
 M.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 
