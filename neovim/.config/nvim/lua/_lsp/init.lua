@@ -3,16 +3,27 @@ local lsp_installer = require('nvim-lsp-installer')
 local null_ls = require('null-ls')
 local appearance = require('_lsp/appearance')
 local handlers = require('_lsp/handlers')
+local lsp_format = require('lsp-format')
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local on_attach = function(client, bufnr)
-    appearance.setup()
-    vim.cmd [[augroup Format]]
-    vim.cmd [[autocmd! * <buffer>]]
-    vim.cmd [[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_seq_sync({}, 2000)]]
-    vim.cmd [[augroup END]]
+lsp_format.setup {
+  javascript = {
+    indent_width = 4,
+    order = { 'eslint', 'null-ls' }
+  },
+  typescript = {
+    indent_width = 4,
+    order = { 'eslint', 'null-ls' }
+  },
+  html = {
+    indent_width = 4
+  }
+}
 
+local on_attach = function(client, bufnr)
+    lsp_format.on_attach(client)
+    appearance.setup()
     handlers.on_attach()
 end
 
