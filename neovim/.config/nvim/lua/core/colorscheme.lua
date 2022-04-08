@@ -10,4 +10,3 @@ vim.cmd[[colorscheme vscode]]
 vim.cmd("let &fcs='eob: '")
 vim.cmd('highlight MatchParen ctermfg=white ctermbg=black')
 vim.cmd('highlight Normal ctermbg=NONE')
-

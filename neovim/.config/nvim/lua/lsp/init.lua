@@ -1,8 +1,8 @@
 local lspconfig = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
 local null_ls = require('null-ls')
-local appearance = require('_lsp/appearance')
-local handlers = require('_lsp/handlers')
+local appearance = require('lsp/appearance')
+local handlers = require('lsp/handlers')
 local lsp_format = require('lsp-format')
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

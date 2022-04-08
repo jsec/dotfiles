@@ -1,4 +1,4 @@
-local diagnostics = require('_lsp/appearance/diagnostics')
+local diagnostics = require('lsp/appearance/diagnostics')
 
 local M = {}
 
