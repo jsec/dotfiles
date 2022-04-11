@@ -59,16 +59,13 @@ local conditions = {
 -- Config
 local config = {
   options = {
-    -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
     theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
+    disabled_filetypes = { 'NvimTree' }
   },
   sections = {
     lualine_a = {},
@@ -143,11 +140,28 @@ ins_left({
 
 ins_left({
   'lsp_progress',
-  timer = {
-    progress_enddelay = 1000,
-    spinner = 1000,
-    lsp_client_name_enddelay = 0
-  }
+  display_components = { 'lsp_client_name', { 'title', 'percentage', 'message' }},
+  colors = {
+    percentage  = colors.lightblue,
+    title  = colors.lightblue,
+    message  = colors.lightblue,
+    spinner = colors.magenta,
+    lsp_client_name = colors.magenta,
+    use = true,
+  },
+  separators = {
+      component = ' ',
+      progress = ' | ',
+      message = { pre = '(', post = ')'},
+      percentage = { pre = '', post = '%% ' },
+      title = { pre = '', post = ': ' },
+      lsp_client_name = { pre = '[', post = ']' },
+      spinner = { pre = '', post = '' },
+      message = { commenced = 'In Progress', completed = 'Completed' },
+  },
+  display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' } },
+  timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
+  spinner_symbols = { "◴", "◷", "◶", "◵" }
 })
 
 ins_right({

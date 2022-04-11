@@ -7,6 +7,7 @@ return require('packer').startup(function()
     use { 'windwp/nvim-autopairs' }
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'kyazdani42/nvim-tree.lua' }
+    use { 'simrat39/symbols-outline.nvim' }
     use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
