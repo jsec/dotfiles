@@ -41,3 +41,6 @@ M.nvim_set_keymap('n', '<leader>cc', '<Plug>kommentary_line_increase', {})
 M.nvim_set_keymap('x', '<leader>cc', '<Plug>kommentary_visual_increase<C-c>', {})
 M.nvim_set_keymap('n', '<leader>cu', '<Plug>kommentary_line_decrease', {})
 M.nvim_set_keymap('x', '<leader>cu', '<Plug>kommentary_visual_decrease<C-c>', {})
+
+-- Symbols outline
+M.nvim_set_keymap('n', '<leader>s', ':SymbolsOutline<CR>', { silent = true })
