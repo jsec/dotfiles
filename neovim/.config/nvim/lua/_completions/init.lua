@@ -19,8 +19,10 @@ cmp.setup({
       })
     })
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+    }
   },
   snippet = {
     expand = function(args)
