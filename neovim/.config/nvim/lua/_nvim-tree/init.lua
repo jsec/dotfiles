@@ -3,6 +3,6 @@ require('nvim-tree').setup({
     width = 35
   },
   filters = {
-    custom = { '.git', 'node_modules', 'dist' }
+    custom = { '.git/', 'node_modules', 'dist' }
   }
 })
