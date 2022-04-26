@@ -19,7 +19,7 @@ alias ll="ls -alG"
 
 eval "$(starship init zsh)"
 
-ulimit -n 10240
+ulimit -n 16348
 
 # Case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
