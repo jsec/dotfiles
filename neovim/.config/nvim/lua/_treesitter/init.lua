@@ -1,6 +1,18 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = 'all',
-    ignore_install = { 'haskell', 'cmake', 'phpdoc' },
+    ensure_installed = {
+        'css',
+        'dot',
+        'html',
+        'json',
+        'json5',
+        'lua',
+        'php',
+        'scss',
+        'javascript',
+        'dockerfile',
+        'yaml'
+    },
+    sync_install = true,
     highlight = {
         enable = true,
         disable = { 'phpdoc' }

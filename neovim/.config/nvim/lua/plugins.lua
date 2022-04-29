@@ -1,4 +1,10 @@
-return require('packer').startup(function()
+local packer = require('packer')
+
+packer.init {
+    max_jobs = 1
+}
+
+return packer.startup(function()
     use { 'wbthomason/packer.nvim' }
     use { 'lewis6991/impatient.nvim' }
     use { 'ntpeters/vim-better-whitespace' }
