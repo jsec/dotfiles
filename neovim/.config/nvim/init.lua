@@ -1,3 +1,4 @@
+require('impatient')
 require('plugins')
 require('core.colorscheme')
 require('core.keybindings')

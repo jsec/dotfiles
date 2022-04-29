@@ -8,6 +8,7 @@ return require('packer').startup(function()
   end
 
     use { 'wbthomason/packer.nvim' }
+    use { 'lewis6991/impatient.nvim' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
