@@ -57,7 +57,7 @@ return require('packer').startup(function()
     use { 'arkav/lualine-lsp-progress' }
     use {
         'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-ui-select.nvim'}},
         config = config('telescope')
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
