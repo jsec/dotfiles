@@ -18,6 +18,7 @@ return packer.startup(function()
     use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
+    use { 'karb94/neoscroll.nvim' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/playground' }
     use { 'Mofiqul/vscode.nvim' }
