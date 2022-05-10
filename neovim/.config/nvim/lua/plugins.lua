@@ -9,6 +9,9 @@ return packer.startup(function()
     use { 'lewis6991/impatient.nvim' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
+    use { 'TimUntersberger/neogit',
+      requires = { 'sindrets/diffview.nvim', 'nvim-lua/plenary.nvim' }
+    }
     use { 'Raimondi/delimitMate' }
     use { 'tmux-plugins/vim-tmux-focus-events' }
     use { 'windwp/nvim-autopairs' }
