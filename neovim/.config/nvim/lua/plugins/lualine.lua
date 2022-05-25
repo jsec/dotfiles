@@ -136,7 +136,29 @@ ins_left({
   end,
 })
 
-ins_left('lsp_progress')
+ins_left({
+  'lsp_progress',
+  display_components = { 'lsp_client_name', { 'title', 'percentage', 'message' }},
+  colors = {
+    percentage  = colors.lightblue,
+    title  = colors.lightblue,
+    message  = colors.lightblue,
+    spinner = colors.magenta,
+    lsp_client_name = colors.magenta,
+    use = true,
+  },
+  separators = {
+      component = ' ',
+      progress = ' | ',
+      percentage = { pre = '', post = '%% ' },
+      title = { pre = '', post = ': ' },
+      lsp_client_name = { pre = '[', post = ']' },
+      spinner = { pre = '', post = '' },
+      message = { pre = '(', post = ')', commenced = 'In Progress', completed = 'Completed' },
+  },
+  timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
+  spinner_symbols = { "◴", "◷", "◶", "◵" }
+})
 
 ins_right {
   function(msg)
