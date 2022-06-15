@@ -24,6 +24,9 @@ ulimit -n 16348
 # Case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+# Re-enable git branch completion
+autoload -Uz compinit && compinit
+
 if [ -f ~/.zsh/git.zsh ]; then
     source ~/.zsh/git.zsh
 fi
