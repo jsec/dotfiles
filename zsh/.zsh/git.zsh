@@ -244,3 +244,5 @@
   alias gwC='git clean --force'
   alias gwx='git rm -r'
   alias gwX='git rm -r --force'
+
+  alias squish='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD)) '
