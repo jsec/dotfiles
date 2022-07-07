@@ -1,7 +1,8 @@
 export CI_REGISTRY="registry.gitlab.com"
-export MYSQL_TAG="2022-02-11-1606"
+export MYSQL_TAG="2022-07-07-multiarch"
 export HAPROXY_TAG="master"
 export SSH_PRIVATE_KEY="$(cat ~/.ssh/id_ed25519)"
+export DOCKER_ALPINE_NODE_TAG="9963d8ae"
 
 # Personal configs
 alias vim="nvim"
@@ -17,6 +18,7 @@ export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
 ulimit -n 16348
@@ -34,3 +36,6 @@ fi
 if [ -f ~/.zsh/docker.zsh ]; then
     source ~/.zsh/docker.zsh
 fi
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
