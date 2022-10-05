@@ -24,6 +24,9 @@ local on_attach = function(client, bufnr)
     handlers.on_attach()
 end
 
+mason.setup()
+mason_lspconfig.setup()
+
 lspconfig.tsserver.setup {
   on_attach = function(client, bufnr)
     local ts_utils = require('nvim-lsp-ts-utils')
