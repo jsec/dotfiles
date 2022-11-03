@@ -25,6 +25,7 @@ vim.cmd('set splitright')
 vim.cmd('set cmdheight=2')
 vim.cmd('set updatetime=300')
 vim.cmd('set shortmess+=c')
+vim.cmd('set clipboard+=unnamedplus')
 vim.o.completeopt = "menuone,noselect"
 
 -- Ignores
