@@ -1,5 +1,4 @@
 local lspconfig = require('lspconfig')
-local null_ls = require('null-ls')
 local appearance = require('lsp/appearance')
 local handlers = require('lsp/handlers')
 local lsp_format = require('lsp-format')
@@ -11,11 +10,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lsp_format.setup {
   javascript = {
     indent_width = 4,
-    order = { 'eslint', 'null-ls' }
+    order = { 'eslint' }
   },
   typescript = {
     indent_width = 4,
-    order = { 'eslint', 'null-ls' }
+    order = { 'eslint' }
   },
   html = {
     indent_width = 4
@@ -38,8 +37,9 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.eslint.setup {
+  on_attach = on_attach,
   capabilities = capabilites,
-  root_dir = lspconfig.util.root_pattern('.eslintrc', '.eslintrc.json', '.git'),
+  root_dir = lspconfig.util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.json', '.git'),
   settings = {
     format = { enable = true }
   }
@@ -48,10 +48,3 @@ lspconfig.eslint.setup {
 lspconfig.tailwindcss.setup {
     filetypes = { "html", "jade", "css", "less", "postcss", "sass", "scss", "stylus", "javascriptreact", "typescriptreact", "vue", "svelte" }
 }
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.prettierd
-  },
-  on_attach = on_attach
-})
