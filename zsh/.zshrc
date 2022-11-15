@@ -3,19 +3,15 @@ alias vim="nvim"
 alias mux="tmuxinator"
 export EDITOR=vim
 export DISABLE_AUTO_TITLE=true
-export BAT_THEME="Nord"
-export N_PREFIX="$HOME/n";
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/lib/python3.9/site-packages:/Users/jarrod.seccombe/n/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/lib/python3.9/site-packages
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
 
-export N_PRESERVE_NPM=1
-export N_PRESERVE_COREPACK=1
-
-eval "$(starship init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 ulimit -n 16348
 
@@ -37,3 +33,5 @@ fi
 if [ -f ~/.zsh/env.zsh ]; then
     source ~/.zsh/env.zsh
 fi
+
+eval "$(starship init zsh)"
