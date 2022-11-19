@@ -26,7 +26,7 @@ return require('packer').startup(function()
       config = config('nvim-treesitter')
     }
     use { 'nvim-treesitter/playground' }
-    use { 'Mofiqul/vscode.nvim' }
+    use { 'projekt0n/github-nvim-theme' }
     use { 'b3nj5m1n/kommentary' }
     use {
       'phaazon/hop.nvim',
