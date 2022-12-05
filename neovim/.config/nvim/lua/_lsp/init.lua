@@ -10,11 +10,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lsp_format.setup {
   javascript = {
-    indent_width = 4,
+    indent_width = 2,
     order = { 'eslint', 'null-ls' }
   },
   html = {
-    indent_width = 4
+    indent_width = 2
   }
 }
 
