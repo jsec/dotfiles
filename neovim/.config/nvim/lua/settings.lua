@@ -37,9 +37,6 @@ vim.cmd('set wildignore+=**/bin')
 
 -- Filetype settings
 -- Maybe move this to its own file? Or break it out by filetype?
-vim.cmd('autocmd FileType typescript setl sw=4 sts=4 et')
-vim.cmd('autocmd FileType javascript setl sw=4 sts=4 et')
-vim.cmd('autocmd FileType json setl sw=4 sts=4 et')
 vim.cmd('autocmd FileType lua setl sw=2 sts=2 et')
 
 -- Trim whitespace
