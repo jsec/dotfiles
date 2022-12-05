@@ -24,8 +24,7 @@ return packer.startup(function()
     use { 'karb94/neoscroll.nvim' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/playground' }
-    -- use { 'Mofiqul/vscode.nvim' }
-    use { 'projekt0n/github-nvim-theme' }
+    use { 'sainnhe/gruvbox-material' }
     use { 'b3nj5m1n/kommentary' }
     use {
       'phaazon/hop.nvim',
