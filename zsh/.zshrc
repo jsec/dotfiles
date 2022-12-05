@@ -10,6 +10,7 @@ export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
 
+# Bootstrap Node toolchain
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -34,4 +35,8 @@ if [ -f ~/.zsh/env.zsh ]; then
     source ~/.zsh/env.zsh
 fi
 
+# Bootstrap homebrew environment
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# Set prompt
 eval "$(starship init zsh)"
