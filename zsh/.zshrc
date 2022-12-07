@@ -3,7 +3,7 @@ alias vim="nvim"
 alias mux="tmuxinator"
 export EDITOR=vim
 export DISABLE_AUTO_TITLE=true
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/lib/python3.9/site-packages
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/lib/python3.9/site-packages:/opt/homebrew/Cellar/mysql-client/8.0.31/bin
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 
 export CLICOLOR=1
