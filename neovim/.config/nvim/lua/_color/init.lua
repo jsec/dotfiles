@@ -1,7 +1,4 @@
---[[ vim.g.gruvbox_material_enable_bold=1
-vim.g.gruvbox_material_better_performance=1
-vim.g.gruvbox_material_enable_italic=1
-vim.cmd('colorscheme gruvbox-material') ]]
+local colors = require('material.colors')
 
 require('material').setup({
   contrast = {
@@ -16,6 +13,9 @@ require('material').setup({
     functions = {
       bold = true,
       undercurl = false
+    },
+    keywords = {
+      italic = true
     }
   },
   plugins = {
@@ -29,7 +29,10 @@ require('material').setup({
     'telescope'
   },
   lualine_style = 'default',
-  async_loading = true
+  async_loading = true,
+  custom_highlights = {
+    ['@keyword'] = { fg = colors.main.cyan, italic = true }
+  }
 })
 
 vim.g.material_style = 'darker'
