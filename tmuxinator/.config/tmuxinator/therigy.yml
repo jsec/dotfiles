@@ -3,6 +3,8 @@
 name: therigy
 root: ~/src/therigy
 
+on_project_start: docker run -p 6379:6379 -d redis
+
 windows:
   - stm-ui:
       root: ~/src/therigy/services/stm-ui
