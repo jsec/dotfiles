@@ -18,7 +18,6 @@ return require('packer').startup(function()
     use_with_config('kyazdani42/nvim-tree.lua', 'nvim-tree')
     use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'moll/vim-node' }
-    use { 'peitalin/vim-jsx-typescript' }
     use { 'junegunn/vim-easy-align' }
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -26,8 +25,16 @@ return require('packer').startup(function()
       config = config('nvim-treesitter')
     }
     use { 'nvim-treesitter/playground' }
-    use { 'projekt0n/github-nvim-theme' }
+    use { 'sainnhe/gruvbox-material' }
+    use { 'marko-cerovac/material.nvim' }
     use { 'b3nj5m1n/kommentary' }
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup {}
+      end
+    }
     use {
       'phaazon/hop.nvim',
       branch = 'v1',

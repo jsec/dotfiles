@@ -2,6 +2,7 @@ local lualine = require('lualine')
 
 lualine.setup {
   options = {
-    theme = 'auto'
+    theme = 'material',
+    ignore_focus = { 'NvimTree' }
   }
 }
