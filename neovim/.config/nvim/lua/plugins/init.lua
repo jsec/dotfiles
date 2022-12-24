@@ -17,7 +17,6 @@ return require('packer').startup(function()
     use_with_config('kyazdani42/nvim-web-devicons', 'nvim-web-devicons')
     use_with_config('kyazdani42/nvim-tree.lua', 'nvim-tree')
     use { 'lukas-reineke/indent-blankline.nvim' }
-    use { 'moll/vim-node' }
     use { 'junegunn/vim-easy-align' }
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -25,7 +24,6 @@ return require('packer').startup(function()
       config = config('nvim-treesitter')
     }
     use { 'nvim-treesitter/playground' }
-    use { 'sainnhe/gruvbox-material' }
     use { 'marko-cerovac/material.nvim' }
     use { 'b3nj5m1n/kommentary' }
     use_with_config('folke/todo-comments.nvim', 'todo_comments')
@@ -51,11 +49,7 @@ return require('packer').startup(function()
     use { 'williamboman/mason.nvim' }
     use { 'williamboman/mason-lspconfig.nvim' }
     use { 'lukas-reineke/lsp-format.nvim' }
-    use { 'RishabhRD/nvim-lsputils',
-      requires = { 'RishabhRD/popfix' }
-    }
     use_with_config('hoob3rt/lualine.nvim', 'lualine')
-    use { 'arkav/lualine-lsp-progress' }
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-ui-select.nvim'}},
