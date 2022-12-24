@@ -28,13 +28,7 @@ return require('packer').startup(function()
     use { 'sainnhe/gruvbox-material' }
     use { 'marko-cerovac/material.nvim' }
     use { 'b3nj5m1n/kommentary' }
-    use {
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup {}
-      end
-    }
+    use_with_config('folke/todo-comments.nvim', 'todo_comments')
     use {
       'phaazon/hop.nvim',
       branch = 'v1',
