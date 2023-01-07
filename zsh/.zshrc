@@ -7,12 +7,13 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 export BAT_THEME="Nord"
 
-eval "$(rbenv init -)"
-
 # Support coloring in ls commands without the use of a framework
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 alias ll="ls -alG"
+
+# Bootstrap homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
 
 # Prompt
 eval "$(starship init zsh)"
