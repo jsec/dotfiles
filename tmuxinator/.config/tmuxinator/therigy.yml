@@ -3,65 +3,65 @@
 name: therigy
 root: ~/src/therigy
 
-on_project_start: docker run -p 6379:6379 -d redis
+on_project_start: nc -w1 -z localhost 6379 | docker run -p 6379:6379 -d redis
 
 windows:
   - stm-ui:
       root: ~/src/therigy/services/stm-ui
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
-        - vim
+        - 
         - docker compose -f docker-compose.dev.yml up -d && docker logs -f stm-ui
         -
   - stm:
       root: ~/src/therigy/services/stm
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
+        -
+        -
         - docker compose -f docker-compose.dev.yml up -d && docker logs -f stm-stm-1
-        -
-        -
   - ams:
       root: ~/src/therigy/services/ams
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
+        -
+        -
         - NODE_ENV=test nodemon
-        -
-        -
   - pes:
       root: ~/src/therigy/services/pes
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
+        -
+        -
         - NODE_ENV=test nodemon
-        -
-        -
   - rms:
       root: ~/src/therigy/services/rms
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
+        -
+        -
         - NODE_ENV=test nodemon
-        -
-        -
   - tas:
       root: ~/src/therigy/services/tas
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
+        -
+        -
         - NODE_ENV=test nodemon
-        -
-        -
   - serverless:
       root: ~/src/therigy/services/serverless
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
+        -
+        -
         - npm run dev
-        -
-        -
   - module:
       root: ~/src/therigy/modules/therigy
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         - vim
         -
-        -
+        - 
   - shell:
       root: ~/src/therigy/services
       panes:
