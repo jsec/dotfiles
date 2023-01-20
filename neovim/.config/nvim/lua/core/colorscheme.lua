@@ -34,8 +34,14 @@ require('material').setup({
   lualine_style = 'default',
   async_loading = true,
   custom_highlights = {
+<<<<<<< Updated upstream
     ['@keyword'] = { fg = colors.main.cyan, italic = true }
   }
+=======
+    ["@keyword"] = { fg = colors.main.cyan, italic = true },
+    ["@property"] = { fg = colors.editor.fg }
+  },
+>>>>>>> Stashed changes
 })
 
 vim.g.material_style = 'darker'
