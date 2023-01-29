@@ -3,5 +3,7 @@
   "lazy.nvim": { "branch": "main", "commit": "9b208696e139a404d159963b975a5b90af38439b" },
   "lualine.nvim": { "branch": "master", "commit": "0050b308552e45f7128f399886c86afefc3eb988" },
   "nordic.nvim": { "branch": "main", "commit": "e2dbe93549d107fa95006910317bd6910159f272" },
-  "nvim-tree.lua": { "branch": "master", "commit": "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f" }
+  "nvim-tree.lua": { "branch": "master", "commit": "e14989c0eaa6f9c299d48f7e45ce1ed04b21180f" },
+  "nvim-treesitter": { "branch": "master", "commit": "c610c78576f372684f42eeaec56d13be2cf304d2" },
+  "playground": { "branch": "master", "commit": "c19bcfd6a3681bc876e1b861f6685bfc04972d0d" }
 }

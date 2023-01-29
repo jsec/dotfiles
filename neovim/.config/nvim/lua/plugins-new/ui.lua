@@ -11,8 +11,8 @@ return {
         event = 'BufReadPost',
         opts = {
             filetype_exclude = { 'help', 'lazy' },
-            show_trailing_blankline_indent = false,
-            show_current_context = false
+            show_trailing_blankline_indent = true,
+            show_current_context = true
         }
     },
     {
