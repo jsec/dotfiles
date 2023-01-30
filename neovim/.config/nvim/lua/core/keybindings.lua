@@ -32,10 +32,6 @@ M.nvim_set_keymap('n', '<c-n>', ':NvimTreeToggle<CR>', { noremap = true, silent 
 -- Hop
 M.nvim_set_keymap('n', '<leader>f', ':HopChar2<CR>', { noremap = true, silent = true })
 
--- Easy Align
-M.nvim_set_keymap('v', '<Enter>', '<Plug>(EasyAlign)', {})
-M.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
-
 -- Kommentary
 vim.g.kommentary_create_default_mappings = false
 M.nvim_set_keymap('n', '<leader>cc', '<Plug>kommentary_line_increase', {})
