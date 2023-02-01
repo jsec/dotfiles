@@ -8,6 +8,7 @@
   "indent-blankline.nvim": { "branch": "master", "commit": "8299fe7703dfff4b1752aeed271c3b95281a952d" },
   "kommentary": { "branch": "main", "commit": "3a80117148c6798972bb69414423311ab151d368" },
   "lazy.nvim": { "branch": "main", "commit": "9b208696e139a404d159963b975a5b90af38439b" },
+  "leap.nvim": { "branch": "main", "commit": "ff4c3663e5a0a0ecbb3fffbc8318825def35d2aa" },
   "lspkind-nvim": { "branch": "master", "commit": "c68b3a003483cf382428a43035079f78474cd11e" },
   "lualine.nvim": { "branch": "master", "commit": "0050b308552e45f7128f399886c86afefc3eb988" },
   "nordic.nvim": { "branch": "main", "commit": "e2dbe93549d107fa95006910317bd6910159f272" },

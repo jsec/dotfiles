@@ -10,6 +10,12 @@ return {
         }
     },
     {
+        'ggandor/leap.nvim',
+        config = function()
+            require('leap').add_default_mappings()
+        end
+    },
+    {
         'folke/todo-comments.nvim',
         opts = {
             highlight = {
