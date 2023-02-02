@@ -9,7 +9,6 @@ return require('packer').startup(function()
 
     use { 'wbthomason/packer.nvim' }
     use { 'lewis6991/impatient.nvim' }
-    -- TODO: replace with mini.trailspace
     use { 'ntpeters/vim-better-whitespace' }
     use { 'tpope/vim-fugitive' }
     use { 'Raimondi/delimitMate' }
@@ -28,7 +27,6 @@ return require('packer').startup(function()
     use { 'marko-cerovac/material.nvim' }
     use { 'b3nj5m1n/kommentary' }
     use_with_config('folke/todo-comments.nvim', 'todo_comments')
-    -- TODO: replace with leap
     use {
       'phaazon/hop.nvim',
       branch = 'v1',

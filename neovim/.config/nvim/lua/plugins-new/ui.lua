@@ -1,4 +1,5 @@
 return {
+    { 'echasnovski/mini.trailspace', version = '*' },
     {
         'nvim-lualine/lualine.nvim',
         opts = {

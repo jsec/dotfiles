@@ -1,5 +1,10 @@
 return {
-    { 'windwp/nvim-autopairs' },
+    {
+        'windwp/nvim-autopairs',
+        opts = {
+            disable_filetype = { "TelescopePrompt" , "vim" }
+        }
+    },
     {
         'b3nj5m1n/kommentary',
         keys = {
@@ -25,7 +30,6 @@ return {
             }
         }
     },
-    -- LEAP
     {
         'hrsh7th/nvim-cmp',
         dependencies = {

@@ -41,13 +41,4 @@ vim.opt.undofile = true
 vim.opt.undodir = cache_dir .. 'undo/'
 
 -- Filetype settings
-vim.cmd('autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll')
-
--- Trim whitespace
--- vim.g.better_whitespace_enabled=1
--- vim.g.strip_whitespace_on_save = 1
--- vim.g.strip_whitespace_confirm = 0
-
--- Python hosts
--- vim.g.python2_host_prog = "/usr/local/bin/python2"
--- vim.g.python3_host_prog = "/usr/local/bin/python3"
+-- vim.cmd('autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll')
