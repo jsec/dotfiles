@@ -1,6 +1,1 @@
-require('impatient')
-require('plugins')
-require('core.colorscheme')
-require('core.keybindings')
-require('core.settings')
-require('lsp')
+require('config.lazy').init()

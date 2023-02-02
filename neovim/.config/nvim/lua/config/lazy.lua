@@ -21,7 +21,7 @@ function M.init()
     M.check_install()
     require('config.options')
     require('config.keymaps')
-    require('lazy').setup('plugins-new')
+    require('lazy').setup('plugins')
 end
 
 return M

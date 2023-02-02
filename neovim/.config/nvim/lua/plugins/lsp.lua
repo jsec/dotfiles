@@ -36,7 +36,7 @@ return {
         config = function()
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            local on_attach = require('util-new.lsp').on_attach
+            local on_attach = require('util.lsp').on_attach
             require('mason').setup()
             require('mason-lspconfig').setup()
 
