@@ -5,7 +5,9 @@ vim.opt.wildmenu = true
 vim.opt.laststatus = 2
 vim.opt.encoding = 'utf-8'
 vim.opt.laststatus = 2
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
@@ -39,6 +41,3 @@ vim.opt.backupdir = cache_dir .. 'backup/'
 vim.opt.directory = cache_dir .. 'swap/'
 vim.opt.undofile = true
 vim.opt.undodir = cache_dir .. 'undo/'
-
--- Filetype settings
--- vim.cmd('autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll')
