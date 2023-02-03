@@ -8,15 +8,15 @@ return {
                 'nvim-telescope/telescope-ui-select.nvim',
                 config = function()
                     require('telescope').load_extension('ui-select')
-                end
+                end,
             },
             {
                 'nvim-telescope/telescope-fzf-native.nvim',
                 build = 'make',
                 config = function()
                     require('telescope').load_extension('fzf')
-                end
-            }
+                end,
+            },
         },
         keys = {
             { '<c-p>', "<cmd>lua require('util.telescope').project_files()<cr>", desc = 'Find Files' },
@@ -24,7 +24,6 @@ return {
             { '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', desc = 'Go To Definition' },
             { '<leader>gr', '<cmd>Telescope lsp_references<cr>', desc = 'Find References' },
             { '<leader>lg', '<cmd>Telescope live_grep<cr>', desc = 'Live Grep' },
-
         },
         opts = {
             extensions = {
@@ -32,8 +31,8 @@ return {
                     fuzzy = true,
                     override_generic_sorter = true,
                     override_file_sorter = true,
-                    case_mode = "smart_case"
-                }
+                    case_mode = 'smart_case',
+                },
             },
             defaults = {
                 vimgrep_arguments = {
@@ -43,21 +42,21 @@ return {
                     '--with-filename',
                     '--line-number',
                     '--column',
-                    '--smart-case'
+                    '--smart-case',
                 },
-                prompt_prefix = "> ",
-                selection_caret = "> ",
-                entry_prefix = "  ",
-                initial_mode = "insert",
-                selection_strategy = "reset",
-                sorting_strategy = "descending",
+                prompt_prefix = '> ',
+                selection_caret = '> ',
+                entry_prefix = '  ',
+                initial_mode = 'insert',
+                selection_strategy = 'reset',
+                sorting_strategy = 'descending',
                 layout_config = {
                     width = 0.75,
                     horizontal = {
-                        preview_width = 0.5
+                        preview_width = 0.5,
                     },
-                    prompt_position = "bottom",
-                    preview_cutoff = 120
+                    prompt_position = 'bottom',
+                    preview_cutoff = 120,
                 },
                 file_ignore_patterns = { '.git' },
                 path_display = { 'shorten' },
@@ -66,13 +65,13 @@ return {
                 borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
                 color_devicons = true,
                 use_less = true,
-                set_env = { ['COLORTERM'] = 'truecolor' }
+                set_env = { ['COLORTERM'] = 'truecolor' },
             },
             pickers = {
                 find_files = {
-                    hidden = true
-                }
-            }
-        }
-    }
+                    hidden = true,
+                },
+            },
+        },
+    },
 }

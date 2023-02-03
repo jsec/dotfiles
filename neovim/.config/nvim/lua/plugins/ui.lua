@@ -4,8 +4,8 @@ return {
         'nvim-lualine/lualine.nvim',
         opts = {
             theme = 'nordic',
-            ignore_focus = { 'NvimTree' }
-        }
+            ignore_focus = { 'NvimTree' },
+        },
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -13,18 +13,18 @@ return {
         opts = {
             filetype_exclude = { 'help', 'lazy' },
             show_trailing_blankline_indent = true,
-            show_current_context = true
-        }
+            show_current_context = true,
+        },
     },
     {
         'nvim-tree/nvim-tree.lua',
         keys = {
-            { '<c-n>', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTree' }
+            { '<c-n>', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTree' },
         },
         opts = {
             filters = {
-                custom = { '.git', 'node_modules', 'dist' }
-            }
-        }
-    }
+                custom = { '.git', 'node_modules', 'dist' },
+            },
+        },
+    },
 }

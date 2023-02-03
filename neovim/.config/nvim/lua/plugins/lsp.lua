@@ -4,31 +4,31 @@ return {
         opts = {
             javascript = {
                 indent_width = 2,
-                order = { 'eslint' }
+                order = { 'eslint' },
             },
             typescript = {
                 indent_width = 2,
-                order = { 'eslint' }
+                order = { 'eslint' },
             },
             html = {
-                indent_width = 4
+                indent_width = 4,
             },
             lua = {
-                indent_width = 2
-            }
-        }
+                indent_width = 2,
+            },
+        },
     },
     {
-        "williamboman/mason.nvim",
+        'williamboman/mason.nvim',
         opts = {
             ensure_installed = {
-                "tsserver",
-                "prettierd",
-                "stylua",
-                "luacheck",
-                "eslint_d"
-            }
-        }
+                'tsserver',
+                'prettierd',
+                'stylua',
+                'luacheck',
+                'eslint_d',
+            },
+        },
     },
     { 'williamboman/mason-lspconfig.nvim' },
     {
@@ -43,7 +43,7 @@ return {
             lspconfig.tsserver.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
-                root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git')
+                root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git'),
             })
 
             lspconfig.eslint.setup({
@@ -51,9 +51,9 @@ return {
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.json', '.git'),
                 settings = {
-                    format = { enable = true }
-                }
+                    format = { enable = true },
+                },
             })
-        end
-    }
+        end,
+    },
 }

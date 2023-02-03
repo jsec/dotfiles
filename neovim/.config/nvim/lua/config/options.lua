@@ -30,7 +30,7 @@ vim.opt.wildignore = {
     '**/tmp',
     '**/dist',
     '**/.git',
-    '**/bin'
+    '**/bin',
 }
 
 -- State directories

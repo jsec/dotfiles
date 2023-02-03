@@ -35,22 +35,22 @@ return {
                     'typescript',
                     'vim',
                     'vue',
-                    'yaml'
+                    'yaml',
                 },
                 highlight = { enable = true },
                 query_linter = {
                     enable = true,
                     use_virtual_text = true,
-                    lint_events = { 'BufWrite', 'CursorHold' }
+                    lint_events = { 'BufWrite', 'CursorHold' },
                 },
                 playground = {
                     enable = true,
                     disable = {},
                     updatetime = 25,
-                    persist_queries = true
+                    persist_queries = true,
                 },
-                additional_vim_regex_highlighting = false
+                additional_vim_regex_highlighting = false,
             })
-        end
-    }
+        end,
+    },
 }
