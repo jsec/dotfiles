@@ -1,9 +1,5 @@
 local packer = require('packer')
 
-packer.init {
-    max_jobs = 1
-}
-
 return packer.startup(function()
     use { 'wbthomason/packer.nvim' }
     use { 'lewis6991/impatient.nvim' }
@@ -25,6 +21,8 @@ return packer.startup(function()
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'nvim-treesitter/playground' }
     use { 'marko-cerovac/material.nvim' }
+    use { 'AlexvZyl/nordic.nvim' }
+    use { 'rebelot/kanagawa.nvim' }
     use { 'b3nj5m1n/kommentary' }
     use {
       'phaazon/hop.nvim',
