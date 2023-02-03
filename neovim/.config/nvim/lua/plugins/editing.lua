@@ -8,12 +8,10 @@ return {
     {
         'b3nj5m1n/kommentary',
         keys = {
-            { '<leader>cc', '<Plug>kommentary_line_increase', desc = 'Comment Line' },
-            -- TODO: this doesn't work
-            { '<leader>cc', '<Plug>kommentary_line_increase', mode = 'x', desc = 'Comment Lines' },
-            { '<leader>cu', '<Plug>kommentary_line_decrease', desc = 'Uncomment Line' },
-            -- TODO: this doesn't work
-            { '<leader>cu', '<Plug>kommentary_line_decrease', mode = 'x', desc = 'Comment Lines' },
+            { '<leader>cc', '<Plug>kommentary_line_increase' },
+            { '<leader>cc', '<Plug>kommentary_visual_increase', mode = 'x' },
+            { '<leader>cu', '<Plug>kommentary_line_decrease' },
+            { '<leader>cu', '<Plug>kommentary_visual_decrease', mode = 'v' },
         },
     },
     {
