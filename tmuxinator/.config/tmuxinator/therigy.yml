@@ -3,7 +3,7 @@
 name: therigy
 root: ~/src/therigy
 
-on_project_start: nc -w1 -z localhost 6379 | docker run -p 6379:6379 -d redis
+on_project_start: lsof -t -i tcp:6379 2> /dev/null | head -1 | docker run -p 6379:6379 -d redis
 
 windows:
   - stm-ui:
