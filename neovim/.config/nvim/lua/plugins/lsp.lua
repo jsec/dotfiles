@@ -44,6 +44,9 @@ return {
                 on_attach = on_attach,
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git'),
+                settings = {
+                    format = { enable = false }
+                }
             })
 
             lspconfig.eslint.setup({
