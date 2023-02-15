@@ -45,8 +45,8 @@ return {
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git'),
                 settings = {
-                    format = { enable = false }
-                }
+                    format = { enable = false },
+                },
             })
 
             lspconfig.eslint.setup({
