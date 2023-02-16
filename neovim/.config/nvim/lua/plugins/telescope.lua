@@ -19,7 +19,7 @@ return {
             },
         },
         keys = {
-            { '<c-p>', "<cmd>lua require('util.telescope').project_files()<cr>", desc = 'Find Files' },
+            { '<c-p>', '<cmd>Telescope find_files<cr>', desc = 'Find Files' },
             { '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', desc = 'Code Actions' },
             { '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', desc = 'Go To Definition' },
             { '<leader>gr', '<cmd>Telescope lsp_references<cr>', desc = 'Find References' },
