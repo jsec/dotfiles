@@ -45,6 +45,7 @@ return {
             local lspkind = require('lspkind')
             local luasnip = require('luasnip')
             local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            local cmp_util = require('util.cmp')
 
             require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -83,7 +84,7 @@ return {
                             cmp.select_next_item()
                         elseif luasnip.expand_or_jumpable() then
                             luasnip.expand_or_jump()
-                        elseif has_words_before() then
+                        elseif cmp_util.has_words_before() then
                             cmp.complete()
                         else
                             fallback()

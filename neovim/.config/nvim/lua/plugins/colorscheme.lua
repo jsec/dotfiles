@@ -7,8 +7,8 @@ return {
             local nordic = require('nordic')
             nordic.setup({
                 telescope = {
-                    style = 'classic'
-                }
+                    style = 'classic',
+                },
             })
             nordic.load()
         end,
