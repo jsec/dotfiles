@@ -1,16 +1,10 @@
 return {
     {
-        'AlexvZyl/nordic.nvim',
+        'gbprod/nord.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            local nordic = require('nordic')
-            nordic.setup({
-                telescope = {
-                    style = 'classic',
-                },
-            })
-            nordic.load()
-        end,
-    },
+            vim.cmd('colorscheme nord')
+        end
+    }
 }
