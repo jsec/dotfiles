@@ -27,6 +27,7 @@ return {
                 'stylua',
                 'luacheck',
                 'eslint_d',
+                'vtsls'
             },
         },
     },
@@ -40,7 +41,7 @@ return {
             require('mason').setup()
             require('mason-lspconfig').setup()
 
-            lspconfig.tsserver.setup({
+            lspconfig.vtsls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
                 root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git'),
