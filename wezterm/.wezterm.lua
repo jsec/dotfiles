@@ -6,7 +6,7 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.color_scheme = 'nord'
+config.color_scheme = 'Catppuccin Mocha'
 
 config.font = wezterm.font('JetBrains Mono', { weight = 'Medium' })
 config.font_size = 13.0
