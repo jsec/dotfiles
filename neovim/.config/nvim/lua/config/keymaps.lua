@@ -12,3 +12,6 @@ vim.keymap.set('n', '<c-o>', '<cmd>nohlsearch<cr>', { silent = true })
 vim.keymap.set('i', 'jj', '<esc>', { noremap = true })
 vim.keymap.set('n', ';w', '<cmd>w<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>`', '<cmd>ccl<cr>', { silent = true })
+
+-- LSP
+vim.keymap.set('n', '<leader>h', function() vim.lsp.buf.hover() end, { silent = true })
