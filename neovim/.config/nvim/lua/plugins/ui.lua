@@ -3,7 +3,7 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         opts = {
-            theme = 'nordic',
+            theme = 'catppuccin',
             ignore_focus = { 'NvimTree' },
             winbar = {
                 lualine_a = {},
@@ -50,4 +50,11 @@ return {
             },
         },
     },
+    {
+        'j-hui/fidget.nvim',
+        event = 'BufEnter',
+        config = function()
+            require('fidget').setup()
+        end
+    }
 }
