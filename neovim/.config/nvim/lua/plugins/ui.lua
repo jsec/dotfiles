@@ -4,27 +4,7 @@ return {
         'nvim-lualine/lualine.nvim',
         opts = {
             theme = 'catppuccin',
-            ignore_focus = { 'NvimTree' },
-            winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {
-                    { 'filename', path = 1 },
-                },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {},
-            },
-            inactive_winbar = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {
-                    { 'filename', path = 1 },
-                },
-                lualine_x = {},
-                lualine_y = {},
-                lualine_z = {},
-            },
+            ignore_focus = { 'NvimTree' }
         },
     },
     {
