@@ -33,17 +33,6 @@ return {
     },
     { 'williamboman/mason-lspconfig.nvim' },
     {
-        'ray-x/lsp_signature.nvim',
-        config = function()
-            require('lsp_signature').setup({
-                bind = true,
-                handler_opts = {
-                    border = "rounded"
-                }
-            })
-        end
-    },
-    {
         'neovim/nvim-lspconfig',
         config = function()
             local lspconfig = require('lspconfig')

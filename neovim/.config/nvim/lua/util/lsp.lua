@@ -1,15 +1,5 @@
 local M = {}
 
-local border = {
-    { '🭽', 'FloatBorder' },
-    { '▔', 'FloatBorder' },
-    { '🭾', 'FloatBorder' },
-    { '▕', 'FloatBorder' },
-    { '🭿', 'FloatBorder' },
-    { '▁', 'FloatBorder' },
-    { '🭼', 'FloatBorder' },
-    { '▏', 'FloatBorder' },
-}
 
 local set_diagnostic_signs = function()
     local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
@@ -21,9 +11,6 @@ local set_diagnostic_signs = function()
 end
 
 local set_handlers = function()
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
-    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
-
     vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = {
             source = 'always',
@@ -35,7 +22,9 @@ M.on_attach = function(client, bufnr)
     if client.name == 'eslint' then
         client.server_capabilities.documentFormattingProvider = true
     end
-    require('lsp-format').on_attach(client)
+    if client.name ~= 'vtsls' then
+        require('lsp-format').on_attach(client)
+    end
     set_diagnostic_signs()
     set_handlers()
 end
