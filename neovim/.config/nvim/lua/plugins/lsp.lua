@@ -27,7 +27,9 @@ return {
                 'stylua',
                 'luacheck',
                 'eslint_d',
-                'vtsls'
+                'vtsls',
+                'gopls',
+                'golangci_lint_ls'
             },
         },
     },
@@ -58,6 +60,30 @@ return {
                     format = { enable = true },
                 },
             })
+
+            lspconfig.gopls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities
+            })
+
+            lspconfig.golangci_lint_ls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities
+            })
         end,
     },
+    {
+        'ray-x/go.nvim',
+        dependencies = {
+            'ray-x/guihua.lua',
+            'neovim/nvim-lspconfig',
+            'nvim-treesitter/nvim-treesitter'
+        },
+        config = function()
+            require('go').setup()
+        end,
+        event = { 'CmdLineEnter' },
+        ft = { 'go', 'gomod' },
+        build = ':lua require("go.install").update_all_sync()'
+    }
 }
