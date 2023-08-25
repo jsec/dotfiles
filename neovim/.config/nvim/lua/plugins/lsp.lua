@@ -3,11 +3,11 @@ return {
         'lukas-reineke/lsp-format.nvim',
         opts = {
             javascript = {
-                indent_width = 2,
+                indent_width = 4,
                 order = { 'eslint' },
             },
             typescript = {
-                indent_width = 2,
+                indent_width = 4,
                 order = { 'eslint' },
             },
             html = {
@@ -22,18 +22,23 @@ return {
         'williamboman/mason.nvim',
         opts = {
             ensure_installed = {
-                'tsserver',
                 'prettierd',
                 'stylua',
                 'luacheck',
                 'eslint_d',
                 'vtsls',
                 'gopls',
-                'golangci_lint_ls'
+                'golangci_lint_ls',
+                'efm'
             },
         },
     },
     { 'williamboman/mason-lspconfig.nvim' },
+    {
+        'creativenull/efmls-configs-nvim',
+        version = 'v1.x.x',
+        dependencies = { 'neovim/nvim-lspconfig' }
+    },
     {
         'neovim/nvim-lspconfig',
         config = function()
@@ -69,6 +74,21 @@ return {
             lspconfig.golangci_lint_ls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities
+            })
+
+            lspconfig.efm.setup({
+                on_attach = on_attach,
+                capabilities = capabilites,
+                init_options = {
+                    documentFormatting = true
+                },
+                settings = {
+                    languages = {
+                        typescript = {
+                            require('efmls-configs.formatters.prettier_d')
+                        }
+                    }
+                }
             })
         end,
     },
