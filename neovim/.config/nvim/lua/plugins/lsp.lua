@@ -3,12 +3,12 @@ return {
         'lukas-reineke/lsp-format.nvim',
         opts = {
             javascript = {
-                indent_width = 4,
-                order = { 'eslint' },
+                indent_width = 2,
+                order = { 'eslint', 'efm' },
             },
             typescript = {
-                indent_width = 4,
-                order = { 'eslint' },
+                indent_width = 2,
+                order = { 'eslint', 'efm' },
             },
             html = {
                 indent_width = 4,
@@ -16,17 +16,21 @@ return {
             lua = {
                 indent_width = 2,
             },
+            json = {
+                indent_width = 2,
+                order = { 'jsonls' }
+            }
         },
     },
     {
         'williamboman/mason.nvim',
         opts = {
             ensure_installed = {
+                'vtsls',
                 'prettierd',
                 'stylua',
                 'luacheck',
                 'eslint_d',
-                'vtsls',
                 'gopls',
                 'golangci_lint_ls',
                 'efm'
@@ -86,6 +90,26 @@ return {
                     languages = {
                         typescript = {
                             require('efmls-configs.formatters.prettier_d')
+                        },
+                        javascript = {
+                            require('efmls-configs.formatters.prettier_d')
+                        }
+                    }
+                }
+            })
+
+            lspconfig.jsonls.setup({
+                on_attach = on_attach,
+                capabilitites = capabilities,
+                settings = {
+                    schemas = {
+                        {
+                            fileMatch = { 'package.json' },
+                            url = 'https://json.schemastore.org/package.json'
+                        },
+                        {
+                            fileMatch = { 'tsconfig.json', 'tsconfig.*.json' },
+                            url = 'https://json.schemastore.org/tsconfig'
                         }
                     }
                 }
