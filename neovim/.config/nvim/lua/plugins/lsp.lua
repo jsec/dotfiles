@@ -23,21 +23,31 @@ return {
     },
   },
   {
-    'williamboman/mason.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+    },
     opts = {
       ensure_installed = {
+        'pyright',
+        'ruff-lsp',
+        'black',
+        'isort',
+        'taplo',
         'vtsls',
         'prettierd',
         'stylua',
         'luacheck',
         'eslint_d',
         'gopls',
-        'golangci_lint_ls',
-        'efm',
+        'golangci-lint',
+        'efm'
       },
-    },
+      run_on_start = true,
+      debounce_hours = 48
+    }
   },
-  { 'williamboman/mason-lspconfig.nvim' },
   {
     'creativenull/efmls-configs-nvim',
     version = 'v1.x.x',
@@ -81,6 +91,16 @@ return {
       })
 
       lspconfig.golangci_lint_ls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      lspconfig.pyright.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      lspconfig.taplo.setup({
         on_attach = on_attach,
         capabilities = capabilities,
       })
