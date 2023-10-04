@@ -4,17 +4,33 @@ return {
         'nvim-lualine/lualine.nvim',
         opts = {
             theme = 'catppuccin',
-            ignore_focus = { 'NvimTree' }
+            ignore_focus = { 'NvimTree' },
         },
     },
     {
         'lukas-reineke/indent-blankline.nvim',
+        main = 'ibl',
         event = 'BufReadPost',
-        opts = {
-            filetype_exclude = { 'help', 'lazy' },
-            show_trailing_blankline_indent = true,
-            show_current_context = true,
-        },
+        config = function()
+            require('ibl').setup({
+                indent = {
+                    char = '▏',
+                },
+                scope = {
+                    exclude = {
+                        language = {
+                            'help',
+                            'git',
+                            'markdown',
+                            'text',
+                            'terminal',
+                            'lspinfo',
+                            'packer',
+                        },
+                    },
+                },
+            })
+        end,
     },
     {
         'nvim-tree/nvim-tree.lua',
@@ -35,13 +51,13 @@ return {
         name = 'barbecue',
         dependencies = {
             'SmiteshP/nvim-navic',
-            'nvim-tree/nvim-web-devicons'
+            'nvim-tree/nvim-web-devicons',
         },
         config = function()
             require('barbecue').setup({
-                theme = 'catppuccin'
+                theme = 'catppuccin',
             })
-        end
+        end,
     },
     {
         'lewis6991/hover.nvim',
@@ -50,26 +66,26 @@ return {
                 init = function()
                     require('hover.providers.lsp')
                 end,
-                title = true
+                title = true,
             })
 
             vim.keymap.set('n', 'K', require('hover').hover, { desc = 'Hover' })
             vim.keymap.set('n', 'gK', require('hover').hover_select, { desc = 'Hover Select' })
-        end
+        end,
     },
     {
         'folke/noice.nvim',
         event = 'VeryLazy',
         dependencies = {
-            'MunifTanjim/nui.nvim'
+            'MunifTanjim/nui.nvim',
         },
         config = function()
-            require("noice").setup({
+            require('noice').setup({
                 lsp = {
                     override = {
-                      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                      ["vim.lsp.util.stylize_markdown"] = true,
-                      ["cmp.entry.get_documentation"] = true,
+                        ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+                        ['vim.lsp.util.stylize_markdown'] = true,
+                        ['cmp.entry.get_documentation'] = true,
                     },
                 },
                 presets = {
@@ -80,10 +96,10 @@ return {
                     lsp_doc_border = false, -- add a border to hover docs and signature help
                 },
             })
-        end
+        end,
     },
     {
-      'folke/trouble.nvim',
-       dependencies = { "nvim-tree/nvim-web-devicons" },
-    }
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
 }
