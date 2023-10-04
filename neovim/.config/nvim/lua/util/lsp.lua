@@ -1,6 +1,5 @@
 local M = {}
 
-
 local set_diagnostic_signs = function()
     local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 

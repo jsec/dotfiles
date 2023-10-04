@@ -17,5 +17,5 @@ return {
             numhl = false,
         },
     },
-    { 'tpope/vim-fugitive' }
+    { 'tpope/vim-fugitive' },
 }

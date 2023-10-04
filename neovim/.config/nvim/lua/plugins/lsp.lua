@@ -18,8 +18,8 @@ return {
             },
             json = {
                 indent_width = 2,
-                order = { 'jsonls' }
-            }
+                order = { 'jsonls' },
+            },
         },
     },
     {
@@ -33,7 +33,7 @@ return {
                 'eslint_d',
                 'gopls',
                 'golangci_lint_ls',
-                'efm'
+                'efm',
             },
         },
     },
@@ -41,7 +41,7 @@ return {
     {
         'creativenull/efmls-configs-nvim',
         version = 'v1.x.x',
-        dependencies = { 'neovim/nvim-lspconfig' }
+        dependencies = { 'neovim/nvim-lspconfig' },
     },
     {
         'neovim/nvim-lspconfig',
@@ -72,30 +72,30 @@ return {
 
             lspconfig.gopls.setup({
                 on_attach = on_attach,
-                capabilities = capabilities
+                capabilities = capabilities,
             })
 
             lspconfig.golangci_lint_ls.setup({
                 on_attach = on_attach,
-                capabilities = capabilities
+                capabilities = capabilities,
             })
 
             lspconfig.efm.setup({
                 on_attach = on_attach,
                 capabilities = capabilites,
                 init_options = {
-                    documentFormatting = true
+                    documentFormatting = true,
                 },
                 settings = {
                     languages = {
                         typescript = {
-                            require('efmls-configs.formatters.prettier_d')
+                            require('efmls-configs.formatters.prettier_d'),
                         },
                         javascript = {
-                            require('efmls-configs.formatters.prettier_d')
-                        }
-                    }
-                }
+                            require('efmls-configs.formatters.prettier_d'),
+                        },
+                    },
+                },
             })
 
             lspconfig.jsonls.setup({
@@ -105,14 +105,14 @@ return {
                     schemas = {
                         {
                             fileMatch = { 'package.json' },
-                            url = 'https://json.schemastore.org/package.json'
+                            url = 'https://json.schemastore.org/package.json',
                         },
                         {
                             fileMatch = { 'tsconfig.json', 'tsconfig.*.json' },
-                            url = 'https://json.schemastore.org/tsconfig'
-                        }
-                    }
-                }
+                            url = 'https://json.schemastore.org/tsconfig',
+                        },
+                    },
+                },
             })
         end,
     },
@@ -121,13 +121,13 @@ return {
         dependencies = {
             'ray-x/guihua.lua',
             'neovim/nvim-lspconfig',
-            'nvim-treesitter/nvim-treesitter'
+            'nvim-treesitter/nvim-treesitter',
         },
         config = function()
             require('go').setup()
         end,
         event = { 'CmdLineEnter' },
         ft = { 'go', 'gomod' },
-        build = ':lua require("go.install").update_all_sync()'
-    }
+        build = ':lua require("go.install").update_all_sync()',
+    },
 }
