@@ -17,17 +17,9 @@ return {
           char = '▏',
         },
         scope = {
-          exclude = {
-            language = {
-              'help',
-              'git',
-              'markdown',
-              'text',
-              'terminal',
-              'lspinfo',
-              'packer',
-            },
-          },
+          enabled = true,
+          show_start = false,
+          show_end = false
         },
       })
     end,
