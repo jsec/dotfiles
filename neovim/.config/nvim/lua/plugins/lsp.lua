@@ -1,47 +1,29 @@
 return {
   {
-    'lukas-reineke/lsp-format.nvim',
-    opts = {
-      javascript = {
-        indent_width = 2,
-        order = { 'eslint', 'efm' },
-      },
-      typescript = {
-        indent_width = 2,
-        order = { 'eslint', 'efm' },
-      },
-      html = {
-        indent_width = 4,
-      },
-      lua = {
-        indent_width = 2,
-      },
-      json = {
-        indent_width = 2,
-        order = { 'jsonls' },
-      },
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
     },
-  },
-  {
-    'williamboman/mason.nvim',
     opts = {
       ensure_installed = {
+        'pyright',
+        'ruff-lsp',
+        'black',
+        'isort',
+        'taplo',
         'vtsls',
         'prettierd',
         'stylua',
         'luacheck',
         'eslint_d',
         'gopls',
-        'golangci_lint_ls',
-        'efm',
+        'golangci-lint',
+        'efm'
       },
-    },
-  },
-  { 'williamboman/mason-lspconfig.nvim' },
-  {
-    'creativenull/efmls-configs-nvim',
-    version = 'v1.x.x',
-    dependencies = { 'neovim/nvim-lspconfig' },
+      run_on_start = true,
+      debounce_hours = 48
+    }
   },
   {
     'neovim/nvim-lspconfig',
@@ -69,10 +51,7 @@ return {
           '.eslintrc.js',
           '.eslintrc.json',
           '.git'
-        ),
-        settings = {
-          format = { enable = true },
-        },
+        )
       })
 
       lspconfig.gopls.setup({
@@ -85,22 +64,23 @@ return {
         capabilities = capabilities,
       })
 
-      lspconfig.efm.setup({
+      lspconfig.pyright.setup({
         on_attach = on_attach,
-        capabilities = capabilites,
-        init_options = {
-          documentFormatting = true,
-        },
+        capabilities = capabilities,
+      })
+
+      lspconfig.taplo.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      lspconfig.ruff_lsp.setup({
         settings = {
-          languages = {
-            typescript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-            javascript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-          },
+          organizeImports = false
         },
+        on_attach = function(client)
+          client.server_capabilities.hoverProvider = false
+        end
       })
 
       lspconfig.jsonls.setup({
