@@ -1,28 +1,5 @@
 return {
   {
-    'lukas-reineke/lsp-format.nvim',
-    opts = {
-      javascript = {
-        indent_width = 2,
-        order = { 'eslint', 'efm' },
-      },
-      typescript = {
-        indent_width = 2,
-        order = { 'eslint', 'efm' },
-      },
-      html = {
-        indent_width = 4,
-      },
-      lua = {
-        indent_width = 2,
-      },
-      json = {
-        indent_width = 2,
-        order = { 'jsonls' },
-      },
-    },
-  },
-  {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     dependencies = {
       'williamboman/mason.nvim',
@@ -47,11 +24,6 @@ return {
       run_on_start = true,
       debounce_hours = 48
     }
-  },
-  {
-    'creativenull/efmls-configs-nvim',
-    version = 'v1.x.x',
-    dependencies = { 'neovim/nvim-lspconfig' },
   },
   {
     'neovim/nvim-lspconfig',
@@ -79,10 +51,7 @@ return {
           '.eslintrc.js',
           '.eslintrc.json',
           '.git'
-        ),
-        settings = {
-          format = { enable = true },
-        },
+        )
       })
 
       lspconfig.gopls.setup({
@@ -105,22 +74,13 @@ return {
         capabilities = capabilities,
       })
 
-      lspconfig.efm.setup({
-        on_attach = on_attach,
-        capabilities = capabilites,
-        init_options = {
-          documentFormatting = true,
-        },
+      lspconfig.ruff_lsp.setup({
         settings = {
-          languages = {
-            typescript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-            javascript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-          },
+          organizeImports = false
         },
+        on_attach = function(client)
+          client.server_capabilities.hoverProvider = false
+        end
       })
 
       lspconfig.jsonls.setup({

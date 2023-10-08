@@ -19,12 +19,6 @@ local set_handlers = function()
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == 'eslint' then
-    client.server_capabilities.documentFormattingProvider = true
-  end
-  if client.name ~= 'vtsls' then
-    require('lsp-format').on_attach(client)
-  end
   set_diagnostic_signs()
   set_handlers()
 end
