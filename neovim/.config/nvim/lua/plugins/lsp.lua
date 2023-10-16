@@ -35,7 +35,6 @@ return {
         'black',
         'isort',
         'taplo',
-        'vtsls',
         'prettierd',
         'stylua',
         'luacheck',
@@ -62,15 +61,6 @@ return {
       require('mason').setup()
       require('mason-lspconfig').setup()
       local efm_configs = require('efmls-configs')
-
-      lspconfig.vtsls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git'),
-        settings = {
-          format = { enable = false },
-        },
-      })
 
       lspconfig.eslint.setup({
         on_attach = function(client, bufnr)
@@ -168,4 +158,12 @@ return {
     ft = { 'go', 'gomod' },
     build = ':lua require("go.install").update_all_sync()',
   },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 
+      'nvim-lua/plenary.nvim',
+      'neovim/nvim-lspconfig'
+    },
+    opts = {},
+  }
 }
