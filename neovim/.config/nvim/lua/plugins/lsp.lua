@@ -1,28 +1,5 @@
 return {
   {
-   'lukas-reineke/lsp-format.nvim',
-    opts = {
-      javascript = {
-        indent_width = 2,
-        order = { 'eslint', 'efm' },
-      },
-      typescript = {
-        indent_width = 2,
-        order = { 'eslint', 'efm' },
-      },
-      html = {
-        indent_width = 4,
-      },
-      lua = {
-        indent_width = 2,
-      },
-      json = {
-        indent_width = 2,
-        order = { 'jsonls' },
-      },
-    },
-  },
-  {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     dependencies = {
       'williamboman/mason.nvim',
@@ -48,11 +25,6 @@ return {
     }
   },
   {
-    'creativenull/efmls-configs-nvim',
-    version = 'v1.x.x',
-    dependencies = { 'neovim/nvim-lspconfig' },
-  },
-  {
     'neovim/nvim-lspconfig',
     config = function()
       local lspconfig = require('lspconfig')
@@ -60,41 +32,19 @@ return {
       local on_attach = require('util.lsp').on_attach
       require('mason').setup()
       require('mason-lspconfig').setup()
-      local efm_configs = require('efmls-configs')
 
       lspconfig.eslint.setup({
-        on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = true
-          require('lsp-format').on_attach(client, bufnr)
-          on_attach(client, bufnr)
-        end,
+        on_attach = on_attach,
         root_dir = lspconfig.util.root_pattern(
           '.eslintrc',
           '.eslintrc.js',
+          '.eslintrc.cjs',
           '.eslintrc.json',
           '.git'
         ),
         settings = {
-          format = { enable = true }
+          format = { enable = false }
         }
-      })
-
-      lspconfig.efm.setup({
-        on_attach = on_attach,
-        capabilities = capabilites,
-        init_options = {
-          documentFormatting = true,
-        },
-        settings = {
-          languages = {
-            typescript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-            javascript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-          },
-        },
       })
 
       lspconfig.gopls.setup({
