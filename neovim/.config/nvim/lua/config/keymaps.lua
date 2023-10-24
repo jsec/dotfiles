@@ -21,4 +21,3 @@ vim.keymap.set(
 
 -- Trouble
 vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true })
-

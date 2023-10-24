@@ -18,11 +18,11 @@ return {
         'eslint_d',
         'gopls',
         'golangci-lint',
-        'efm'
+        'efm',
       },
       run_on_start = true,
-      debounce_hours = 48
-    }
+      debounce_hours = 48,
+    },
   },
   {
     'neovim/nvim-lspconfig',
@@ -43,8 +43,8 @@ return {
           '.git'
         ),
         settings = {
-          format = { enable = false }
-        }
+          format = { enable = false },
+        },
       })
 
       lspconfig.gopls.setup({
@@ -69,11 +69,11 @@ return {
 
       lspconfig.ruff_lsp.setup({
         settings = {
-          organizeImports = false
+          organizeImports = false,
         },
         on_attach = function(client)
           client.server_capabilities.hoverProvider = false
-        end
+        end,
       })
 
       lspconfig.jsonls.setup({
@@ -110,10 +110,10 @@ return {
   },
   {
     'pmizio/typescript-tools.nvim',
-    dependencies = { 
+    dependencies = {
       'nvim-lua/plenary.nvim',
-      'neovim/nvim-lspconfig'
+      'neovim/nvim-lspconfig',
     },
     opts = {},
-  }
+  },
 }
