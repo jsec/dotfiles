@@ -21,3 +21,6 @@ vim.keymap.set(
 
 -- Trouble
 vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true })
+
+-- Noice
+vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { desc = 'Hover' })

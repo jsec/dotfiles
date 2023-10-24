@@ -52,43 +52,27 @@ return {
     end,
   },
   {
-    'lewis6991/hover.nvim',
-    config = function()
-      require('hover').setup({
-        init = function()
-          require('hover.providers.lsp')
-        end,
-        title = true,
-      })
-
-      vim.keymap.set('n', 'K', require('hover').hover, { desc = 'Hover' })
-      vim.keymap.set('n', 'gK', require('hover').hover_select, { desc = 'Hover Select' })
-    end,
-  },
-  {
     'folke/noice.nvim',
     event = 'VeryLazy',
     dependencies = {
       'MunifTanjim/nui.nvim',
     },
-    config = function()
-      require('noice').setup({
-        lsp = {
-          override = {
-            ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
-            ['vim.lsp.util.stylize_markdown'] = true,
-            ['cmp.entry.get_documentation'] = true,
-          },
+    opts = {
+      lsp = {
+        override = {
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
-        presets = {
-          bottom_search = true,
-          command_palette = true,
-          long_message_to_split = true,
-          inc_rename = false,
-          lsp_doc_border = true,
-        },
-      })
-    end,
+      },
+      presets = {
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = false,
+        lsp_doc_border = true,
+      },
+    },
   },
   {
     'folke/trouble.nvim',
