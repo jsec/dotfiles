@@ -25,6 +25,11 @@ return {
     },
   },
   {
+    'creativenull/efmls-configs-nvim',
+    version = 'v1.x.x',
+    dependencies = { 'neovim/nvim-lspconfig' },
+  },
+  {
     'neovim/nvim-lspconfig',
     config = function()
       local lspconfig = require('lspconfig')
@@ -34,7 +39,11 @@ return {
       require('mason-lspconfig').setup()
 
       lspconfig.eslint.setup({
-        on_attach = on_attach,
+        on_attach = function(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = true
+          require('lsp-format').on_attach(client, bufnr)
+          on_attach(client, bufnr)
+        end,
         root_dir = lspconfig.util.root_pattern(
           '.eslintrc',
           '.eslintrc.js',
@@ -43,7 +52,7 @@ return {
           '.git'
         ),
         settings = {
-          format = { enable = false },
+          format = { enable = true },
         },
       })
 
@@ -92,6 +101,24 @@ return {
           },
         },
       })
+
+      lspconfig.efm.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        init_options = {
+          documentFormatting = true,
+        },
+        settings = {
+          languages = {
+            typescript = {
+              require('efmls-configs.formatters.prettier_d'),
+            },
+            javascript = {
+              require('efmls-configs.formatters.prettier_d'),
+            },
+          },
+        },
+      })
     end,
   },
   {
@@ -114,6 +141,13 @@ return {
       'nvim-lua/plenary.nvim',
       'neovim/nvim-lspconfig',
     },
-    opts = {},
+    config = function()
+      require('typescript-tools').setup({
+        on_attach = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.documentRangeFormattingProvider = false
+        end,
+      })
+    end,
   },
 }

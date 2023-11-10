@@ -18,8 +18,6 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
-        javascript = { { 'eslint_d', 'prettierd' } },
-        typescript = { { 'eslint_d', 'prettierd' } },
       },
       format_on_save = {
         timeout_ms = 1000,
@@ -29,6 +27,22 @@ return {
         shfmt = {
           prepend_args = { '-i', '2' },
         },
+      },
+    },
+  },
+  {
+    'lukas-reineke/lsp-format.nvim',
+    opts = {
+      javascript = {
+        indent_width = 2,
+        order = { 'eslint', 'efm' },
+      },
+      typescript = {
+        indent_width = 2,
+        order = { 'eslint', 'efm' },
+      },
+      html = {
+        indent_width = 2,
       },
     },
   },
