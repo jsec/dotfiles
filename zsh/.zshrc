@@ -26,4 +26,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# rbenv
+eval "$(rbenv init - zsh)"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+
+# direnv
 eval "$(direnv hook zsh)"
