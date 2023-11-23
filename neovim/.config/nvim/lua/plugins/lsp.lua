@@ -18,16 +18,10 @@ return {
         'eslint_d',
         'gopls',
         'golangci-lint',
-        'efm',
       },
       run_on_start = true,
       debounce_hours = 48,
     },
-  },
-  {
-    'creativenull/efmls-configs-nvim',
-    version = 'v1.x.x',
-    dependencies = { 'neovim/nvim-lspconfig' },
   },
   {
     'neovim/nvim-lspconfig',
@@ -101,24 +95,6 @@ return {
           },
         },
       })
-
-      lspconfig.efm.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        init_options = {
-          documentFormatting = true,
-        },
-        settings = {
-          languages = {
-            typescript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-            javascript = {
-              require('efmls-configs.formatters.prettier_d'),
-            },
-          },
-        },
-      })
     end,
   },
   {
@@ -128,12 +104,12 @@ return {
       'neovim/nvim-lspconfig',
       'nvim-treesitter/nvim-treesitter',
     },
+    ft = { 'go', 'gomod' },
+    event = { 'CmdLineEnter' },
+    build = ':lua require("go.install").update_all_sync()',
     config = function()
       require('go').setup()
     end,
-    event = { 'CmdLineEnter' },
-    ft = { 'go', 'gomod' },
-    build = ':lua require("go.install").update_all_sync()',
   },
   {
     'pmizio/typescript-tools.nvim',
