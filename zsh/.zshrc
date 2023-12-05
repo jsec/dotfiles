@@ -34,4 +34,7 @@ PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 # direnv
 eval "$(direnv hook zsh)"
 
+# pipx
+PATH="$HOME/.local/bin:$PATH"
+
 export PATH
