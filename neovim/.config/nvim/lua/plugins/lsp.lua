@@ -7,6 +7,7 @@ return {
     },
     opts = {
       ensure_installed = {
+        'vtsls',
         'pyright',
         'ruff-lsp',
         'black',
@@ -32,9 +33,18 @@ return {
       require('mason').setup()
       require('mason-lspconfig').setup()
 
+      lspconfig.vtsls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git'),
+        settings = {
+          format = { enable = false },
+        },
+      })
+
       lspconfig.eslint.setup({
         on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = true
+          client.server_capabilities.documentFormattingProvider = false
           require('lsp-format').on_attach(client, bufnr)
           on_attach(client, bufnr)
         end,
@@ -110,20 +120,5 @@ return {
     config = function()
       require('go').setup()
     end,
-  },
-  {
-    'pmizio/typescript-tools.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'neovim/nvim-lspconfig',
-    },
-    config = function()
-      require('typescript-tools').setup({
-        on_attach = function(client)
-          client.server_capabilities.documentFormattingProvider = false
-          client.server_capabilities.documentRangeFormattingProvider = false
-        end,
-      })
-    end,
-  },
+  }
 }
