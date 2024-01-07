@@ -9,7 +9,7 @@ return {
         javascript = { 'eslint_d', 'dprint' },
         typescript = { 'eslint_d', 'dprint' },
         python = { 'isort', 'black' },
-        go = { 'gofmt' }
+        go = { 'gofmt', 'goimports' }
       },
       formatters = {
         dprint = {
