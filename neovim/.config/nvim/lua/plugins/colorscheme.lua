@@ -36,34 +36,4 @@ return {
       vim.cmd('colorscheme catppuccin')
     end,
   },
-  {
-    'loctvl842/monokai-pro.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('monokai-pro').setup({
-        transparent_background = false,
-        devicons = true,
-        filter = "octagon",
-        background_clear = {
-          "telescope",
-          -- "nvim-tree"
-        },
-        plugins = {
-          indent_blankline = {
-            context_highlight = "default",
-            context_start_underline = false
-          }
-        }
-      })
-    end
-  },
-  {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
-    priority = 1000,
-    --[[ config = function()
-        require('nordic').load()
-    end ]]
-  }
 }
