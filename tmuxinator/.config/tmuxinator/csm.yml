@@ -1,0 +1,31 @@
+# /Users/jarrod.seccombe/.config/tmuxinator/csm.yml
+
+name: CSM
+root: ~/src/ms/SnapNurse
+
+windows:
+  - api:
+      root: ~/src/ms/SnapNurse
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        - 
+        - 
+        -
+  - ui:
+      root: ~/src/ms/SnapNurse/frontend
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        -
+        -
+        - 
+  - database:
+      root: ~/src/ms/SnapNurse
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        -
+        -
+        - 
+  - shell:
+      root: ~/src/ms/SnapNurse
+      panes:
+        -
