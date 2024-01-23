@@ -5,27 +5,31 @@ root: ~/src/ms/SnapNurse
 
 windows:
   - api:
-      root: ~/src/ms/SnapNurse
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         - 
-        - 
         -
+        - yarn start-dev
   - ui:
       root: ~/src/ms/SnapNurse/frontend
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         -
         -
-        - 
-  - database:
-      root: ~/src/ms/SnapNurse
+        - yarn start
+  - clientPortal:
+      root: ~/src/ms/ClientPortalApi
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         -
         -
         - 
+  - database:
+      panes:
+        -
   - shell:
-      root: ~/src/ms/SnapNurse
+      panes:
+        -
+  - sandbox:
       panes:
         -
