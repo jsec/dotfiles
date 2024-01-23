@@ -6,15 +6,20 @@ return {
     opts = {
       log_level = vim.log.levels.DEBUG,
       formatters_by_ft = {
-        javascript = { 'eslint_d', 'dprint' },
-        typescript = { 'eslint_d', 'dprint' },
+        javascript = { 'eslint_d', 'prettierd' },
+        typescript = { 'eslint_d', 'prettierd' },
         python = { 'isort', 'black' },
         go = { 'gofmt', 'goimports' }
       },
       formatters = {
-        dprint = {
+        eslint_d = {
           condition = function(self, ctx)
-            return vim.fs.find({ 'dprint.json' }, { path = ctx.filename, upward = true })[1]
+            return vim.fs.find({ '.eslintrc.js '}, { path = ctx.filename, upward = true })[1]
+          end
+        },
+        prettierd = {
+          condition = function(self, ctx)
+            return vim.fs.find({ '.prettierrc.js' }, { path = ctx.filename, upward = true })[1]
           end
         }
       },
