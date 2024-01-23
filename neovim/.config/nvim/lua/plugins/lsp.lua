@@ -45,7 +45,6 @@ return {
       lspconfig.eslint.setup({
         on_attach = function(client, bufnr)
           client.server_capabilities.documentFormattingProvider = false
-          require('lsp-format').on_attach(client, bufnr)
           on_attach(client, bufnr)
         end,
         root_dir = lspconfig.util.root_pattern(
