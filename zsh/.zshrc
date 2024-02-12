@@ -46,4 +46,8 @@ eval "$(direnv hook zsh)"
 # pipx
 PATH="$HOME/.local/bin:$PATH"
 
+if [ -f ~/.zsh/azure.zsh ]; then
+    source ~/.zsh/azure.zsh
+fi
+
 export PATH
