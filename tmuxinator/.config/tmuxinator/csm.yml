@@ -9,14 +9,33 @@ windows:
       panes:
         - 
         -
-        - yarn start-dev
+        - 
+
+  - api shell:
+      layout: even-horizontal
+      panes:
+        - 
+        - yarn start-dev 
+
   - ui:
       root: ~/src/ms/SnapNurse/frontend
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         -
         -
+        - 
+
+  - ui shell:
+      root: ~/src/ms/SnapNurse/frontend
+      layout: even-horizontal
+      panes:
+        - 
         - yarn start
+
+  - database:
+      panes:
+        -
+
   - clientPortal:
       root: ~/src/ms/ClientPortalApi
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
@@ -24,12 +43,11 @@ windows:
         -
         -
         - 
-  - database:
-      panes:
-        -
+
   - shell:
       panes:
         -
+
   - sandbox:
       panes:
         -
