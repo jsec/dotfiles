@@ -6,8 +6,8 @@ return {
     opts = {
       log_level = vim.log.levels.DEBUG,
       formatters_by_ft = {
-        javascript = { 'eslint_d', 'dprint' },
-        typescript = { 'eslint_d', 'dprint' },
+        javascript = { 'eslint', 'dprint' },
+        typescript = { 'eslint', 'dprint' },
         python = { 'isort', 'black' },
         go = { 'gofmt', 'goimports' }
       },

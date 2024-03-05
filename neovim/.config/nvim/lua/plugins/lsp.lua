@@ -44,8 +44,7 @@ return {
 
       lspconfig.eslint.setup({
         on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = false
-          require('lsp-format').on_attach(client, bufnr)
+          client.server_capabilities.documentFormattingProvider = true
           on_attach(client, bufnr)
         end,
         root_dir = lspconfig.util.root_pattern(
@@ -104,6 +103,14 @@ return {
             },
           },
         },
+      })
+
+      require'lspconfig'.nim_langserver.setup({
+        settings = {
+          nim = {
+            nimsuggestPath = "/Users/jsec/.nimble/bin/nimsuggest"
+          }
+        }
       })
     end,
   },

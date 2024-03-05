@@ -31,6 +31,9 @@ eval "$(pyenv init -)"
 eval "$(rbenv init - zsh)"
 PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
+# Nimble (Nim)
+PATH="$HOME/.nimble/bin:$PATH"
+
 # direnv
 eval "$(direnv hook zsh)"
 

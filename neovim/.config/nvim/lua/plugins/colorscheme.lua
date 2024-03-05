@@ -59,11 +59,8 @@ return {
     end
   },
   {
-    'AlexvZyl/nordic.nvim',
+    'felipeagc/fleet-theme-nvim',
     lazy = false,
-    priority = 1000,
-    --[[ config = function()
-        require('nordic').load()
-    end ]]
+    priority = 1000
   }
 }
