@@ -34,7 +34,7 @@ return {
     },
     opts = {
       filters = {
-        custom = { '.git', 'node_modules', 'dist' },
+        custom = { '^.git$', 'node_modules', 'dist' },
       },
     },
   },
