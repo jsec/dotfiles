@@ -36,4 +36,19 @@ return {
       vim.cmd('colorscheme catppuccin')
     end,
   },
+  {
+      'aktersnurra/no-clown-fiesta.nvim',
+      lazy = false,
+      priority = 1002,
+      config = function()
+        require('no-clown-fiesta').setup({
+            transparent = false,
+            styles = {
+                comments = { italic = true },
+                keywords = { italic = true },
+                lsp = { underline = true }
+            }
+        })
+      end
+  }
 }

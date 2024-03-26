@@ -50,4 +50,8 @@ if [ -f ~/.zsh/azure.zsh ]; then
     source ~/.zsh/azure.zsh
 fi
 
+if [ -f ~/.zsh/git.zsh ]; then
+    source ~/.zsh/git.zsh
+fi
+
 export PATH
