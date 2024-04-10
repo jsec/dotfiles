@@ -35,7 +35,10 @@ return {
           'vue',
           'yaml',
         },
-        highlight = { enable = true },
+        highlight = { 
+            enable = true,
+            additional_vim_regex_highlighting = false
+        },
         query_linter = {
           enable = true,
           use_virtual_text = true,
@@ -47,7 +50,6 @@ return {
           updatetime = 25,
           persist_queries = true,
         },
-        additional_vim_regex_highlighting = false,
       })
     end,
   },
