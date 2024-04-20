@@ -37,30 +37,18 @@ return {
     end,
   },
   {
-    'loctvl842/monokai-pro.nvim',
-    lazy = false,
+    "felipeagc/fleet-theme-nvim",
     priority = 1000,
-    config = function()
-      require('monokai-pro').setup({
-        transparent_background = false,
-        devicons = true,
-        filter = "octagon",
-        background_clear = {
-          "telescope",
-          -- "nvim-tree"
-        },
-        plugins = {
-          indent_blankline = {
-            context_highlight = "default",
-            context_start_underline = false
-          }
-        }
-      })
-    end
+    lazy = false
+  },
+  { 
+    "EdenEast/nightfox.nvim",
+    priority = 1000,
+    lazy = false
   },
   {
-    'felipeagc/fleet-theme-nvim',
-    lazy = false,
-    priority = 1000
+    'AlexvZyl/nordic.nvim',
+    priority = 1000,
+    lazy = false
   }
 }

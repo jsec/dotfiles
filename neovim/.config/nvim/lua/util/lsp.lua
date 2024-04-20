@@ -19,6 +19,7 @@ local set_handlers = function()
 end
 
 M.on_attach = function(client, bufnr)
+  client.server_capabilities.semanticTokensProvider = nil
   set_diagnostic_signs()
   set_handlers()
 end
