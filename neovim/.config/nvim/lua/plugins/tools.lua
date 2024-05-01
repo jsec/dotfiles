@@ -17,5 +17,10 @@ return {
       numhl = false,
     },
   },
-  { 'tpope/vim-fugitive' },
+  {
+    "FabijanZulj/blame.nvim",
+    config = function()
+        require("blame").setup()
+    end
+  }
 }

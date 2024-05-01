@@ -35,5 +35,10 @@ return {
 
       vim.cmd('colorscheme catppuccin')
     end,
+  },
+  {
+      'AlexvZyl/nordic.nvim',
+      lazy = false,
+      priority = 1000
   }
 }
