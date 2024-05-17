@@ -55,3 +55,5 @@ if [ -f ~/.zsh/git.zsh ]; then
 fi
 
 export PATH
+
+export IGNOREEOF=10

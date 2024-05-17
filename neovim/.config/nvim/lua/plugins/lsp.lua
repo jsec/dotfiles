@@ -119,5 +119,12 @@ return {
     config = function()
       require('go').setup()
     end,
+  },
+  {
+      'pmizio/typescript-tools.nvim',
+      dependencies = {
+          'nvim-lua/plenary.nvim',
+          'neovim/nvim-lspconfig'
+      }
   }
 }
