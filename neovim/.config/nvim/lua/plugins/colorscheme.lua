@@ -37,18 +37,19 @@ return {
     end,
   },
   {
-    "felipeagc/fleet-theme-nvim",
+    'Mofiqul/vscode.nvim',
     priority = 1000,
-    lazy = false
-  },
-  { 
-    "EdenEast/nightfox.nvim",
-    priority = 1000,
-    lazy = false
+    lazy = false,
+    config = function()
+      require('vscode').setup({
+        transparent = false,
+        italic_comments = true
+      })
+    end
   },
   {
-    'AlexvZyl/nordic.nvim',
-    priority = 1000,
+    "rebelot/kanagawa.nvim",
+    priority = 100,
     lazy = false
   }
 }
