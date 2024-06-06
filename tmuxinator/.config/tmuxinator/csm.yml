@@ -4,43 +4,33 @@ name: CSM
 root: ~/src/ms/SnapNurse
 
 windows:
-  - api:
+  - editor:
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         - 
         -
         - 
 
-  - api shell:
+  - api:
       layout: even-horizontal
       panes:
-        - 
         - yarn start-dev 
 
   - ui:
       root: ~/src/ms/SnapNurse/frontend
-      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
-      panes:
-        -
-        -
-        - 
-
-  - ui shell:
-      root: ~/src/ms/SnapNurse/frontend
       layout: even-horizontal
       panes:
-        - 
         - yarn start
 
   - database:
       panes:
-        -
+        - yarn migrate
 
-  - clientPortal:
-      root: ~/src/ms/ClientPortalApi
+  - rewrite:
+      root: ~/src/ms/csm-api
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
-        -
+        - 
         -
         - 
 

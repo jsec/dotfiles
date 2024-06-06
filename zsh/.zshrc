@@ -46,14 +46,17 @@ eval "$(direnv hook zsh)"
 # pipx
 PATH="$HOME/.local/bin:$PATH"
 
+# Azure SUPER SECRET SAUCE
 if [ -f ~/.zsh/azure.zsh ]; then
     source ~/.zsh/azure.zsh
 fi
 
+# Custom git functions
 if [ -f ~/.zsh/git.zsh ]; then
     source ~/.zsh/git.zsh
 fi
 
 export PATH
 
+# I like jamming CTRL-C and CTRL-D a lot, leave me alone
 export IGNOREEOF=10
