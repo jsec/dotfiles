@@ -41,3 +41,6 @@ vim.opt.backupdir = cache_dir .. 'backup/'
 vim.opt.directory = cache_dir .. 'swap/'
 vim.opt.undofile = true
 vim.opt.undodir = cache_dir .. 'undo/'
+
+-- Prevent LSP from overwriting TS color settings
+vim.highlight.priorities.semantic_tokens = 95

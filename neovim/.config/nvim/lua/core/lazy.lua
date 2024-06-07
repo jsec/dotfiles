@@ -19,9 +19,9 @@ end
 
 function M.init()
   M.check_install()
-  require('config.options')
-  require('config.keymaps')
-  require('config.autocmd')
+  require('core.options')
+  require('core.keymaps')
+  require('core.autocmd')
   require('lazy').setup('plugins')
 end
 

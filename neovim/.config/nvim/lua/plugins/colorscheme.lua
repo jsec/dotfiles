@@ -40,5 +40,10 @@ return {
       'EdenEast/nightfox.nvim',
       priority = 1000,
       lazy = false
+  },
+  {
+      'doums/dark.nvim',
+      priority = 1000,
+      lazy = false
   }
 }
