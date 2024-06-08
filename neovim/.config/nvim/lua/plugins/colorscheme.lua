@@ -37,19 +37,14 @@ return {
     end,
   },
   {
-    'Mofiqul/vscode.nvim',
+  -- carbonfox appears to be a winner, maybe duskfox too
+    "EdenEast/nightfox.nvim",
     priority = 1000,
-    lazy = false,
-    config = function()
-      require('vscode').setup({
-        transparent = false,
-        italic_comments = true
-      })
-    end
+    lazy = false
   },
   {
-    "rebelot/kanagawa.nvim",
-    priority = 100,
+    'projekt0n/github-nvim-theme',
+    priority = 1000,
     lazy = false
   }
 }
