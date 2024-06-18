@@ -33,6 +33,7 @@ return {
           'toml',
           'tsx',
           'typescript',
+          'typespec',
           'vim',
           'vue',
           'yaml',
