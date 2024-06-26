@@ -105,12 +105,17 @@ return {
         },
       })
 
-      require'lspconfig'.nim_langserver.setup({
+      lspconfig.tsp_server.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      require('lspconfig').nim_langserver.setup({
         settings = {
           nim = {
-            nimsuggestPath = "/Users/jsec/.nimble/bin/nimsuggest"
-          }
-        }
+            nimsuggestPath = '/Users/jsec/.nimble/bin/nimsuggest',
+          },
+        },
       })
     end,
   },
@@ -127,5 +132,5 @@ return {
     config = function()
       require('go').setup()
     end,
-  }
+  },
 }

@@ -17,7 +17,7 @@ return {
             dim_dirname = true,
             bold_basename = true,
             dim_context = false,
-            alt_background = false
+            alt_background = false,
           },
           gitsigns = true,
           mason = true,
@@ -28,28 +28,23 @@ return {
           treesitter = true,
           treesitter_context = true,
           telescope = {
-            enabled = true
-          }
-        }
+            enabled = true,
+          },
+        },
       })
 
       vim.cmd('colorscheme catppuccin')
     end,
   },
   {
-  -- carbonfox appears to be a winner, maybe duskfox too
-    "EdenEast/nightfox.nvim",
+    -- carbonfox appears to be a winner, maybe duskfox too
+    'EdenEast/nightfox.nvim',
     priority = 1000,
-    lazy = false
+    lazy = false,
   },
   {
-    'shaunsingh/nord.nvim',
+    'rebelot/kanagawa.nvim',
+    lazy = false,
     priority = 1000,
-    lazy = false
   },
-  {
-    'rebelot/kanagawa.nvim', -- You can replace this with your favorite colorscheme
-    lazy = false, -- We want the colorscheme to load immediately when starting Neovim
-    priority = 1000, -- Load the colorscheme before other non-lazy-loaded plugins
-  }
 }
