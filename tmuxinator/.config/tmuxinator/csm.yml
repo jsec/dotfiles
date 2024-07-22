@@ -26,14 +26,6 @@ windows:
       panes:
         - yarn migrate
 
-  - rewrite:
-      root: ~/src/ms/csm-api
-      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
-      panes:
-        - 
-        -
-        - 
-
   - shell:
       panes:
         -
