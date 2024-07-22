@@ -37,13 +37,14 @@ return {
     end,
   },
   {
-      'EdenEast/nightfox.nvim',
+      'Mofiqul/vscode.nvim',
+      lazy = false,
       priority = 1000,
-      lazy = false
-  },
-  {
-      'doums/dark.nvim',
-      priority = 1000,
-      lazy = false
+      config = function()
+          require('vscode').setup({
+              transparent = false,
+              italic_coments = true
+          })
+      end
   }
 }
