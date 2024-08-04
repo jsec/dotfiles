@@ -22,7 +22,7 @@ return {
           gitsigns = true,
           mason = true,
           noice = true,
-          cmp = true,
+          -- cmp = true,
           semantic_tokens = true,
           nvimtree = true,
           treesitter = true,
@@ -45,5 +45,5 @@ return {
     'Mofiqul/vscode.nvim',
     priority = 1000,
     lazy = false
-  },
+  }
 }
