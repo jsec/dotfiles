@@ -22,7 +22,7 @@ return {
           gitsigns = true,
           mason = true,
           noice = true,
-          -- cmp = true,
+          cmp = true,
           semantic_tokens = true,
           nvimtree = true,
           treesitter = true,
