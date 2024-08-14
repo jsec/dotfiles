@@ -37,11 +37,6 @@ return {
     end,
   },
   {
-    'EdenEast/nightfox.nvim',
-    priority = 1000,
-    lazy = false,
-  },
-  {
     'Mofiqul/vscode.nvim',
     priority = 1000,
     lazy = false
