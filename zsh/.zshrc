@@ -22,27 +22,7 @@ eval "$(starship init zsh)"
 export VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# rbenv
-eval "$(rbenv init - zsh)"
-PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-
-# Nimble (Nim)
-PATH="$HOME/.nimble/bin:$PATH"
+export PATH
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# pipx
-PATH="$HOME/.local/bin:$PATH"
-
-# rust
-PATH="$HOME/.cargo/bin:$PATH"
-source "$HOME/.cargo/env"
-
-export PATH
-
