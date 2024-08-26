@@ -1,5 +1,6 @@
 alias vim=nvim
 export EDITOR='vim'
+alias mux=tmuxinator
 
 export DISABLE_AUTO_TITLE=true
 export GOPATH=/Users/jsec/.go
