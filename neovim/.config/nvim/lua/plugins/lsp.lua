@@ -16,7 +16,7 @@ return {
         'prettierd',
         'stylua',
         'luacheck',
-        'eslint_d',
+        'eslint-lsp',
         'gopls',
         'golangci-lint',
       },
