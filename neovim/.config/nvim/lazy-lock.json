@@ -1,6 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "7ad2eaeaca56d6ed63acacbfc114b99f1f67b982" },
   "barbecue": { "branch": "main", "commit": "3e31404f0b93a2c30d151abf0648650ac811c664" },
+  "blame.nvim": { "branch": "main", "commit": "cfc4385d979c7e21a5c7e237c391be0948c5ee95" },
   "catppuccin": { "branch": "main", "commit": "4fd72a9ab64b393c2c22b168508fd244877fec96" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
@@ -39,6 +40,5 @@
   "telescope.nvim": { "branch": "master", "commit": "5972437de807c3bc101565175da66a1aa4f8707a" },
   "todo-comments.nvim": { "branch": "main", "commit": "8f45f353dc3649cb9b44cecda96827ea88128584" },
   "trouble.nvim": { "branch": "main", "commit": "6efc446226679fda0547c0fd6a7892fd5f5b15d8" },
-  "vim-fugitive": { "branch": "master", "commit": "0444df68cd1cdabc7453d6bd84099458327e5513" },
   "vscode.nvim": { "branch": "main", "commit": "7de58b7a6d55fe48475d0ba2fddbcec871717761" }
 }
