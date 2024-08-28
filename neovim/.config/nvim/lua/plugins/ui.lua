@@ -36,6 +36,9 @@ return {
       filters = {
         custom = { '^.git$', 'node_modules', 'dist' },
       },
+      view = {
+          width = 35
+      }
     },
   },
   {
