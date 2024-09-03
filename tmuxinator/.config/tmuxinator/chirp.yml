@@ -4,21 +4,20 @@ name: ParkChirp
 root: ~/src/dev
 
 windows:
-  - editor:
-      root: ~/src/dev
+  - monthly:
+      root: ~/src/dev/ParkingAdvisors-Monthly
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         - vim
         -
         -
-  - chirp2:
-      root: ~/src/dev/chirp2
+  - admin-ui:
+      root: ~/src/dev/ParkingAdvisors-Monthly/apps/admin-dashboard
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
-        - yarn start
-  - monthly:
-      root: ~/src/dev/ParkingAdvisors-Monthly
-      panes:
-        - yarn dev
+        - vim
+        -
+        -
   - infra:
       root: ~/src/dev/infra
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
@@ -26,6 +25,18 @@ windows:
         -
         -
         - 
+  - database:
+      panes:
+        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/migration
+        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/parkchirp-monthly-api/migrations
+  - chirp2:
+      root: ~/src/dev/chirp2
+      panes:
+        - yarn start
+  - logs:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        - yarn dev
   - shell:
       root: ~/src/dev
       panes:
