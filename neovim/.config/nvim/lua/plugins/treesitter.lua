@@ -1,5 +1,4 @@
 return {
-  { 'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle' },
   {
     'nvim-treesitter/nvim-treesitter',
     config = function()
@@ -41,12 +40,6 @@ return {
           enable = true,
           use_virtual_text = true,
           lint_events = { 'BufWrite', 'CursorHold' },
-        },
-        playground = {
-          enable = true,
-          disable = {},
-          updatetime = 25,
-          persist_queries = true,
         },
         additional_vim_regex_highlighting = false,
       })
