@@ -25,7 +25,7 @@ windows:
       panes:
         -
         -
-  - monthly-logs:
+  - services:
       root: ~/src/dev/ParkingAdvisors-Monthly
       panes:
         - yarn dev
@@ -43,7 +43,7 @@ windows:
         - 
   - database:
       panes:
-        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/migration
+        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/migration && yarn migrate:dev
         - cd ~/src/dev/ParkingAdvisors-Monthly/apps/parkchirp-monthly-api/migrations
   - shell:
       root: ~/src/dev
