@@ -29,3 +29,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias nombom='yarn clean && yarn && yarn upgrade:shared && yarn dev'
+
+eval "$(zoxide init zsh --cmd cd --hook prompt)"
