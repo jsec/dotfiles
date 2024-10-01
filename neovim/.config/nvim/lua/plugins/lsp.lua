@@ -17,8 +17,6 @@ return {
         'stylua',
         'luacheck',
         'eslint-lsp',
-        'gopls',
-        'golangci-lint',
       },
       run_on_start = true,
       debounce_hours = 48,
