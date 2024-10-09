@@ -21,6 +21,9 @@ eval "$(starship init zsh)"
 
 export PATH
 
+# make ulimit not suck
+ulimit -n 10240
+
 # direnv
 eval "$(direnv hook zsh)"
 
@@ -33,3 +36,12 @@ alias nombom='yarn clean && yarn && yarn upgrade:shared && yarn dev'
 alias fbr='git checkout $(git branch | fzf)'
 
 eval "$(zoxide init zsh --cmd cd --hook prompt)"
+
+# Work specific env variables
+if [ -f ~/.zsh/env.zsh ]; then
+    source ~/.zsh/env.zsh
+fi
+
+if [ -f ~/.zsh/git.zsh ]; then
+    source ~/.zsh/git.zsh
+fi
