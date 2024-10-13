@@ -31,9 +31,6 @@ eval "$(pyenv init -)"
 eval "$(rbenv init - zsh)"
 PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
-# Nimble (Nim)
-PATH="$HOME/.nimble/bin:$PATH"
-
 # direnv
 eval "$(direnv hook zsh)"
 
@@ -44,5 +41,10 @@ PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 source "$HOME/.cargo/env"
 
-export PATH
+#psql
+PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+#mysql
+PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+export PATH
