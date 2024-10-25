@@ -45,14 +45,9 @@ return {
           client.server_capabilities.documentFormattingProvider = true
           on_attach(client, bufnr)
         end,
-        root_dir = lspconfig.util.root_pattern(
-          '.eslintrc',
-          '.eslintrc.js',
-          '.eslintrc.cjs',
-          '.eslintrc.json',
-          '.git'
-        ),
+        root_dir = lspconfig.util.find_git_ancestor,
         settings = {
+          workingDirectory = { mode = 'location' },
           format = { enable = true },
         },
       })
