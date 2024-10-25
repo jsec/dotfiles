@@ -45,3 +45,7 @@ fi
 if [ -f ~/.zsh/git.zsh ]; then
     source ~/.zsh/git.zsh
 fi
+
+if [ -f ~/.zsh/functions.zsh ]; then
+    source ~/.zsh/functions.zsh
+fi
