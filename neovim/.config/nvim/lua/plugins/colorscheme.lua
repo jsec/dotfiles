@@ -41,10 +41,41 @@ return {
       lazy = false,
       priority = 1000,
       config = function()
+          local colors = require('vscode.colors').get_colors()
           require('vscode').setup({
-              italic_comments = true
+              italic_comments = true,
+              group_overrides = {
+                    ["@variable.builtin.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
+                    ["@property.method.typescript"] = { fg = colors.vscYellow, bg = "NONE" },
+                    ["@constructor.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
+                    ["@keyword.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
+                    ["@keyword.return.typescript"] = { fg = colors.vscPink, bg = "NONE" },
+                }
           })
       end
-
+  },
+  {
+      'projekt0n/github-nvim-theme',
+      name = 'github-theme',
+      lazy = false,
+      priority = 1000,
+      config = function()
+          require('github-theme').setup({
+              options = {
+                  styles = {
+                      comments = 'italic',
+                      keywords = 'italic',
+                      functions = 'italic',
+                      conditionals = 'italic'
+                  },
+                  darken = {
+                      floats = true,
+                      sidebars = {
+                          enable = true
+                      }
+                  }
+              }
+          })
+      end
   }
 }
