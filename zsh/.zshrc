@@ -33,8 +33,6 @@ export NVM_DIR="$HOME/.nvm"
 
 alias nombom='yarn clean && yarn && yarn upgrade:shared && yarn dev'
 
-alias fbr='git checkout $(git branch | fzf)'
-
 eval "$(zoxide init zsh --cmd cd --hook prompt)"
 
 # Work specific env variables
