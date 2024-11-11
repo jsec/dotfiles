@@ -9,7 +9,7 @@ return {
       ensure_installed = {
         'vtsls',
         'pyright',
-        'ruff-lsp',
+        'ruff',
         'black',
         'isort',
         'taplo',
@@ -72,7 +72,7 @@ return {
         capabilities = capabilities,
       })
 
-      lspconfig.ruff_lsp.setup({
+      lspconfig.ruff.setup({
         settings = {
           organizeImports = false,
         },
