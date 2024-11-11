@@ -41,8 +41,10 @@ return {
       lazy = false,
       priority = 1000,
       config = function()
+          local vscode = require('vscode')
           local colors = require('vscode.colors').get_colors()
-          require('vscode').setup({
+
+          vscode.setup({
               italic_comments = true,
               group_overrides = {
                     ["@variable.builtin.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
