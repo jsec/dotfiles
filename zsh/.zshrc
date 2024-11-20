@@ -41,10 +41,17 @@ PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 source "$HOME/.cargo/env"
 
-#psql
+# psql
 PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-#mysql
+# mysql
 PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# zoxide
+eval "$(zoxide init zsh)"
+alias cd=z
+
+# air
+alias air='$(go env GOPATH)/bin/air'
 
 export PATH
