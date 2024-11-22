@@ -19,6 +19,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # Prompt
 eval "$(starship init zsh)"
 
+# Mysql-client
+PATH="$PATH:/opt/homebrew/opt/mysql-client@8.4/bin"
+
 export PATH
 
 # make ulimit not suck
