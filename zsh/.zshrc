@@ -54,4 +54,7 @@ alias cd=z
 # air
 alias air='$(go env GOPATH)/bin/air'
 
+# git branch autocompletion
+autoload -Uz compinit && compinit
+
 export PATH
