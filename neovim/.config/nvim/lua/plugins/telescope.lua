@@ -63,7 +63,6 @@ return {
           preview_cutoff = 120,
         },
         file_ignore_patterns = { '.git' },
-        -- path_display = { 'shorten' },
         winblend = 0,
         border = {},
         borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
