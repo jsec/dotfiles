@@ -57,4 +57,7 @@ alias air='$(go env GOPATH)/bin/air'
 # git branch autocompletion
 autoload -Uz compinit && compinit
 
+# case insensitive completions
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
 export PATH
