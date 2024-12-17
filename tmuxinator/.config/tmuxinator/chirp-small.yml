@@ -1,0 +1,44 @@
+# /Users/jarrod.seccombe/.config/tmuxinator/chirp.yml
+
+name: ParkChirp
+root: ~/src/dev
+
+on_project_start: cd chirp2 && yarn start && cd ../ParkingAdvisors-Monthly
+
+windows:
+  - monthly:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        - vim
+  - admin-ui:
+      root: ~/src/dev/ParkingAdvisors-Monthly/apps/admin-dashboard
+      panes:
+        - 
+  - monthly-shell:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        -
+  - services:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        - yarn cleanAndRun
+  - infra:
+      root: ~/src/dev/infra
+      panes:
+        - 
+  - infra-shell:
+      root: ~/src/dev/infra
+      panes:
+        -
+  - database:
+      panes:
+        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/migration && yarn migrate:dev
+        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/parkchirp-monthly-api/migrations
+  - shell:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        -
+  - sandbox:
+      root: ~/src/node/sandbox
+      panes:
+        -
