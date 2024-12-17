@@ -50,6 +50,10 @@ return {
           workingDirectory = { mode = 'location' },
           format = { enable = true },
         },
+        flags = os.getenv('DEBOUNCE_ESLINT') and {
+            allow_incremental_sync = false,
+            debounce_text_changes = 1000
+        } or nil
       })
 
       lspconfig.gopls.setup({
