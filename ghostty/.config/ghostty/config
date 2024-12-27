@@ -1,0 +1,7 @@
+font-family = "JetBrains Mono Medium"
+font-size = 13
+cursor-style = block
+cursor-style-blink = false
+macos-titlebar-proxy-icon = hidden
+theme = catppuccin-mocha
+shell-integration-features = no-cursor
