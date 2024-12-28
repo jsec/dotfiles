@@ -1,5 +1,9 @@
-font-family = "JetBrains Mono Medium"
+font-family = JetBrains Mono Medium
+font-family-bold = JetBrains Mono Bold
+font-family-italic = JetBrains Mono Italic
+font-family-bold-italic = JetBrains Mono Bold Italic
 font-size = 13
+bold-is-bright = true
 cursor-style = block
 cursor-style-blink = false
 macos-titlebar-proxy-icon = hidden
