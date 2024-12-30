@@ -1,36 +1,4 @@
 return {
-  {
-    'windwp/nvim-autopairs',
-    opts = {
-      disable_filetype = { 'TelescopePrompt', 'vim' },
-    },
-  },
-  {
-    'b3nj5m1n/kommentary',
-    keys = {
-      { '<leader>cc', '<Plug>kommentary_line_increase' },
-      { '<leader>cc', '<Plug>kommentary_visual_increase<C-c>', mode = 'x' },
-      { '<leader>cu', '<Plug>kommentary_line_decrease' },
-      { '<leader>cu', '<Plug>kommentary_visual_decrease<C-c>', mode = 'v' },
-    },
-  },
-  {
-    'ggandor/leap.nvim',
-    config = function()
-      require('leap').add_default_mappings()
-    end,
-  },
-  {
-    'folke/todo-comments.nvim',
-    opts = {
-      highlight = {
-        before = '',
-        keyword = 'wide_bg',
-        after = '',
-      },
-    },
-  },
-  {
     'hrsh7th/nvim-cmp',
     event = 'BufEnter',
     dependencies = {
@@ -110,11 +78,4 @@ return {
 
       cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
     end,
-  },
-  {
-    'karb94/neoscroll.nvim',
-    config = function()
-      require('neoscroll').setup()
-    end,
-  },
 }

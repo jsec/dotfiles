@@ -1,1 +1,1 @@
-require('config.lazy').init()
+require('core')

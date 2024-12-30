@@ -1,5 +1,4 @@
 return {
-  {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
@@ -32,5 +31,4 @@ return {
         lsp_fallback = true,
       },
     },
-  },
 }

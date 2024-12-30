@@ -1,5 +1,4 @@
 return {
-  {
     'catppuccin/nvim',
     name = 'catppuccin',
     lazy = false,
@@ -35,10 +34,4 @@ return {
 
       vim.cmd('colorscheme catppuccin')
     end,
-  },
-  {
-    'Mofiqul/vscode.nvim',
-    priority = 1000,
-    lazy = false
-  }
 }
