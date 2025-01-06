@@ -37,23 +37,8 @@ return {
     end,
   },
   {
-      'Mofiqul/vscode.nvim',
+      'folke/tokyonight.nvim',
       lazy = false,
-      priority = 1000,
-      config = function()
-          local vscode = require('vscode')
-          local colors = require('vscode.colors').get_colors()
-
-          vscode.setup({
-              italic_comments = true,
-              group_overrides = {
-                    ["@variable.builtin.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
-                    ["@property.method.typescript"] = { fg = colors.vscYellow, bg = "NONE" },
-                    ["@constructor.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
-                    ["@keyword.typescript"] = { fg = colors.vscBlue, bg = "NONE" },
-                    ["@keyword.return.typescript"] = { fg = colors.vscPink, bg = "NONE" },
-                }
-          })
-      end
+      priority = 1000
   }
 }
