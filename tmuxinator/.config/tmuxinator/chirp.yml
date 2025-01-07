@@ -13,22 +13,6 @@ windows:
         - vim
         -
         -
-  - admin-ui:
-      root: ~/src/dev/ParkingAdvisors-Monthly/apps/admin-dashboard
-      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
-      panes:
-        - 
-        -
-        -
-  - monthly-shell:
-      root: ~/src/dev/ParkingAdvisors-Monthly
-      panes:
-        -
-        -
-  - services:
-      root: ~/src/dev/ParkingAdvisors-Monthly
-      panes:
-        - yarn cleanAndRun
   - infra:
       root: ~/src/dev/infra
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
@@ -36,10 +20,17 @@ windows:
         - 
         -
         - 
+  - monthly-shell:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        -
+  - services:
+      root: ~/src/dev/ParkingAdvisors-Monthly
+      panes:
+        - yarn container:restart && yarn dev
   - infra-shell:
       root: ~/src/dev/infra
       panes:
-        -
         - 
   - database:
       panes:
