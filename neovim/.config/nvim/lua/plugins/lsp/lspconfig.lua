@@ -21,15 +21,9 @@ return {
           client.server_capabilities.documentFormattingProvider = true
           on_attach(client, bufnr)
         end,
-        root_dir = lspconfig.util.root_pattern(
-          '.eslintrc',
-          '.eslintrc.js',
-          '.eslintrc.cjs',
-          '.eslintrc.json',
-          '.git'
-        ),
         settings = {
           format = { enable = true },
+          workingDirectories = { mode = 'auto' }
         },
       })
 
