@@ -77,13 +77,5 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
-
-      require('lspconfig').nim_langserver.setup({
-        settings = {
-          nim = {
-            nimsuggestPath = '/Users/jsec/.nimble/bin/nimsuggest',
-          },
-        },
-      })
     end,
 }
