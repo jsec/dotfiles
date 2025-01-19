@@ -17,6 +17,7 @@ return {
         }
       },
       picker = {
+        ui_select = true,
         matcher = {
           fuzzy = true,
           smartcase = true,
@@ -71,7 +72,13 @@ return {
         end, 
         nowait = true, 
         desc = "Find References" 
-      }
+      },
+      { 
+        "<leader>lg", 
+        function() 
+          Snacks.picker.grep() 
+        end, 
+        desc = "Grep" },
     }
   }
 }
