@@ -4,7 +4,8 @@ export EDITOR='vim'
 export DISABLE_AUTO_TITLE=true
 export GOPATH=/Users/jsec/.go
 export GOBIN=$GOPATH/bin
-PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications:/usr/local/go/bin:$GOBIN
+export GHOSTTY_BIN=/Applications/Ghostty.app/Contents/MacOS
+PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jsec/Applications:/usr/local/go/bin:$GOBIN:$GHOSTTY_BIN
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 
 # Support coloring in ls commands without the use of a framework
