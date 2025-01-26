@@ -11,10 +11,10 @@ return {
           animate = {
             duration = {
               step = 10,
-              total = 250
-            }
-          }
-        }
+              total = 250,
+            },
+          },
+        },
       },
       picker = {
         ui_select = true,
@@ -23,62 +23,63 @@ return {
           smartcase = true,
           ignorecase = true,
           sort_empty = false,
-          filename_bonus = true
+          filename_bonus = true,
         },
         sort = {
-          fields = { 'score:desc', '#text', 'idx' }
+          fields = { 'score:desc', '#text', 'idx' },
         },
         formatters = {
           file = {
-            filename_first = true
+            filename_first = true,
           },
           selected = {
             show_always = false,
-            unselected = true
-          }
+            unselected = true,
+          },
         },
         win = {
           input = {
             keys = {
-              ["<Esc>"] = { "close", mode = { "n", "i" } },
-            }
-          }
+              ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+            },
+          },
         },
-      }
+      },
     },
     keys = {
-      { 
-        '<c-p>', 
-        function() 
+      {
+        '<c-p>',
+        function()
           if vim.b.gitsigns_head or vim.b.gitsigns_status_dict then
             Snacks.picker.git_files({ untracked = true })
-          else 
+          else
             Snacks.picker.files()
           end
-        end, 
-        desc = "Find Files" 
+        end,
+        desc = 'Find Files',
       },
-      { 
-        "<leader>gd", 
-        function() 
-          Snacks.picker.lsp_definitions({ confirm = 'edit_vsplit' }) 
-        end, 
-        desc = "Goto Definition" 
+      {
+        '<leader>gd',
+        function()
+          Snacks.picker.lsp_definitions({ confirm = 'edit_vsplit' })
+        end,
+        desc = 'Goto Definition',
       },
-      { 
-        "<leader>gr", 
-        function() 
-          Snacks.picker.lsp_references({ confirm = 'edit_vsplit' }) 
-        end, 
-        nowait = true, 
-        desc = "Find References" 
+      {
+        '<leader>gr',
+        function()
+          Snacks.picker.lsp_references({ confirm = 'edit_vsplit' })
+        end,
+        nowait = true,
+        desc = 'Find References',
       },
-      { 
-        "<leader>lg", 
-        function() 
-          Snacks.picker.grep() 
-        end, 
-        desc = "Grep" },
-    }
-  }
+      {
+        '<leader>lg',
+        function()
+          Snacks.picker.grep()
+        end,
+        desc = 'Grep',
+      },
+    },
+  },
 }

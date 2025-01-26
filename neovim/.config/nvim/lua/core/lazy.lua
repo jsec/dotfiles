@@ -17,10 +17,10 @@ require('lazy').setup({
   spec = {
     { import = 'plugins' },
     { import = 'plugins.colorscheme' },
-    { import = 'plugins.lsp' }
+    { import = 'plugins.lsp' },
   },
   change_detection = {
     notify = false,
     enable = true,
-  }
+  },
 })
