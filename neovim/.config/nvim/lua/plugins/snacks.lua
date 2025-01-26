@@ -86,6 +86,13 @@ return {
           Snacks.picker.colorschemes()
         end,
         desc = 'Choose colorscheme'
+      },
+      {
+        '<leader>ca',
+        function()
+          vim.lsp.buf.code_action()
+        end,
+        desc = 'Code Actions'
       }
     },
   },
