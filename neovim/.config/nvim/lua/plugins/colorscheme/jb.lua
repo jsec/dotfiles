@@ -1,5 +1,5 @@
 return {
-  'nickkadutskyi/jb.nvim',
+  'jsec/jb.nvim',
   lazy = false,
   priority = 1000
 }
