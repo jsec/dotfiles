@@ -80,6 +80,13 @@ return {
         end,
         desc = 'Grep',
       },
+      {
+        '<leader>cs',
+        function()
+          Snacks.picker.colorschemes()
+        end,
+        desc = 'Choose colorscheme'
+      }
     },
   },
 }
