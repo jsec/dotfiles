@@ -51,9 +51,9 @@ return {
           format = { enable = true },
         },
         flags = os.getenv('DEBOUNCE_ESLINT') and {
-            allow_incremental_sync = false,
-            debounce_text_changes = 1000
-        } or nil
+          allow_incremental_sync = false,
+          debounce_text_changes = 1000,
+        } or nil,
       })
 
       lspconfig.gopls.setup({
@@ -134,5 +134,5 @@ return {
     'mrcjkb/rustaceanvim',
     version = '^4', -- Recommended
     lazy = false, -- This plugin is already lazy
-  }
+  },
 }

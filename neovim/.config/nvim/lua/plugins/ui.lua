@@ -20,8 +20,8 @@ return {
         custom = { '^.git$', 'node_modules', 'dist' },
       },
       view = {
-          width = 35
-      }
+        width = 35,
+      },
     },
   },
   {
