@@ -40,5 +40,10 @@ return {
       'folke/tokyonight.nvim',
       lazy = false,
       priority = 1000
+  },
+  {
+      'nickkadutskyi/jb.nvim',
+      lazy = false,
+      priority = 1000
   }
 }

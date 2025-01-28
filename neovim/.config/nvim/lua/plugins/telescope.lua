@@ -46,7 +46,7 @@ return {
           '--with-filename',
           '--line-number',
           '--column',
-          '--smart-case',
+          '--smart-case'
         },
         prompt_prefix = '> ',
         selection_caret = '> ',
@@ -62,7 +62,7 @@ return {
           prompt_position = 'bottom',
           preview_cutoff = 120,
         },
-        file_ignore_patterns = { '.git' },
+        file_ignore_patterns = { '.git', 'dist' },
         winblend = 0,
         border = {},
         borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
