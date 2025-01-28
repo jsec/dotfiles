@@ -39,7 +39,7 @@ alias nombom='yarn clean && yarn && yarn upgrade:shared && yarn dev'
 
 eval "$(zoxide init zsh --cmd cd --hook prompt)"
 
-# Work specific env variables
+# Work specific functionality
 if [ -f ~/.zsh/env.zsh ]; then
     source ~/.zsh/env.zsh
 fi
