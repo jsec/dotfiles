@@ -23,6 +23,9 @@ eval "$(starship init zsh)"
 # Mysql-client
 PATH="$PATH:/opt/homebrew/opt/mysql-client@8.4/bin"
 
+# Rust
+PATH="$PATH:/$HOME/.cargo/bin"
+
 export PATH
 
 # make ulimit not suck
