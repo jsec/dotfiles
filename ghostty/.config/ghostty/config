@@ -6,3 +6,4 @@ cursor-style-blink = false
 macos-titlebar-proxy-icon = hidden
 theme = catppuccin-mocha
 shell-integration-features = no-cursor
+macos-secure-input-indication = false
