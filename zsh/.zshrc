@@ -5,7 +5,8 @@ alias mux=tmuxinator
 export DISABLE_AUTO_TITLE=true
 export GOPATH=/Users/jarrod.seccombe/.go
 export GOBIN=$GOPATH/bin
-PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/go/bin:$GOBIN
+export GHOSTTY_BIN=/Applications/Ghostty.app/Contents/MacOS
+PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/go/bin:$GOBIN:$GHOSTTY_BIN
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
 export DEBOUNCE_ESLINT=true
 
@@ -53,4 +54,8 @@ fi
 
 if [ -f ~/.zsh/functions.zsh ]; then
     source ~/.zsh/functions.zsh
+fi
+
+if [ -f ~/.zsh/fzf.zsh ]; then
+    source ~/.zsh/fzf.zsh
 fi
