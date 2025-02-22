@@ -14,7 +14,7 @@ windows:
         -
         -
   - infra:
-      root: ~/src/dev/infra
+      root: ~/src/dev/ParkingAdvisors-Monthly/infra
       layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
       panes:
         - 
@@ -27,15 +27,22 @@ windows:
   - services:
       root: ~/src/dev/ParkingAdvisors-Monthly
       panes:
-        - yarn container:restart && yarn dev
+        - yarn clean && yarn && yarn dev
   - infra-shell:
-      root: ~/src/dev/infra
+      root: ~/src/dev/ParkingAdvisors-Monthly/infra
       panes:
         - 
   - database:
       panes:
-        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/migration && yarn migrate:dev
+        - cd ~/src/dev/ParkingAdvisors-Monthly/apps/migration && yarn migrate
         - cd ~/src/dev/ParkingAdvisors-Monthly/apps/parkchirp-monthly-api/migrations
+  - chirp2:
+      root: ~/src/dev/chirp2
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        - 
+        -
+        - 
   - shell:
       root: ~/src/dev/ParkingAdvisors-Monthly
       panes:
