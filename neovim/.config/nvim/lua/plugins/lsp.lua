@@ -45,9 +45,8 @@ return {
           client.server_capabilities.documentFormattingProvider = true
           on_attach(client, bufnr)
         end,
-        root_dir = lspconfig.util.find_git_ancestor,
         settings = {
-          workingDirectory = { mode = 'location' },
+          workingDirectory = { mode = 'auto' },
           format = { enable = true },
         },
         flags = os.getenv('DEBOUNCE_ESLINT') and {
