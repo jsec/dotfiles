@@ -59,3 +59,7 @@ fi
 if [ -f ~/.zsh/fzf.zsh ]; then
     source ~/.zsh/fzf.zsh
 fi
+
+if [ -f ~/.zsh/aliases.zsh ]; then
+    source ~/.zsh/aliases.zsh
+fi
