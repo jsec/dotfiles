@@ -37,6 +37,14 @@ return {
         root_dir = lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', '.git'),
         settings = {
           format = { enable = false },
+          vtsls = {
+              autoUseWorkspaceTsdk = true,
+              experimental = {
+                  completion = {
+                      enableServerSideFuzzyMatch = true
+                  }
+              }
+          }
         },
       })
 
@@ -49,10 +57,10 @@ return {
           workingDirectory = { mode = 'auto' },
           format = { enable = true },
         },
-        flags = os.getenv('DEBOUNCE_ESLINT') and {
+        flags = {
           allow_incremental_sync = false,
           debounce_text_changes = 1000,
-        } or nil,
+        }
       })
 
       lspconfig.gopls.setup({
@@ -105,15 +113,7 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
-
-      require('lspconfig').nim_langserver.setup({
-        settings = {
-          nim = {
-            nimsuggestPath = '/Users/jsec/.nimble/bin/nimsuggest',
-          },
-        },
-      })
-    end,
+    end
   },
   {
     'ray-x/go.nvim',
