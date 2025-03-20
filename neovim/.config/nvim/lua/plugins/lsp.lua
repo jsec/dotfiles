@@ -12,8 +12,6 @@ return {
         'ruff',
         'black',
         'isort',
-        'taplo',
-        'prettierd',
         'stylua',
         'luacheck',
         'eslint-lsp',
