@@ -2,6 +2,9 @@
 font-family = "JetBrains Mono Medium"
 font-size = 13
 
+# codepoints
+font-codepoint-map = U+21E1-U+21E3=Symbols Nerd Font Mono
+
 # cursor
 cursor-style = block
 cursor-style-blink = false
