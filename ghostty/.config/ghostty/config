@@ -1,8 +1,22 @@
+# font face
+font-family = "JetBrains Mono Medium"
 font-size = 13
-bold-is-bright = true
+
+# codepoints
+font-codepoint-map = U+21E1-U+21E3=Symbols Nerd Font Mono
+
+# cursor
 cursor-style = block
 cursor-style-blink = false
-macos-titlebar-proxy-icon = hidden
+
+# theme
 theme = catppuccin-mocha
+
+# quick terminal
+quick-terminal-position = top
+quick-terminal-screen = mouse
+keybind = global:opt+grave_accent=toggle_quick_terminal
+
+# misc
+macos-titlebar-proxy-icon = hidden
 shell-integration-features = no-cursor
-macos-secure-input-indication = false
