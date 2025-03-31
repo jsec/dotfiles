@@ -1,7 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-      'saghen/blink.cmp'
+    'saghen/blink.cmp',
   },
   config = function()
     local lspconfig = require('lspconfig')
