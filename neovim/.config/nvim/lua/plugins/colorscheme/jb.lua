@@ -1,5 +1,5 @@
 return {
   'jsec/jb.nvim',
   lazy = false,
-  priority = 1000
+  priority = 1000,
 }

@@ -85,15 +85,15 @@ return {
         function()
           Snacks.picker.colorschemes()
         end,
-        desc = 'Choose colorscheme'
+        desc = 'Choose colorscheme',
       },
       {
         '<leader>ca',
         function()
           vim.lsp.buf.code_action()
         end,
-        desc = 'Code Actions'
-      }
+        desc = 'Code Actions',
+      },
     },
   },
 }
