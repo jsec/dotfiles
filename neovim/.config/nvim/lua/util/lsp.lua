@@ -1,12 +1,30 @@
 local M = {}
 
-local set_diagnostic_signs = function()
-  local signs = { Error = ' ', Warn = ' ', Hint = '󰍉 ', Information = ' ' }
-
-  for type, icon in pairs(signs) do
-    local hl = 'DiagnosticSign' .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-  end
+local set_diagnostics = function()
+  vim.diagnostic.config({
+    virtual_text = true,
+    underline = true,
+    signs = {
+      text = {
+        [vim.diagnostic.severity.ERROR] = '',
+        [vim.diagnostic.severity.WARN] = '',
+        [vim.diagnostic.severity.INFO] = ' ',
+        [vim.diagnostic.severity.HINT] = ' ',
+      },
+      linehl = {
+        [vim.diagnostic.severity.ERROR] = '',
+        [vim.diagnostic.severity.WARN] = '',
+        [vim.diagnostic.severity.INFO] = '',
+        [vim.diagnostic.severity.HINT] = '',
+      },
+      numhl = {
+        [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+        [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+        [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+        [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+      },
+    },
+  })
 end
 
 local set_handlers = function()
@@ -19,8 +37,7 @@ local set_handlers = function()
 end
 
 M.on_attach = function(client, bufnr)
-  -- client.server_capabilities.semanticTokensProvider = nil
-  set_diagnostic_signs()
+  set_diagnostics()
   set_handlers()
 end
 
