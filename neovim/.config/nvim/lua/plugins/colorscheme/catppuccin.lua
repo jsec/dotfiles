@@ -27,10 +27,30 @@ return {
                 nvimtree = true,
                 treesitter = true,
                 treesitter_context = true,
-                telescope = {
+                snacks = {
                     enabled = true,
                 },
+                native_lsp = {
+                    enabled = true,
+                    virtual_text = {
+                        errors = { 'italic' },
+                        hints = { 'italic' },
+                        warnings = { 'italic' },
+                        information = { 'italic' }
+                    },
+                    underlines = {
+                        errors = { 'undercurl' },
+                        hints = { 'undercurl' },
+                        warnings = { 'undercurl' },
+                        information = { 'undercurl' },
+                    }
+                }
             },
+            custom_highlights = function(colors)
+                return {
+                  BlinkCmpMenu = { bg = colors.base },
+                }
+            end
         })
 
         vim.cmd('colorscheme catppuccin')

@@ -6,7 +6,7 @@ return {
     },
     version = '1.*',
     opts = {
-        keymap = { preset = 'super-tab' },
+        keymap = { preset = 'enter' },
         appearance = {
             nerd_font_variant = 'mono',
         },
@@ -18,8 +18,16 @@ return {
                 },
             },
             menu = {
-                border = 'single',
-            },
+                draw = {
+                    components = {
+                        kind_icon = {
+                            text = function(ctx) 
+                                return ' ' .. ctx.kind_icon .. ctx.icon_gap .. ' ' 
+                            end
+                        }
+                    }
+                }
+            }
         },
         signature = {
             window = {
