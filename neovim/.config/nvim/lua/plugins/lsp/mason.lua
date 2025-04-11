@@ -7,11 +7,9 @@ return {
   opts = {
     ensure_installed = {
       'vtsls',
-      'pyright',
       'ruff',
       'black',
       'isort',
-      'taplo',
       'prettierd',
       'stylua',
       'luacheck',
