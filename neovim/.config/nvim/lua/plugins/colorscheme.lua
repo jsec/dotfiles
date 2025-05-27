@@ -59,9 +59,16 @@ return {
     priority = 1000,
   },
   {
-    'nickkadutskyi/jb.nvim',
+    'Mofiqul/vscode.nvim',
     lazy = false,
     priority = 1000,
-  },
-  { 'projekt0n/github-nvim-theme', name = 'github-theme' }
+    config = function() 
+        require('vscode').setup({
+            transparent = false,
+            italic_comments = true,
+            disable_nvimtree_bg = true,
+            terminal_colors = true
+        })
+    end
+  }
 }
