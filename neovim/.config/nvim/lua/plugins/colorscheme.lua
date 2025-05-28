@@ -70,5 +70,20 @@ return {
             terminal_colors = true
         })
     end
+  },
+  {
+      'gbprod/nord.nvim',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require('nord').setup({
+            search = {
+                theme = 'vscode'
+            },
+            styles = {
+                comments = { italic = true }
+            }
+        })
+      end
   }
 }
