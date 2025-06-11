@@ -50,6 +50,9 @@ return {
           },
         },
       },
+      explorer = {
+          replace_netrw = true
+      }
     },
     keys = {
       {
@@ -99,6 +102,12 @@ return {
         end,
         desc = 'Code Actions',
       },
+      {
+          '<leader>p',
+          function()
+              Snacks.explorer.open()
+          end
+      }
     },
   },
 }
