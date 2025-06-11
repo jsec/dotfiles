@@ -72,18 +72,8 @@ return {
     end
   },
   {
-      'gbprod/nord.nvim',
+      'EdenEast/nightfox.nvim',
       lazy = false,
-      priority = 1000,
-      config = function()
-        require('nord').setup({
-            search = {
-                theme = 'vscode'
-            },
-            styles = {
-                comments = { italic = true }
-            }
-        })
-      end
+      priority = 1000
   }
 }
