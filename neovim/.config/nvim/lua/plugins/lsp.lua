@@ -32,14 +32,18 @@ return {
       lspconfig.vtsls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', '.git'),
+        root_dir = lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git'),
+        reuse_client = function(client, config)
+            return client.name == 'vtsls' and client.config.root_dir == config.root_dir
+        end,
         settings = {
           format = { enable = false },
           vtsls = {
               autoUseWorkspaceTsdk = true,
               experimental = {
                   completion = {
-                      enableServerSideFuzzyMatch = true
+                      enableServerSideFuzzyMatch = true,
+                      entriesLimit = 100
                   }
               }
           }
