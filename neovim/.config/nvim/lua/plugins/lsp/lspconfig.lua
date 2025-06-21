@@ -5,7 +5,6 @@ return {
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         local on_attach = require('util.lsp').on_attach
         require('mason').setup()
-        require('mason-lspconfig').setup()
 
         lspconfig.vtsls.setup({
             on_attach = on_attach,
