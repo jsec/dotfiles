@@ -19,9 +19,8 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # Prompt
 eval "$(starship init zsh)"
 
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-PATH="$VOLTA_HOME/bin:$PATH"
+# mise
+eval "$(mise activate zsh)"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -61,10 +60,16 @@ autoload -Uz compinit && compinit
 # case insensitive completions
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
+# Google Cloud
+if [ -f '/Users/jsec/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jsec/.google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/jsec/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jsec/.google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/jsec/.bun/_bun" ] && source "/Users/jsec/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+PATH="$BUN_INSTALL/bin:$PATH"
+
 export PATH
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jsec/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jsec/.google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jsec/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jsec/.google-cloud-sdk/completion.zsh.inc'; fi
