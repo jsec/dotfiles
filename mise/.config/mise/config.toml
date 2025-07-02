@@ -1,0 +1,9 @@
+[tools]
+node = "22"
+"npm:aws-cdk" = "latest"
+"npm:commitizen" = "latest"
+"npm:fastify-cli" = "latest"
+"npm:neovim" = "latest"
+"npm:pnpm" = "latest"
+"npm:typescript" = "latest"
+usage = "latest"
