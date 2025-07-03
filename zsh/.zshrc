@@ -54,4 +54,8 @@ if [ -f '/Users/jsec/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jse
 # bun completions
 [ -s "/Users/jsec/.bun/_bun" ] && source "/Users/jsec/.bun/_bun"
 
+# pnpm
+export PNPM_HOME="/Users/jsec/Library/pnpm"
+PATH="$PNPM_HOME:$PATH"
+
 export PATH
