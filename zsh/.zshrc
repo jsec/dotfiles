@@ -58,9 +58,4 @@ if [ -f '/Users/jsec/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jse
 # bun completions
 [ -s "/Users/jsec/.bun/_bun" ] && source "/Users/jsec/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-PATH="$BUN_INSTALL/bin:$PATH"
-
 export PATH
-

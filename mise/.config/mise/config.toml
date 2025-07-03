@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 node = "22"
 "npm:aws-cdk" = "latest"
 "npm:commitizen" = "latest"
