@@ -22,11 +22,6 @@ eval "$(starship init zsh)"
 # mise
 eval "$(mise activate zsh)"
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # rbenv
 eval "$(rbenv init - zsh)"
 PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
@@ -36,10 +31,6 @@ eval "$(direnv hook zsh)"
 
 # pipx
 PATH="$HOME/.local/bin:$PATH"
-
-# rust
-PATH="$HOME/.cargo/bin:$PATH"
-source "$HOME/.cargo/env"
 
 # psql
 PATH="/opt/homebrew/opt/libpq/bin:$PATH"

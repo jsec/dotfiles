@@ -6,4 +6,12 @@ node = "22"
 "npm:neovim" = "latest"
 "npm:pnpm" = "latest"
 "npm:typescript" = "latest"
+python = "3.13"
+rust = "latest"
 usage = "latest"
+
+[settings]
+
+[settings.python]
+compile = true
+uv_venv_auto = true
