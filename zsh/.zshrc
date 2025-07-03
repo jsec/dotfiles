@@ -22,10 +22,6 @@ eval "$(starship init zsh)"
 # mise
 eval "$(mise activate zsh)"
 
-# rbenv
-eval "$(rbenv init - zsh)"
-PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-
 # direnv
 eval "$(direnv hook zsh)"
 
