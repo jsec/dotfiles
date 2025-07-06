@@ -5,5 +5,6 @@ vim.lsp.config('*', {
 
 vim.lsp.enable({
     'vtsls',
-    'eslint'
+    'eslint',
+    'ruff'
 })

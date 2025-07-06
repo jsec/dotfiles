@@ -26,15 +26,6 @@ return {
             capabilities = capabilities,
         })
 
-        lspconfig.ruff.setup({
-            settings = {
-                organizeImports = false,
-            },
-            on_attach = function(client)
-                client.server_capabilities.hoverProvider = false
-            end,
-        })
-
         lspconfig.jsonls.setup({
             on_attach = on_attach,
             capabilitites = capabilities,
