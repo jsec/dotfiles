@@ -16,23 +16,6 @@ return {
             capabilities = capabilities,
         })
 
-        lspconfig.jsonls.setup({
-            on_attach = on_attach,
-            capabilitites = capabilities,
-            settings = {
-                schemas = {
-                    {
-                        fileMatch = { 'package.json' },
-                        url = 'https://json.schemastore.org/package.json',
-                    },
-                    {
-                        fileMatch = { 'tsconfig.json', 'tsconfig.*.json' },
-                        url = 'https://json.schemastore.org/tsconfig',
-                    },
-                },
-            },
-        })
-
         lspconfig.tsp_server.setup({
             on_attach = on_attach,
             capabilities = capabilities,

@@ -9,4 +9,5 @@ vim.lsp.enable({
     'ruff',
     'basedpyright',
     'gopls',
+    'jsonls',
 })
