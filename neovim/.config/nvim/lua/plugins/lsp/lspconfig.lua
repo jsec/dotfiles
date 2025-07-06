@@ -6,11 +6,6 @@ return {
         local on_attach = require('util.lsp').on_attach
         require('mason').setup()
 
-        lspconfig.gopls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-        })
-
         lspconfig.golangci_lint_ls.setup({
             on_attach = on_attach,
             capabilities = capabilities,

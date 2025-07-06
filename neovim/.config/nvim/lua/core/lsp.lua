@@ -7,5 +7,6 @@ vim.lsp.enable({
     'vtsls',
     'eslint',
     'ruff',
-    'basedpyright'
+    'basedpyright',
+    'gopls',
 })
