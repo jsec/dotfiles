@@ -6,26 +6,6 @@ return {
         local on_attach = require('util.lsp').on_attach
         require('mason').setup()
 
-        lspconfig.vtsls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            root_dir = lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', '.git'),
-            settings = {
-                format = { enable = false },
-            },
-        })
-
-        lspconfig.eslint.setup({
-            on_attach = function(client, bufnr)
-                client.server_capabilities.documentFormattingProvider = true
-                on_attach(client, bufnr)
-            end,
-            settings = {
-                format = { enable = true },
-                workingDirectories = { mode = 'auto' },
-            },
-        })
-
         lspconfig.gopls.setup({
             on_attach = on_attach,
             capabilities = capabilities,

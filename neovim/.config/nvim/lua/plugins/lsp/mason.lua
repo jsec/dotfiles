@@ -5,14 +5,11 @@ return {
     },
     opts = {
         ensure_installed = {
-            'vtsls',
             'ruff',
             'black',
             'isort',
-            'prettierd',
             'stylua',
             'luacheck',
-            'eslint_d',
             'gopls',
             'golangci-lint',
         },
