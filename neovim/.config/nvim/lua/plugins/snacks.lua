@@ -51,8 +51,8 @@ return {
         },
       },
       explorer = {
-          replace_netrw = true
-      }
+        replace_netrw = true,
+      },
     },
     keys = {
       {
@@ -103,11 +103,11 @@ return {
         desc = 'Code Actions',
       },
       {
-          '<leader>p',
-          function()
-              Snacks.explorer.open()
-          end
-      }
+        '<leader>p',
+        function()
+          Snacks.explorer.open()
+        end,
+      },
     },
   },
 }

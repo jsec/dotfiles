@@ -30,18 +30,23 @@ return {
       lspconfig.vtsls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git'),
+        root_dir = lspconfig.util.root_pattern(
+          'tsconfig.json',
+          'jsconfig.json',
+          'package.json',
+          '.git'
+        ),
         settings = {
           format = { enable = false },
           vtsls = {
-              autoUseWorkspaceTsdk = true,
-              experimental = {
-                  completion = {
-                      enableServerSideFuzzyMatch = true,
-                      entriesLimit = 100
-                  }
-              }
-          }
+            autoUseWorkspaceTsdk = true,
+            experimental = {
+              completion = {
+                enableServerSideFuzzyMatch = true,
+                entriesLimit = 100,
+              },
+            },
+          },
         },
       })
 
@@ -57,7 +62,7 @@ return {
         flags = {
           allow_incremental_sync = false,
           debounce_text_changes = 1000,
-        }
+        },
       })
 
       lspconfig.gopls.setup({
@@ -90,16 +95,16 @@ return {
       })
 
       lspconfig.terraformls.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
-          on_init = function(client)
-                client.server_capabilities.semanticTokensProvider = nil
-          end
+        on_attach = on_attach,
+        capabilities = capabilities,
+        on_init = function(client)
+          client.server_capabilities.semanticTokensProvider = nil
+        end,
       })
 
       lspconfig.tflint.setup({
-          on_attach = on_attach,
-          capabilities = capabilities,
+        on_attach = on_attach,
+        capabilities = capabilities,
       })
 
       lspconfig.jsonls.setup({
@@ -123,7 +128,7 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
-    end
+    end,
   },
   {
     'ray-x/go.nvim',
