@@ -89,6 +89,19 @@ return {
         end,
       })
 
+      lspconfig.terraformls.setup({
+          on_attach = on_attach,
+          capabilities = capabilities,
+          on_init = function(client)
+                client.server_capabilities.semanticTokensProvider = nil
+          end
+      })
+
+      lspconfig.tflint.setup({
+          on_attach = on_attach,
+          capabilities = capabilities,
+      })
+
       lspconfig.jsonls.setup({
         on_attach = on_attach,
         capabilitites = capabilities,
