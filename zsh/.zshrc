@@ -7,7 +7,7 @@ export GOPATH=/Users/jarrod.seccombe/.go
 export GOBIN=$GOPATH/bin
 export GHOSTTY_BIN=/Applications/Ghostty.app/Contents/MacOS
 PATH=/usr/local/bin:/usr/local/sbin:/bin:/usr/bin:/usr/sbin:/sbin:/Users/jarrod.seccombe/Applications:/usr/local/go/bin:$GOBIN:$GHOSTTY_BIN
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git,node_modules,bin}"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --color=never --glob "!{.git/,node_modules,bin}"'
 export DEBOUNCE_ESLINT=true
 
 # Support coloring in ls commands without the use of a framework
