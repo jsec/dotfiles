@@ -1,7 +1,7 @@
 # font
-font-family = "CommitMono-js"
+# font-family = "CommitMono-js"
 font-size = 13
-adjust-cell-height = "10%"
+# adjust-cell-height = "10%"
 
 # codepoints
 font-codepoint-map = U+21E1-U+21E3=Menlo
