@@ -11,7 +11,7 @@ cursor-style = block
 cursor-style-blink = false
 
 # theme
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 # quick terminal
 quick-terminal-position = top
