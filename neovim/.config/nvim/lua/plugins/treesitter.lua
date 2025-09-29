@@ -11,6 +11,7 @@ return {
           'css',
           'diff',
           'gitignore',
+          'glimmer',
           'go',
           'graphql',
           'html',
