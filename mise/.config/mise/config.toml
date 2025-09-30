@@ -4,6 +4,7 @@ node = "20"
 "npm:neovim" = "latest"
 "npm:typescript" = "latest"
 "npm:vscode-langservers-extracted" = "latest"
+"npm:yarn" = "1"
 
 [settings]
 idiomatic_version_file_enable_tools = []
