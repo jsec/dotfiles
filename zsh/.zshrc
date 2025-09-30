@@ -1,6 +1,5 @@
 alias vim=nvim
 export EDITOR='vim'
-alias mux=tmuxinator
 
 export DISABLE_AUTO_TITLE=true
 export GOPATH=/Users/jarrod.seccombe/.go
@@ -13,7 +12,6 @@ export DEBOUNCE_ESLINT=true
 # Support coloring in ls commands without the use of a framework
 export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
-alias ll="ls -alG"
 
 # Bootstrap homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
@@ -27,6 +25,9 @@ PATH="$PATH:/opt/homebrew/opt/mysql-client@8.4/bin"
 # Rust
 PATH="$PATH:/$HOME/.cargo/bin"
 
+# mise
+eval "$(mise activate zsh)"
+
 export PATH
 
 # make ulimit not suck
@@ -34,12 +35,6 @@ ulimit -n 10240
 
 # direnv
 eval "$(direnv hook zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-alias nombom='yarn clean && yarn && yarn upgrade:shared && yarn dev'
 
 eval "$(zoxide init zsh --cmd cd --hook prompt)"
 
