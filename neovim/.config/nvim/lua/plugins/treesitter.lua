@@ -39,7 +39,7 @@ return {
         highlight = { enable = true },
         query_linter = {
           enable = true,
-          use_virtual_text = true,
+          use_virtual_text = false,
           lint_events = { 'BufWrite', 'CursorHold' },
         },
         additional_vim_regex_highlighting = false,
