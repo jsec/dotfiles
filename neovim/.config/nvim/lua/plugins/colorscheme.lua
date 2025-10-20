@@ -104,4 +104,9 @@ return {
       })
     end,
   },
+  {
+      'nickkadutskyi/jb.nvim',
+      lazy = false,
+      priority = 1000,
+  }
 }
