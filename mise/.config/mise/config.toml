@@ -14,8 +14,10 @@ node = "22"
 python = "3.13"
 rust = "latest"
 usage = "latest"
+uv = "latest"
 
 [settings]
+experimental = true
 
 [settings.python]
 compile = true
