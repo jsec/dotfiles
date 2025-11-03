@@ -1,5 +1,4 @@
 return {
-  default_config = {
     cmd = { 'glint-language-server' },
     on_new_config = function(config, new_root_dir)
       local project_root = vim.fs.dirname(vim.fs.find('node_modules', { path = new_root_dir, upward = true })[1])
@@ -27,5 +26,4 @@ return {
       'glint.config.js',
       'package.json'
     }
-  }
 }
