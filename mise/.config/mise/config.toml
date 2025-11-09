@@ -1,7 +1,7 @@
 [tools]
 bun = "latest"
 deno = "latest"
-node = "22"
+node = "24"
 "npm:@typespec/compiler" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:aws-cdk" = "latest"
