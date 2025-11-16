@@ -2,6 +2,7 @@
 bun = "latest"
 deno = "latest"
 node = "24"
+"npm:@typescript/native-preview" = "latest"
 "npm:@typespec/compiler" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:aws-cdk" = "latest"

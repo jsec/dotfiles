@@ -3,7 +3,7 @@ vim.lsp.config('*', {
 })
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     underline = true,
     signs = {
         text = {
