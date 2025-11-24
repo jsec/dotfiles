@@ -2,6 +2,7 @@
 go = "latest"
 node = "20"
 "npm:@glint/core" = "latest"
+"npm:@typescript/native-preview" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:neovim" = "latest"
 "npm:typescript" = "latest"
