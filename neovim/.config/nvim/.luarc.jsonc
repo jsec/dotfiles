@@ -8,10 +8,9 @@
         "library": [
             "$VIMRUNTIME/lua",
             "${3rd}/luv/library",
-            "$XDG_DATA_HOME/nvim/lazy/LuaSnip/lua",
-            "$XDG_DATA_HOME/nvim/lazy/gitlinker.nvim/lua",
-            "$XDG_DATA_HOME/nvim/lazy/lazy.nvim/lua",
-            "$XDG_DATA_HOME/nvim/lazy/nvim-treesitter-context/lua",
+            "~/.local/share/nvim/lazy/LuaSnip/lua",
+            "~/.local/share/nvim/lazy/lazy.nvim",
+            "~/.local/share/nvim/lazy/snacks.nvim",
         ]
     }
 }

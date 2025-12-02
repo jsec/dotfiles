@@ -3,6 +3,7 @@ return {
         'folke/snacks.nvim',
         priority = 1000,
         lazy = false,
+        ---@type snacks.Config
         opts = {
             bigfile = { enabled = true },
             indent = {
@@ -29,6 +30,7 @@ return {
                     ignorecase = true,
                     sort_empty = false,
                     filename_bonus = true,
+                    frecency = true,
                 },
                 sort = {
                     fields = { 'score:desc', '#text', 'idx' },
