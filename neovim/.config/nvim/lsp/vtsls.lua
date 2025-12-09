@@ -4,7 +4,7 @@
 -- Use VS Code's bundled copy if available.
 local function get_global_tsdk()
     local vscode_tsdk_path =
-    '/Applications/%s/Contents/Resources/app/extensions/node_modules/typescript/lib'
+        '/Applications/%s/Contents/Resources/app/extensions/node_modules/typescript/lib'
     local vscode_tsdk = vscode_tsdk_path:format('Visual Studio Code.app')
     local vscode_insiders_tsdk = vscode_tsdk_path:format('Visual Studio Code - Insiders.app')
 

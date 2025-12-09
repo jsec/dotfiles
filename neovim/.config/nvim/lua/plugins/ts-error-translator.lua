@@ -4,8 +4,8 @@ return {
         require('ts-error-translator').setup({
             auto_attach = true,
             servers = {
-                'vtsls'
-            }
+                'vtsls',
+            },
         })
-    end
+    end,
 }
