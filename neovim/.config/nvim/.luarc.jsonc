@@ -9,9 +9,9 @@
             "$VIMRUNTIME/lua",
             "${3rd}/luv/library",
             "$XDG_DATA_HOME/nvim/lazy/LuaSnip/lua",
-            "$XDG_DATA_HOME/nvim/lazy/gitlinker.nvim/lua",
             "$XDG_DATA_HOME/nvim/lazy/lazy.nvim/lua",
             "$XDG_DATA_HOME/nvim/lazy/nvim-treesitter-context/lua",
+            "$XDG_DATA_HOME/nvim/lazy/blink.cmp/lua",
         ]
     }
 }
