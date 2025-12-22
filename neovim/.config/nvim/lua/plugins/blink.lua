@@ -56,9 +56,11 @@ return {
             },
             completion = {
                 documentation = {
-                    auto_show = true
+                    auto_show = true,
+                    window = { border = 'rounded' }
                 },
                 menu = {
+                    border = 'rounded',
                     draw = {
                         components = {
                             kind_icon = {

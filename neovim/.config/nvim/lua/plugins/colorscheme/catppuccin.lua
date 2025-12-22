@@ -21,7 +21,7 @@ return {
                 gitsigns = true,
                 mason = true,
                 noice = true,
-                cmp = true,
+                blink_cmp = true,
                 semantic_tokens = true,
                 nvimtree = true,
                 treesitter = true,
