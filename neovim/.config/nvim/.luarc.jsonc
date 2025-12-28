@@ -8,10 +8,11 @@
         "library": [
             "$VIMRUNTIME/lua",
             "${3rd}/luv/library",
-            "$XDG_DATA_HOME/nvim/lazy/LuaSnip/lua",
-            "$XDG_DATA_HOME/nvim/lazy/lazy.nvim/lua",
-            "$XDG_DATA_HOME/nvim/lazy/nvim-treesitter-context/lua",
-            "$XDG_DATA_HOME/nvim/lazy/blink.cmp/lua",
+            "$HOME/.local/share/nvim/lazy/LuaSnip/lua",
+            "$HOME/.local/share/nvim/lazy/lazy.nvim/lua",
+            "$HOME/.local/share/nvim/lazy/nvim-treesitter-context/lua",
+            "$HOME/.local/share/nvim/lazy/blink.cmp/lua",
+            "$HOME/.local/share/nvim/lazy/snacks.nvim/lua",
         ]
     }
 }
