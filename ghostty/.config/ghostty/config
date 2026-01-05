@@ -20,3 +20,4 @@ keybind = global:opt+grave_accent=toggle_quick_terminal
 # misc
 macos-titlebar-proxy-icon = hidden
 shell-integration-features = no-cursor
+
