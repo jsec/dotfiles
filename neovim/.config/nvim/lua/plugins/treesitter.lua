@@ -13,6 +13,7 @@ return {
                 'glimmer',
                 'go',
                 'graphql',
+                'hcl',
                 'html',
                 'http',
                 'javascript',
