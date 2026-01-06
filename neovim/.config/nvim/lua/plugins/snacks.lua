@@ -19,8 +19,18 @@ return {
             lazygit = { enabled = true },
             scroll = {
                 animate = {
-                    duration = { step = 10, total = 300 },
+                    duration = { step = 10, total = 200 },
+                    easing = "linear",
                 },
+                animate_repeat = {
+                    delay = 100, -- delay in ms before using the repeat animation
+                    duration = { step = 5, total = 50 },
+                    easing = "linear",
+                },
+                filter = function(buf)
+                    return vim.g.snacks_scroll ~= false and vim.b[buf].snacks_scroll ~= false and
+                        vim.bo[buf].buftype ~= "terminal"
+                end,
             },
             picker = {
                 ui_select = true,
