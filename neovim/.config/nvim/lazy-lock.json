@@ -11,7 +11,7 @@
   "jb.nvim": { "branch": "main", "commit": "1a6d96d3b95cff514ffd62aa4b52cf27745203ef" },
   "kommentary": { "branch": "main", "commit": "d5a111a3bc4109a8f913a5863c9092b3b3801482" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "leap.nvim": { "branch": "main", "commit": "0033bcaefc3cd7cf5a70b28cd356fe4860e5c074" },
+  "leap.nvim": { "branch": "main", "commit": "572fbcfd2cca5f7b3e56b1ac1d720861f2a4db78" },
   "lspkind.nvim": { "branch": "master", "commit": "dbac5149fb5fb1b642266ff268b1e0f4ebac9293" },
   "lualine.nvim": { "branch": "master", "commit": "47f91c416daef12db467145e16bed5bbfe00add8" },
   "mini.trailspace": { "branch": "main", "commit": "f8083ca969e1b2098480c10f3c3c4d2ce3586680" },
