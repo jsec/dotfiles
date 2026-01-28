@@ -1,4 +1,4 @@
----@type vim.lsp.Config
+--[[ ---@type vim.lsp.Config
 return {
     cmd = { 'vscode-eslint-language-server', '--stdio' },
     filetypes = {
@@ -46,4 +46,4 @@ return {
             name = vim.fn.fnamemodify(params.rootPath, ':t'),
         }
     end,
-}
+} ]]
