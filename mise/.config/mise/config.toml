@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 go = "latest"
 node = "20"
 "npm:@biomejs/biome" = "latest"
