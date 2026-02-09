@@ -6,12 +6,12 @@ return {
         log_level = vim.log.levels.DEBUG,
         formatters_by_ft = {
             javascript = {
-                'biome',
+                -- 'biome',
                 'biome-organize-imports',
                 'eslint'
             },
             typescript = {
-                'biome',
+                -- 'biome',
                 'biome-organize-imports',
                 'eslint'
             },
@@ -29,6 +29,11 @@ return {
                 condition = function(_, ctx)
                     return vim.fs.find({ 'biome.json' }, { path = ctx.filename, upward = true })[1]
                 end,
+            },
+            eslint = {
+                condition = function(_, ctx)
+                    return vim.fs.find({ 'eslint.config.js' }, { path = ctx.filename, upward = true })[1]
+                end
             },
             sqlfluff = {
                 condition = function(_, ctx)
