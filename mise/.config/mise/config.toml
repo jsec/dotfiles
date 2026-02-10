@@ -2,6 +2,7 @@
 bun = "latest"
 go = "latest"
 node = "20"
+"npm:0x" = "latest"
 "npm:@biomejs/biome" = "latest"
 "npm:@glint/core" = "latest"
 "npm:@vtsls/language-server" = "latest"
