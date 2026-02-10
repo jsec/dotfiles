@@ -36,12 +36,9 @@ return {
                 end
             },
             sqlfluff = {
-                condition = function(_, ctx)
-                    return vim.fs.find({ '.sqlfluff' }, { path = ctx.filename, upward = true })[1]
-                end,
                 inherit = false,
                 command = 'sqlfluff',
-                args = { 'fix', '--config', '.sqlfluff', '-' },
+                args = { 'fix', '--config', '/Users/jarrod.seccombe/.sqlfluff', '-' },
             },
         },
         format_on_save = {
