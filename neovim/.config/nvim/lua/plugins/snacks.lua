@@ -6,6 +6,9 @@ return {
         opts = {
             bigfile = { enabled = true },
             lazygit = { enabled = true },
+            explorer = {
+                replace_netrw = true,
+            },
             indent = {
                 scope = {
                     animate = {
@@ -27,6 +30,17 @@ return {
                 },
                 sort = {
                     fields = { 'score:desc', '#text', 'idx' },
+                },
+                sources = {
+                    explorer = {
+                        win = {
+                            list = {
+                                keys = {
+                                    ["<c-n>"] = { "cancel" },
+                                }
+                            },
+                        },
+                    }
                 },
                 formatters = {
                     file = {
@@ -108,6 +122,12 @@ return {
                     vim.lsp.buf.code_action()
                 end,
                 desc = 'Code Actions',
+            },
+            {
+                "<c-n>",
+                function()
+                    Snacks.picker.explorer()
+                end,
             },
         },
     },
