@@ -26,11 +26,11 @@ vim.opt.mouse = 'a'
 vim.opt.visualbell = false
 vim.opt.nu = true
 vim.opt.wildignore = {
-  '**/node_modules',
-  '**/tmp',
-  '**/dist',
-  '**/.git',
-  '**/bin',
+    '**/node_modules',
+    '**/tmp',
+    '**/dist',
+    '**/.git',
+    '**/bin',
 }
 
 -- State directories

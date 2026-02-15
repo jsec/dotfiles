@@ -1,4 +1,4 @@
 return {
-  'echasnovski/mini.trailspace',
-  version = '*',
+    'echasnovski/mini.trailspace',
+    version = '*',
 }

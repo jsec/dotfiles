@@ -45,8 +45,8 @@ return {
                     },
                     files = {
                         hidden = true,
-                        ignored = false
-                    }
+                        ignored = false,
+                    },
                 },
                 formatters = {
                     file = {

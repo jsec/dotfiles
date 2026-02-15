@@ -13,10 +13,10 @@ vim.keymap.set('i', 'jj', '<esc>', { noremap = true })
 vim.keymap.set('n', ';w', '<cmd>w<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>`', '<cmd>ccl<cr>', { silent = true })
 vim.keymap.set(
-  'n',
-  '<leader>s',
-  '<cmd>lua vim.diagnostic.open_float()<cr>',
-  { noremap = true, silent = true }
+    'n',
+    '<leader>s',
+    '<cmd>lua vim.diagnostic.open_float()<cr>',
+    { noremap = true, silent = true }
 )
 
 -- Trouble
