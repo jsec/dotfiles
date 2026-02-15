@@ -13,12 +13,6 @@ return {
         git = {
             timeout = 800,
         },
-        update_focused_file = {
-            enable = true,
-            update_root = {
-                enable = false,
-            },
-        },
         view = {
             width = 35,
         },
