@@ -6,12 +6,12 @@ return {
         log_level = vim.log.levels.DEBUG,
         formatters_by_ft = {
             javascript = {
-                -- 'biome',
+                'biome',
                 'biome-organize-imports',
                 'eslint'
             },
             typescript = {
-                -- 'biome',
+                'biome',
                 'biome-organize-imports',
                 'eslint'
             },
