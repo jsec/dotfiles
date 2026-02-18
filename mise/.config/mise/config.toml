@@ -12,6 +12,12 @@ node = "20"
 "npm:vscode-langservers-extracted" = "latest"
 "npm:yarn" = "1"
 "npm:zx" = "latest"
+python = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = []
+experimental = true
+
+[settings.python]
+compile = true
+uv_venv_auto = true
