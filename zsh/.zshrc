@@ -36,7 +36,11 @@ ulimit -n 10240
 # direnv
 eval "$(direnv hook zsh)"
 
+# zoxide
 eval "$(zoxide init zsh --cmd cd --hook prompt)"
+
+# Slack CLI
+PATH="$PATH:$HOME/.local/bin"
 
 # Work specific functionality
 if [ -f ~/.zsh/env.zsh ]; then
