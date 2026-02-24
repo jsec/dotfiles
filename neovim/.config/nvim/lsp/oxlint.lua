@@ -31,15 +31,7 @@ return {
             desc = 'Apply Oxlint automatic fixes',
         })
     end,
-    settings = {
-        -- run = 'onType',
-        -- configPath = nil,
-        -- tsConfigPath = nil,
-        -- unusedDisableDirectives = 'allow',
-        -- typeAware = false,
-        -- disableNestedConfig = false,
-        -- fixKind = 'safe_fix',
-    },
+    settings = { fixKind = 'safe_fix' },
     before_init = function(init_params, config)
         local settings = config.settings or {}
         if settings.typeAware == nil and vim.fn.executable('tsgolint') == 1 then

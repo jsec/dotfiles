@@ -7,45 +7,31 @@ return {
         formatters_by_ft = {
             javascript = {
                 'eslint',
-                'biome',
-                'biome-organize-imports',
+                'oxlint',
             },
             javascriptreact = {
                 'eslint',
-                'biome',
-                'biome-organize-imports',
+                'oxlint',
             },
             typescript = {
                 'eslint',
-                'biome',
-                'biome-organize-imports',
+                'oxlint',
             },
             typescriptreact = {
                 'eslint',
-                'biome',
-                'biome-organize-imports',
+                'oxlint',
             },
             go = { 'gofmt', 'goimports' },
             sql = { 'sqlfluff' },
         },
         formatters = {
-            dprint = {
-                condition = function(self, ctx)
-                    return vim.fs.find({ 'dprint.json' }, { path = ctx.filename, upward = true })[1]
-                end,
-            },
-            biome = {
-                condition = function(self, ctx)
-                    return vim.fs.find({ 'biome.json' }, { path = ctx.filename, upward = true })[1]
-                end,
-            },
-            ['biome-organize-imports'] = {
-                condition = function(self, ctx)
-                    return vim.fs.find({ 'biome.json' }, { path = ctx.filename, upward = true })[1]
+            oxlint = {
+                condition = function(_, ctx)
+                    return vim.fs.find({ '.oxlintrc.json' }, { path = ctx.filename, upward = true })[1]
                 end,
             },
             sqlfluff = {
-                condition = function(self, ctx)
+                condition = function(_, ctx)
                     return vim.fs.find({ '.sqlfluff' }, { path = ctx.filename, upward = true })[1]
                 end,
                 inherit = false,
