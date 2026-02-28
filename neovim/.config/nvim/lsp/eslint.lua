@@ -19,8 +19,7 @@ return {
     settings = {
         validate = 'on',
         packageManager = nil,
-        useESLintClass = true,
-        experimental = { useFlatConfig = true },
+        experimental = {},
         codeActionOnSave = { enable = true, mode = 'all' },
         format = true,
         quiet = false,
