@@ -21,4 +21,4 @@ experimental = true
 
 [settings.python]
 compile = true
-uv_venv_auto = true
+uv_venv_auto = "create|source"
