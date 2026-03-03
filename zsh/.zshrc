@@ -19,6 +19,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
 # Prompt
 eval "$(starship init zsh)"
 
+# Postgres
+PATH="$PATH:/opt/homebrew/opt/libpq/bin"
+
 # Mysql-client
 PATH="$PATH:/opt/homebrew/opt/mysql-client@8.4/bin"
 
