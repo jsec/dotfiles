@@ -25,6 +25,11 @@ return {
             sql = { 'sqlfluff' },
         },
         formatters = {
+            eslint = {
+                condition = function(_, ctx)
+                    return vim.fs.find({ 'eslint.config.js' }, { path = ctx.filename, upward = true })[1]
+                end,
+            },
             oxlint = {
                 condition = function(_, ctx)
                     return vim.fs.find({ '.oxlintrc.json' }, { path = ctx.filename, upward = true })[1]

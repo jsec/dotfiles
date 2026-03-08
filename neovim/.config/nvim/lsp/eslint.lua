@@ -11,10 +11,7 @@ return {
     root_markers = {
         'eslint.config.js',
         'eslint.config.ts',
-        'eslint.config.mjs',
-        '.eslintrc',
-        '.eslintrc.js',
-        '.eslintrc.json',
+        'eslint.config.mjs'
     },
     settings = {
         validate = 'on',
