@@ -8,18 +8,22 @@ return {
             javascript = {
                 'eslint',
                 'oxlint',
+                'oxfmt',
             },
             javascriptreact = {
                 'eslint',
                 'oxlint',
+                'oxfmt',
             },
             typescript = {
                 'eslint',
                 'oxlint',
+                'oxfmt',
             },
             typescriptreact = {
                 'eslint',
                 'oxlint',
+                'oxfmt',
             },
             go = { 'gofmt', 'goimports' },
             sql = { 'sqlfluff' },
@@ -33,6 +37,11 @@ return {
             oxlint = {
                 condition = function(_, ctx)
                     return vim.fs.find({ '.oxlintrc.json' }, { path = ctx.filename, upward = true })[1]
+                end,
+            },
+            oxfmt = {
+                condition = function(_, ctx)
+                    return vim.fs.find({ '.oxfmtrc.json' }, { path = ctx.filename, upward = true })[1]
                 end,
             },
             sqlfluff = {
