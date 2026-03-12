@@ -15,7 +15,11 @@ return {
 				'eslint',
 				stop_after_first = true
 			},
-			python = { 'isort', 'black' },
+			python = {
+				'ruff_fix',
+				'ruff_format',
+				'ruff_organize_imports',
+			},
 			go = { 'gofmt', 'goimports' },
 			sql = { 'sqlfluff' },
 		},
@@ -39,6 +43,21 @@ return {
 				inherit = false,
 				command = 'sqlfluff',
 				args = { 'fix', '--config', '/Users/jarrod.seccombe/.sqlfluff', '-' },
+			},
+			ruff_fix = {
+				condition = function(_, ctx)
+					return vim.fs.find({ 'ruff.toml' }, { path = ctx.filename, upward = true })[1]
+				end
+			},
+			ruff_format = {
+				condition = function(_, ctx)
+					return vim.fs.find({ 'ruff.toml' }, { path = ctx.filename, upward = true })[1]
+				end
+			},
+			ruff_organize_imports = {
+				condition = function(_, ctx)
+					return vim.fs.find({ 'ruff.toml' }, { path = ctx.filename, upward = true })[1]
+				end
 			},
 		},
 		format_on_save = {
