@@ -37,8 +37,13 @@ return {
             on_dir(vim.fn.fnamemodify(ts_root, ':h'))
         end
     end,
+    on_attach = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end,
     settings = {
-        format = { enable = false },
+        typescript = { format = { enable = false } },
+        javascript = { format = { enable = false } },
         vtsls = {
             typescript = {
                 globalTsdk = get_global_tsdk(),
