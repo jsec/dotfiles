@@ -1,4 +1,5 @@
 [tools]
+"aqua:LuaLS/lua-language-server" = "latest"
 bun = "latest"
 go = "latest"
 node = "20"

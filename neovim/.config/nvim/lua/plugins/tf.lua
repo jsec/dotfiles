@@ -5,11 +5,11 @@ return {
         require('tf').setup({
             doc = {
                 default_option = 'open',
-                browser_command = 'chrome'
+                browser_command = 'chrome',
             },
             terraform = {
-                bin = '/opt/homebrew/bin/terraform'
-            }
+                bin = '/opt/homebrew/bin/terraform',
+            },
         })
-    end
+    end,
 }
