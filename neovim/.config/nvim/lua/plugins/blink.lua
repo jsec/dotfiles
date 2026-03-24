@@ -95,7 +95,14 @@ return {
                 },
             },
             sources = {
-                default = { 'lsp', 'path', 'buffer', 'snippets' },
+                default = { 'lsp', 'path', 'buffer' },
+                providers = {
+                    snippets = {
+                        opts = {
+                            friendly_snippets = false
+                        }
+                    }
+                }
             },
             fuzzy = { implementation = 'prefer_rust_with_warning' },
         }
