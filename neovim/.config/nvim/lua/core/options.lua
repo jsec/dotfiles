@@ -41,3 +41,6 @@ vim.opt.backupdir = cache_dir .. 'backup/'
 vim.opt.directory = cache_dir .. 'swap/'
 vim.opt.undofile = true
 vim.opt.undodir = cache_dir .. 'undo/'
+
+vim.api.nvim_set_hl(0, 'SnippetTabstop', {})
+vim.api.nvim_set_hl(0, 'SnippetTabstopActive', {})
