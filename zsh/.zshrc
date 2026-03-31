@@ -17,6 +17,7 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # Prompt
+STARSHIP_CONFIG=${HOME}/.config/starship.toml
 eval "$(starship init zsh)"
 
 # Postgres
