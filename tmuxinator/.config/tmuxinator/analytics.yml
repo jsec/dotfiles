@@ -1,0 +1,32 @@
+# /Users/jarrod.seccombe/.config/tmuxinator/analytics.yml
+
+name: Analytics
+root: ~/src/dev/ParkingAdvisors-Monthly
+
+windows:
+  - etl:
+      root: ~/src/dev/ParkingAdvisors-Monthly/infra/modules/etl
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        - vim
+        -
+        -
+  - infra:
+      root: ~/src/dev/ParkingAdvisors-Monthly/infra
+      panes:
+        -
+  - "dw infra":
+      root: ~/src/dev/ParkingAdvisors-Monthly/infra/data-warehouse
+      panes:
+        -
+  - migrations:
+      root: ~/src/dev/ParkingAdvisors-Monthly/infra/data-warehouse/migrations
+      layout: b8c1,319x83,0,0{159x83,0,0,0,159x83,160,0[159x41,160,0,1,159x41,160,42,2]}
+      panes:
+        -
+        - cd ~/src/dev/ParkingAdvisors-Monthly
+        -
+  - shell:
+      panes:
+        -
+
