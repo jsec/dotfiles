@@ -15,6 +15,7 @@ node = "20"
 "npm:yarn" = "1"
 "npm:zx" = "latest"
 python = "latest"
+terraform = "latest"
 uv = "latest"
 
 [settings]
