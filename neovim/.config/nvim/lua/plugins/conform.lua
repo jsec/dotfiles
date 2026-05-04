@@ -29,6 +29,11 @@ return {
                     return vim.fs.find({ 'biome.json' }, { path = ctx.filename, upward = true })[1]
                 end,
             },
+            ['biome-check'] = {
+                condition = function(_, ctx)
+                    return vim.fs.find({ 'biome.json' }, { path = ctx.filename, upward = true })[1]
+                end,
+            },
             ['biome-organize-imports'] = {
                 condition = function(_, ctx)
                     return vim.fs.find({ 'biome.json' }, { path = ctx.filename, upward = true })[1]

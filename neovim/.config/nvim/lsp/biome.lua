@@ -17,8 +17,6 @@ return {
     root_markers = {
         'biome.json',
         'biome.jsonc',
-        'package.json',
-        '.git',
     },
     settings = {
         format = { enable = true },
