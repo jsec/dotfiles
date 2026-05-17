@@ -13,6 +13,7 @@ return {
         'eslint.config.ts',
         'eslint.config.mjs'
     },
+    workspace_required = true,
     settings = {
         validate = 'on',
         packageManager = nil,
