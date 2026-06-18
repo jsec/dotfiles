@@ -37,9 +37,6 @@ export PATH
 # make ulimit not suck
 ulimit -n 10240
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # Slack CLI
 PATH="$PATH:$HOME/.local/bin"
 
