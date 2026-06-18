@@ -33,7 +33,9 @@ windows:
         - vim
         -
         -
-
+  - shell:
+      panes:
+        -
   - shell:
       panes:
         -
