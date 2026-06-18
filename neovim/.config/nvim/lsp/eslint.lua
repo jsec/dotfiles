@@ -8,14 +8,25 @@ return {
         'typescriptreact',
         'graphql',
     },
-    root_markers = {
-        'eslint.config.js',
-        'eslint.config.ts',
-        'eslint.config.mjs',
-        '.eslintrc',
-        '.eslintrc.js',
-        '.eslintrc.json',
-    },
+    root_dir = function(bufnr, on_dir)
+        local markers = {
+            'eslint.config.js',
+            'eslint.config.ts',
+            'eslint.config.mjs',
+            'eslint.config.cjs',
+            '.eslintrc',
+            '.eslintrc.js',
+            '.eslintrc.cjs',
+            '.eslintrc.json',
+            '.eslintrc.yaml',
+            '.eslintrc.yml',
+        }
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        local found = vim.fs.find(markers, { path = fname, upward = true })[1]
+        if found then
+            on_dir(vim.fs.dirname(found))
+        end
+    end,
     settings = {
         validate = 'on',
         packageManager = nil,
