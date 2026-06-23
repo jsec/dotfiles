@@ -39,16 +39,13 @@ return {
     config = function()
         local ts = require('nvim-treesitter')
 
-        ts.setup({
-            highlight = { enable = true },
-            query_linter = {
-                enable = true,
-                use_virtual_text = true,
-                lint_events = { 'BufWrite', 'CursorHold' },
-            },
-            additional_vim_regex_highlighting = false,
-        })
-
+        ts.setup({})
         ts.install(parsers):wait(300000)
+
+        vim.api.nvim_create_autocmd('FileType', {
+            callback = function(args)
+                pcall(vim.treesitter.start, args.buf)
+            end,
+        })
     end,
 }
