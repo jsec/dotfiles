@@ -10,4 +10,12 @@ return {
         'requirements.txt',
         '.git',
     },
+    settings = {
+        ty = {
+            inlayHints = {
+                variableTypes = false,
+                callArgumentNames = false,
+            }
+        }
+    }
 }
