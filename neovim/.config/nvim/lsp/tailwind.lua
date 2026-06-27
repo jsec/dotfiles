@@ -45,7 +45,6 @@ return {
             },
         },
     },
-    ---@type lspconfig.settings.tailwindcss
     settings = {
         tailwindCSS = {
             validate = true,
@@ -92,13 +91,6 @@ return {
         'postcss.config.cjs',
         'postcss.config.mjs',
         'postcss.config.ts',
-        -- Django
-        'theme/static_src/tailwind.config.js',
-        'theme/static_src/tailwind.config.cjs',
-        'theme/static_src/tailwind.config.mjs',
-        'theme/static_src/tailwind.config.ts',
-        'theme/static_src/postcss.config.js',
-        -- Fallback for tailwind v4, where tailwind.config.* is not required anymore
         '.git',
     }
 }

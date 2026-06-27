@@ -23,6 +23,8 @@ vim.diagnostic.config({
     },
 })
 
+vim.lsp.inlay_hint.enable(false)
+
 vim.api.nvim_create_autocmd({ 'BufReadPre', 'BufNewFile' }, {
     once = true,
     callback = function()
