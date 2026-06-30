@@ -11,6 +11,7 @@ return {
         formatters_by_ft = {
             javascript = { 'eslint' },
             javascriptreact = { 'eslint' },
+            json = { 'jq' },
             typescript = { 'eslint' },
             typescriptreact = { 'eslint' },
             go = { 'gofmt', 'goimports' },
