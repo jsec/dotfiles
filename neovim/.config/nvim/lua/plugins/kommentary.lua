@@ -2,7 +2,6 @@ return {
     specs = {
         {
             src = 'https://github.com/b3nj5m1n/kommentary',
-            version = 'd5a111a3bc4109a8f913a5863c9092b3b3801482',
         },
     },
     setup = function()

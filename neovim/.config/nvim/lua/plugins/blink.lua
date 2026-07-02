@@ -2,15 +2,13 @@ return {
     specs = {
         {
             src = 'https://github.com/saghen/blink.cmp',
-            version = '78336bc89ee5365633bcf754d93df01678b5c08f',
+            version = vim.version.range('1.*'),
         },
         {
             src = 'https://github.com/rafamadriz/friendly-snippets',
-            version = '6cd7280adead7f586db6fccbd15d2cac7e2188b9',
         },
         {
             src = 'https://github.com/onsails/lspkind.nvim',
-            version = 'c7274c48137396526b59d86232eabcdc7fed8a32',
         },
     },
     setup = function()

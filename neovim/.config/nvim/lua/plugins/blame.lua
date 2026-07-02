@@ -2,7 +2,6 @@ return {
     specs = {
         {
             src = 'https://github.com/FabijanZulj/blame.nvim',
-            version = '179da7aaacce7c52874af636255ede72dd6fe796',
         },
     },
     setup = function()

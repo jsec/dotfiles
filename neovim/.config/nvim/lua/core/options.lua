@@ -46,4 +46,4 @@ vim.api.nvim_set_hl(0, 'SnippetTabstop', {})
 vim.api.nvim_set_hl(0, 'SnippetTabstopActive', {})
 
 -- Temporary fix for tmux 3.7a
-vim.opt.termsync = false
+-- vim.opt.termsync = false

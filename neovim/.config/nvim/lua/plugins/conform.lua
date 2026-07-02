@@ -6,7 +6,6 @@ return {
     specs = {
         {
             src = 'https://github.com/stevearc/conform.nvim',
-            version = '619363c30309d29ffa631e67c8183f2a72caa373',
         },
     },
     setup = function()

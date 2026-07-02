@@ -2,11 +2,9 @@ return {
     specs = {
         {
             src = 'https://github.com/ray-x/go.nvim',
-            version = '0768d79bbebdb1a112a845f9cd6293bfbd544dab',
         },
         {
             src = 'https://github.com/ray-x/guihua.lua',
-            version = 'f8e06bd8a26dee3377d63c2adf1e57cdb58ac474',
         },
     },
     setup = function()

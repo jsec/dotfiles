@@ -2,7 +2,6 @@ return {
     specs = {
         {
             src = 'https://github.com/folke/snacks.nvim',
-            version = '882c996cf28183f4d63640de0b4c02ec886d01f2',
         },
     },
     setup = function()
