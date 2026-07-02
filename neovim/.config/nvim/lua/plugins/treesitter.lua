@@ -32,11 +32,13 @@ local parsers = {
 }
 
 return {
-    'nvim-treesitter/nvim-treesitter',
-    branch = 'main',
-    lazy = false,
-    build = ':TSUpdate',
-    config = function()
+    specs = {
+        {
+            src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+            version = '4916d6592ede8c07973490d9322f187e07dfefac',
+        },
+    },
+    setup = function()
         local ts = require('nvim-treesitter')
 
         ts.setup({})

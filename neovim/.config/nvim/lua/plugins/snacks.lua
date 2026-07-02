@@ -1,9 +1,12 @@
 return {
-    {
-        'folke/snacks.nvim',
-        priority = 1000,
-        lazy = false,
-        opts = {
+    specs = {
+        {
+            src = 'https://github.com/folke/snacks.nvim',
+            version = '882c996cf28183f4d63640de0b4c02ec886d01f2',
+        },
+    },
+    setup = function()
+        require('snacks').setup({
             bigfile = { enabled = true },
             lazygit = { enabled = true },
             explorer = {
@@ -81,61 +84,38 @@ return {
                         and vim.bo[buf].buftype ~= 'terminal'
                 end,
             },
-        },
-        keys = {
-            {
-                '<c-p>',
-                function()
-                    if vim.b.gitsigns_head or vim.b.gitsigns_status_dict then
-                        Snacks.picker.git_files({ untracked = true })
-                    else
-                        Snacks.picker.files()
-                    end
-                end,
-                desc = 'Find Files',
-            },
-            {
-                '<leader>gd',
-                function()
-                    Snacks.picker.lsp_definitions({ confirm = 'edit_vsplit' })
-                end,
-                desc = 'Goto Definition',
-            },
-            {
-                '<leader>gr',
-                function()
-                    Snacks.picker.lsp_references({ confirm = 'edit_vsplit' })
-                end,
-                nowait = true,
-                desc = 'Find References',
-            },
-            {
-                '<leader>lg',
-                function()
-                    Snacks.picker.grep()
-                end,
-                desc = 'Grep',
-            },
-            {
-                '<leader>cs',
-                function()
-                    Snacks.picker.colorschemes()
-                end,
-                desc = 'Choose colorscheme',
-            },
-            {
-                '<leader>ca',
-                function()
-                    vim.lsp.buf.code_action()
-                end,
-                desc = 'Code Actions',
-            },
-            {
-                '<c-n>',
-                function()
-                    Snacks.picker.explorer()
-                end,
-            },
-        },
-    },
+        })
+
+        vim.keymap.set('n', '<c-p>', function()
+            if vim.b.gitsigns_head or vim.b.gitsigns_status_dict then
+                Snacks.picker.git_files({ untracked = true })
+            else
+                Snacks.picker.files()
+            end
+        end, { desc = 'Find Files' })
+
+        vim.keymap.set('n', '<leader>gd', function()
+            Snacks.picker.lsp_definitions({ confirm = 'edit_vsplit' })
+        end, { desc = 'Goto Definition' })
+
+        vim.keymap.set('n', '<leader>gr', function()
+            Snacks.picker.lsp_references({ confirm = 'edit_vsplit' })
+        end, { desc = 'Find References', nowait = true })
+
+        vim.keymap.set('n', '<leader>lg', function()
+            Snacks.picker.grep()
+        end, { desc = 'Grep' })
+
+        vim.keymap.set('n', '<leader>cs', function()
+            Snacks.picker.colorschemes()
+        end, { desc = 'Choose colorscheme' })
+
+        vim.keymap.set('n', '<leader>ca', function()
+            vim.lsp.buf.code_action()
+        end, { desc = 'Code Actions' })
+
+        vim.keymap.set('n', '<c-n>', function()
+            Snacks.picker.explorer()
+        end)
+    end,
 }

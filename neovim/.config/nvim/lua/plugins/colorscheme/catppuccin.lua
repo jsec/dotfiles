@@ -1,9 +1,12 @@
 return {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    lazy = false,
-    priority = 1000,
-    config = function()
+    specs = {
+        {
+            src = 'https://github.com/catppuccin/nvim',
+            name = 'catppuccin',
+            version = 'e068ab5f8261f23f6f71ffd8791ae40315b77b9c',
+        },
+    },
+    setup = function()
         require('catppuccin').setup({
             styles = {
                 comments = { 'italic' },
@@ -78,6 +81,6 @@ return {
             end,
         })
 
-        vim.cmd('colorscheme catppuccin')
+        vim.cmd.colorscheme('catppuccin')
     end,
 }
