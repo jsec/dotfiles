@@ -2,6 +2,10 @@ local function has_config(file_list, ctx)
     return vim.fs.find(file_list, { path = ctx.filename, upward = true })[1]
 end
 
+local function has_ruff_config(ctx)
+    return has_config({ 'pyproject.toml', 'ruff.toml', '.ruff.toml' }, ctx)
+end
+
 return {
     specs = {
         {
@@ -18,7 +22,7 @@ return {
                 typescript = { 'eslint' },
                 typescriptreact = { 'eslint' },
                 go = { 'gofmt', 'goimports' },
-                sql = { 'sqlfluff' },
+                sql = { 'sqlfluff', 'sqlfmt' },
                 python = {
                     'ruff_fix',
                     'ruff_format',
@@ -49,19 +53,27 @@ return {
                     command = 'sqlfluff',
                     args = { 'fix', '--config', '.sqlfluff', '-' },
                 },
+                sqlfmt = {
+                    condition = function(_, ctx)
+                        return has_config({ 'dbt_project.yml' }, ctx)
+                    end,
+                    inherit = false,
+                    command = 'uv',
+                    args = { 'run', 'sqlfmt', '-' }
+                },
                 ruff_fix = {
                     condition = function(_, ctx)
-                        return has_config({ 'pyproject.toml', 'ruff.toml', '.ruff.toml' }, ctx)
+                        return has_ruff_config(ctx)
                     end,
                 },
                 ruff_format = {
                     condition = function(_, ctx)
-                        return has_config({ 'pyproject.toml', 'ruff.toml', '.ruff.toml' }, ctx)
+                        return has_ruff_config(ctx)
                     end,
                 },
                 ruff_organize_imports = {
                     condition = function(_, ctx)
-                        return has_config({ 'pyproject.toml', 'ruff.toml', '.ruff.toml' }, ctx)
+                        return has_ruff_config(ctx)
                     end,
                 },
             },
