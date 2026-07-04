@@ -1,4 +1,5 @@
 alias vim=nvim
+alias mux=tmuxinator
 export EDITOR='vim'
 
 export DISABLE_AUTO_TITLE=true

@@ -1,0 +1,25 @@
+# /Users/jsec/.config/tmuxinator/drs.yml
+
+name: drs
+root: ~/src/node/drs
+
+windows:
+  - api:
+      panes:
+        - vim
+  - web:
+      panes:
+        - 
+  - dev:
+      panes:
+        - pnpm dev
+  - shell:
+      panes:
+        -
+  - db:
+      root: ~/src/node/drs/db
+      panes:
+        - 
+  - git:
+      panes:
+        -
