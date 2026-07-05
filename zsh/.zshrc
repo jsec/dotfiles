@@ -1,5 +1,4 @@
 alias vim=nvim
-alias mux=tmuxinator
 export EDITOR='vim'
 
 export DISABLE_AUTO_TITLE=true
@@ -38,5 +37,26 @@ autoload -Uz compinit && compinit
 
 # case insensitive completions
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
+# Work specific functionality
+if [ -f ~/.zsh/env.zsh ]; then
+    source ~/.zsh/env.zsh
+fi
+
+if [ -f ~/.zsh/git.zsh ]; then
+    source ~/.zsh/git.zsh
+fi
+
+if [ -f ~/.zsh/functions.zsh ]; then
+    source ~/.zsh/functions.zsh
+fi
+
+if [ -f ~/.zsh/fzf.zsh ]; then
+    source ~/.zsh/fzf.zsh
+fi
+
+if [ -f ~/.zsh/aliases.zsh ]; then
+    source ~/.zsh/aliases.zsh
+fi
 
 export PATH
