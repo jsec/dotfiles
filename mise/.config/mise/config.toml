@@ -1,6 +1,6 @@
 [tools]
 go = "latest"
-node = "26"
+node = "24.11.0"
 "npm:@nestjs/cli" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:neovim" = "latest"
@@ -14,6 +14,7 @@ uv = "latest"
 
 [settings]
 experimental = true
+idiomatic_version_file_enable_tools = ["node"]
 
 [settings.python]
 compile = true
