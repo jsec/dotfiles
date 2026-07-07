@@ -1,0 +1,43 @@
+# /Users/jsec/.config/tmuxinator/solace.yml
+
+name: Solace
+root: ~/src/solace
+
+windows:
+  - server:
+      root: ~/src/solace/solace-health-server/
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        - vim
+        -
+        -
+  - "server shell":
+      root: ~/src/solace/solace-health-server/
+      panes:
+        -
+  - admin:
+      root: ~/src/solace/solace-health-admin/
+      layout: 96d0,318x88,0,0[318x70,0,0,0,318x17,0,71{159x17,0,71,9,158x17,160,71,10}]
+      panes:
+        - vim
+        -
+        -
+  - "admin shell":
+      root: ~/src/solace/solace-health-admin/
+      panes:
+        -
+  - dev:
+      root: ~/src/solace/
+      layout: even-vertical
+      panes:
+        - cd solace-health-server && npm run dev
+        - cd solace-health-admin && npm run dev
+  - shell:
+      panes:
+        -
+  - dev:
+      root: ~/src/solace/
+      layout: even-vertical
+      panes:
+        - cd solace-health-server
+        - cd solace-health-admin
