@@ -1,14 +1,19 @@
 ---@type vim.lsp.Config
 return {
-    cmd = { 'vscode-eslint-language-server', '--stdio' },
+    cmd = {
+        'node',
+        '--max-old-space-size=8192',
+        vim.fn.exepath('vscode-eslint-language-server'),
+        '--stdio',
+    },
     filetypes = {
         'javascript',
         'javascriptreact',
         'typescript',
         'typescriptreact',
-        'graphql',
     },
     root_markers = {
+        '.eslintrc.js',
         'eslint.config.js',
         'eslint.config.ts',
         'eslint.config.mjs'
@@ -24,10 +29,10 @@ return {
         onIgnoredFiles = 'off',
         options = {},
         rulesCustomizations = {},
-        run = 'onType',
+        run = 'onSave',
         problems = { shortenToSingleLine = false },
         nodePath = '',
-        workingDirectory = { mode = 'auto' },
+        workingDirectories = { mode = 'auto' },
         codeAction = {
             disableRuleComment = { enable = true, location = 'separateLine' },
             showDocumentation = { enable = true },
