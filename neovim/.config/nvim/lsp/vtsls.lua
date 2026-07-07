@@ -42,7 +42,10 @@ return {
         client.server_capabilities.documentRangeFormattingProvider = false
     end,
     settings = {
-        typescript = { format = { enable = false } },
+        typescript = {
+            format = { enable = false },
+            tsserver = { maxTsServerMemory = 8192 },
+        },
         javascript = { format = { enable = false } },
         vtsls = {
             typescript = {
