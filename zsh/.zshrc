@@ -59,4 +59,8 @@ if [ -f ~/.zsh/aliases.zsh ]; then
     source ~/.zsh/aliases.zsh
 fi
 
+if [ -f ~/.zsh/tokens.zsh ]; then
+    source ~/.zsh/tokens.zsh
+fi
+
 export PATH
