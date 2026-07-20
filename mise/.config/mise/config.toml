@@ -1,4 +1,5 @@
 [tools]
+bun = "latest"
 go = "latest"
 node = "24.11.0"
 "npm:@nestjs/cli" = "latest"
