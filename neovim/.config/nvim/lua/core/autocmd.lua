@@ -19,3 +19,19 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.cmd.inoreabbrev('<buffer> nil None')
     end,
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+    callback = function(args)
+        local path = vim.api.nvim_buf_get_name(args.buf)
+
+        if not vim.startswith(path, vim.fn.expand('~/src/solace')) then
+            return
+        end
+
+        vim.opt_local.expandtab = true
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+    end,
+})
