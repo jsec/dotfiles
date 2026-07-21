@@ -38,6 +38,10 @@ return {
             showDocumentation = { enable = true },
         },
     },
+    flags = {
+        allow_incremental_sync = false,
+        debounce_text_changes = 1000,
+    },
     before_init = function(params, config)
         config.settings.workspaceFolder = {
             uri = params.rootPath,
