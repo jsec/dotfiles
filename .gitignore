@@ -9,3 +9,4 @@ neovim/.config/nvim/plugin/
 .luarc.json
 tmux/.tmux/plugins
 tokens.zsh
+vars.zsh

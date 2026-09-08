@@ -22,7 +22,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "rev": "bb548e5ae4550a5e318b7e398a93b9af456b65e1",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
@@ -46,7 +46,7 @@
       "src": "https://github.com/b3nj5m1n/kommentary"
     },
     "leap.nvim": {
-      "rev": "5db34d1a302ef18bc819dc8a38011abe29dae229",
+      "rev": "38af0ab56c6eb8757ee6006dd13ab79c2bc11a49",
       "src": "https://codeberg.org/andyg/leap.nvim"
     },
     "lspkind.nvim": {
@@ -78,7 +78,7 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-navic": {
-      "rev": "f5eba192f39b453675d115351808bd51276d9de5",
+      "rev": "455808fd0fae06e6d70fadfd61432275db8f34ce",
       "src": "https://github.com/SmiteshP/nvim-navic"
     },
     "nvim-treesitter": {
@@ -91,7 +91,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
-      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
+      "rev": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -124,7 +124,7 @@
       "src": "https://github.com/tpope/vim-fugitive"
     },
     "vscode.nvim": {
-      "rev": "aa1102a7e15195c9cca22730b09224a7f7745ba8",
+      "rev": "6439ed89d0e10193f07e92268a321d7c6f6e93ee",
       "src": "https://github.com/Mofiqul/vscode.nvim"
     }
   }

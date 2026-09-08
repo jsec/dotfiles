@@ -63,4 +63,8 @@ if [ -f ~/.zsh/tokens.zsh ]; then
     source ~/.zsh/tokens.zsh
 fi
 
+if [ -f ~/.zsh/vars.zsh ]; then
+    source ~/.zsh/vars.zsh
+fi
+
 export PATH
