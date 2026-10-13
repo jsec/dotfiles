@@ -2,10 +2,10 @@
 bun = "latest"
 go = "latest"
 node = "24.11.0"
+pnpm = "latest"
 "npm:@nestjs/cli" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:neovim" = "latest"
-"npm:pnpm" = "latest"
 "npm:prettier" = "latest"
 "npm:typescript" = "latest"
 "npm:vscode-langservers-extracted" = "latest"
@@ -21,3 +21,6 @@ idiomatic_version_file_enable_tools = ["node"]
 [settings.python]
 compile = true
 uv_venv_auto = true
+
+[settings.npm]
+package_manager = "npm"
