@@ -57,3 +57,6 @@ export PNPM_HOME="/Users/jsec/Library/pnpm"
 PATH="$PNPM_HOME:$PATH"
 
 export PATH
+
+# opencode
+export PATH=/Users/jsec/.opencode/bin:$PATH
