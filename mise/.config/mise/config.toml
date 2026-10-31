@@ -1,7 +1,7 @@
 [tools]
 bun = "latest"
 go = "latest"
-node = "24.11.0"
+node = "24.22.1"
 pnpm = "latest"
 "npm:@nestjs/cli" = "latest"
 "npm:@vtsls/language-server" = "latest"
