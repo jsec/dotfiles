@@ -13,7 +13,6 @@ local modules = {
     'plugins.noice',
     'plugins.nvim-autopairs',
     'plugins.nvim-ts-autotag',
-    'plugins.rustacean',
     'plugins.snacks',
     'plugins.tiny-inline-diagnostic',
     'plugins.todo-comments',
