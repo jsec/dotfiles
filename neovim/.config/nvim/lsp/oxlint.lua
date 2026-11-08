@@ -1,4 +1,7 @@
 local function uses_typescript(root_dir)
+    if vim.uv.fs_stat(vim.fs.joinpath(root_dir, 'oxlint.config.ts')) then
+        return true
+    end
     local fn = vim.fs.joinpath(root_dir, '.oxlintrc.json')
     for line in io.lines(fn) do
         if line:find('typescript') then
@@ -10,7 +13,13 @@ end
 
 ---@type vim.lsp.Config
 return {
-    cmd = { 'oxlint', '--lsp' },
+    cmd = function(dispatchers, config)
+        local bin = vim.fs.joinpath(config.root_dir, 'node_modules', '.bin', 'oxlint')
+        if not vim.uv.fs_stat(bin) then
+            bin = 'oxlint'
+        end
+        return vim.lsp.rpc.start({ bin, '--lsp' }, dispatchers, { cwd = config.root_dir })
+    end,
     filetypes = {
         'javascript',
         'javascriptreact',
@@ -18,7 +27,7 @@ return {
         'typescriptreact',
         'astro',
     },
-    root_markers = { '.oxlintrc.json' },
+    root_markers = { '.oxlintrc.json', 'oxlint.config.ts' },
     workspace_required = true,
     on_attach = function(client, bufnr)
         vim.api.nvim_buf_create_user_command(bufnr, 'LspOxlintFixAll', function()
@@ -34,7 +43,8 @@ return {
     settings = { fixKind = 'safe_fix' },
     before_init = function(init_params, config)
         local settings = config.settings or {}
-        if settings.typeAware == nil and vim.fn.executable('tsgolint') == 1 then
+        local tsgolint = vim.fs.joinpath(config.root_dir, 'node_modules', '.bin', 'tsgolint')
+        if settings.typeAware == nil and vim.uv.fs_stat(tsgolint) then
             local ok, res = pcall(uses_typescript, config.root_dir)
             if ok and res then
                 settings = vim.tbl_extend('force', settings, { typeAware = true })

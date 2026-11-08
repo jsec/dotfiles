@@ -16,11 +16,11 @@ return {
         require('conform').setup({
             log_level = vim.log.levels.DEBUG,
             formatters_by_ft = {
-                javascript = { 'eslint' },
-                javascriptreact = { 'eslint' },
+                javascript = { 'eslint', 'oxlint', 'oxfmt' },
+                javascriptreact = { 'eslint', 'oxlint', 'oxfmt' },
                 json = { 'jq' },
-                typescript = { 'eslint' },
-                typescriptreact = { 'eslint' },
+                typescript = { 'eslint', 'oxlint', 'oxfmt' },
+                typescriptreact = { 'eslint', 'oxlint', 'oxfmt' },
                 go = { 'gofmt', 'goimports' },
                 sql = { 'sqlfluff', 'sqlfmt' },
                 python = {
@@ -37,12 +37,12 @@ return {
                 },
                 oxlint = {
                     condition = function(_, ctx)
-                        return has_config({ '.oxlintrc.json' }, ctx)
+                        return has_config({ '.oxlintrc.json', 'oxlint.config.ts' }, ctx)
                     end,
                 },
                 oxfmt = {
                     condition = function(_, ctx)
-                        return has_config({ '.oxfmtrc.json' }, ctx)
+                        return has_config({ '.oxfmtrc.json', 'oxfmt.config.ts' }, ctx)
                     end,
                 },
                 sqlfluff = {
